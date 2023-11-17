@@ -20,7 +20,7 @@ export default function AboutUs() {
                         About Us
                     </h1>
                     <p className="mt-8 font-arimo text-xl text-grays-600">
-                        Our mission is to celebrate and promote Nigerian languages and culture. We're a team of language enthusiasts, educators, and cultural advocates who are dedicated to preserving and sharing the beauty of Nigerian languages. We believe that language is a bridge that connects generations, communities, and cultures. We offer high-quality language courses, cultural resources, and a vibrant online community to support your language learning journey. Whether you're starting from scratch or reconnecting with your roots, we're here to empower you.
+                        Our mission is to celebrate and promote Nigerian languages and culture. We&apos;re a team of language enthusiasts, educators, and cultural advocates who are dedicated to preserving and sharing the beauty of Nigerian languages. We believe that language is a bridge that connects generations, communities, and cultures. We offer high-quality language courses, cultural resources, and a vibrant online community to support your language learning journey. Whether you&apos;re starting from scratch or reconnecting with your roots, we&apos;re here to empower you.
                     </p>
                 </div>
             </div>
