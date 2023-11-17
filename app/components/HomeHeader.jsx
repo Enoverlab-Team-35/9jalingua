@@ -4,7 +4,7 @@ import React from 'react'
 export default function HomeHeader() {
     return (
         <header className="bg-blues-1000 px-5 py-10">
-            <div className="mx-auto container flex flex-col lg:flex-row items-center justify-between gap-7">
+            <div className="mx-auto container flex flex-col lg:flex-row items-center justify-between gap-24">
                 {/* Text */}
                 <div className='lg:max-w-[615px] w-full text-center lg:text-left'>
                     <h1 className='font-bold font-arimo text-white text-[56px]'>
@@ -18,7 +18,7 @@ export default function HomeHeader() {
                     </button>
                 </div>
                 {/* Image */}
-                <div className='w-full lg:w-auto'>
+                <div className='w-full lg:w-auto flex-auto'>
                     <Image
                         src={'/william.png'}
                         width={1880}
