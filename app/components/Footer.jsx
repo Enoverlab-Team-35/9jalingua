@@ -115,6 +115,33 @@ const footerLinks = {
     ],
 }
 
+const socialMedia = [
+    {
+        img: "/social/twitter.svg",
+        href: "#"
+    },
+    {
+        img: "/social/linkedin.svg",
+        href: "#"
+    },
+    {
+        img: "/social/facebook.svg",
+        href: "#"
+    },
+    {
+        img: "/social/github.svg",
+        href: "#"
+    },
+    {
+        img: "/social/icon4.svg",
+        href: "#"
+    },
+    {
+        img: "/social/icon5.svg",
+        href: "#"
+    },
+]
+
 export default function Footer() {
     return (
         <footer className='bg-greens-300 px-5 py-16'>
@@ -170,20 +197,28 @@ export default function Footer() {
                                 ))}
                             </div>
                         ))}
-
-                        {/* <div>
-                            <h4 className='text-base'>
-                                Product
-                            </h4>
-                            <ul>
-                                <li className='text-base font-bold mt-4'>
-                                    <Link href={'/'}>
-                                        Overview
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div> */}
                     </div>
+                </div>
+
+                <hr className='my-16 w-full h-[1px] bg-[#EAECF0]' />
+
+                <div className='flex place-items-center justify-between gap-10'>
+                    <p className=''>
+                        © 2023 9jaLingua. All rights reserved.
+                    </p>
+                    <ul className='flex place-items-center gap-6'>
+                        {socialMedia?.map((item, index) => (
+                            <li>
+                                <a href={item.href}>
+                                    <Image
+                                        src={item.img}
+                                        width={24}
+                                        height={24}
+                                    />
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         </footer>
