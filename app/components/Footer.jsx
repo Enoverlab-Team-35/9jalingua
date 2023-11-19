@@ -202,7 +202,7 @@ export default function Footer() {
 
                 <hr className='my-16 w-full h-[1px] bg-[#EAECF0]' />
 
-                <div className='flex place-items-center justify-between gap-10'>
+                <div className='flex flex-col-reverse sm:flex-row place-items-center justify-between gap-5 sm:gap-10'>
                     <p className=''>
                         © 2023 9jaLingua. All rights reserved.
                     </p>
