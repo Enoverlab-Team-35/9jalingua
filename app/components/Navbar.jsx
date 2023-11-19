@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { HiMenu } from "react-icons/hi";
 
 export default function Navbar() {
     return (
@@ -15,11 +16,12 @@ export default function Navbar() {
                         src={'/9jalingua/green.svg'}
                         width={38}
                         height={43}
+                        alt='9jaLingua'
                     />
                     <span className="text-4xl font-bold text-blues-1100">9jaLingua</span>
                 </Link>
                 {/* Buttons */}
-                <div className="flex items-center gap-10">
+                <div className="hidden sm:flex items-center gap-10">
                     <button className="text-grays-600 text-xl font-inter">
                         Cultural Resources
                     </button>
@@ -30,6 +32,11 @@ export default function Navbar() {
                         Log In
                     </Link>
                 </div>
+
+                {/* Hamburger BTN */}
+                <button className='sm:hidden bg-greens-300 rounded-lg p-2'>
+                    <HiMenu color='white' size={32} />
+                </button>
             </div>
         </nav>
     )

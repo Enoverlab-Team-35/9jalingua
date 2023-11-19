@@ -23,6 +23,7 @@ export default function HomeHeader() {
                         src={'/william.png'}
                         width={1880}
                         height={1253}
+                        alt='William'
                         className='w-full rounded-lg object-center'
                     />
                 </div>

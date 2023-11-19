@@ -22,6 +22,7 @@ export default function Languages() {
                         <Image
                             src={'/svgs/chevron-down.svg'}
                             width={20}
+                            alt='Dropdown Icon'
                             height={20}
                         />
                     </button>

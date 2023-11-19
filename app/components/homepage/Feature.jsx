@@ -9,6 +9,7 @@ export default function Feature({ svg, title, description }) {
                     src={svg}
                     width={32}
                     height={32}
+                    alt={title}
                 />
             </div>
             <h4 className="mt-6 font-arimo text-xl font-bold text-blues-1100">
