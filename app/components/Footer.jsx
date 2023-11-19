@@ -208,8 +208,8 @@ export default function Footer() {
                     </p>
                     <ul className='flex place-items-center gap-6'>
                         {socialMedia?.map((item, index) => (
-                            <li>
-                                <a href={item.href} key={index}>
+                            <li key={index}>
+                                <a href={item.href}>
                                     <Image
                                         src={item.img}
                                         alt={item.img}
