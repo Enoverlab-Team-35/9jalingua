@@ -11,6 +11,7 @@ export default function AboutUs() {
                         src={'/Frame25.png'}
                         width={1880}
                         height={1254}
+                        alt='About Us'
                         className='w-full rounded-lg object-center'
                     />
                 </div>
