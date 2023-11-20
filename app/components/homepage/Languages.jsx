@@ -16,7 +16,6 @@ export default function Languages() {
                     <Language title={'Efik'} />
                     <Language title={'Ibibio'} />
                     <Language title={'Bini'} />
-                    <Language title={'Bini'} />
                     <button className="bg-greens-300 text-white py-5 px-3 w-[151px] text-center rounded-lg font-arimo text-xl font-bold flex justify-center items-center gap-2">
                         <span>Others</span>
                         <Image
