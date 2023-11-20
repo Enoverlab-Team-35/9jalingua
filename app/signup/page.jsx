@@ -5,27 +5,26 @@ import { FcGoogle } from "react-icons/fc";
 
 export default function page() {
     return (
-        <AuthLayout text={'Log in'}>
+        <AuthLayout text={'Sign Up'}>
             <div className="flex flex-col justify-center items-center gap-3">
                 <button className="w-[40%] font-bold max-auto flex justify-center items-center border-[3px] border-gray-300 text-black py-2 text-lg rounded-[0.5rem]">
                     <FcGoogle className="mr-2 text-4xl rounded-full p-1"/>
-                    Sign in with google
+                    Sign up with google
                 </button>
                 <button className="w-[40%] font-bold flex justify-center items-center border-[3px] border-gray-300 text-black py-2 text-lg rounded-[0.5rem]">
                     <FaFacebook className="mr-2 text-4xl text-blue-900 rounded-full p-1"/>
-                    Sign in with facebook
+                    Sign up with facebook
                 </button>
                 <button className="w-[40%] font-bold flex justify-center items-center border-[3px] border-gray-300 text-black py-2 text-lg rounded-[0.5rem]">
                     <FaApple className="mr-2 text-4xl rounded-full p-1"/>
-                    Sign in with apple
+                    Sign up with apple
                 </button>
             </div>
             <div>
                 <div className="flex flex-col justify-center items-start w-[40%] mx-auto">
                     <h1 className="text-blue-800 mt-20 font-[900] text-3xl">
-                        Login
+                        Sign up
                     </h1>
-                    <p className="mt-2 font-[600] text-[16px]">Welcome back! Please enter your details.</p>
                 </div>
                 <form>
                     <div className="flex flex-col justify-center items-start w-[40%] mt-8 mx-auto">
@@ -45,23 +44,9 @@ export default function page() {
                           text-gray-700 bg-white border border-gray-300 
                             rounded-[0.5rem] transition ease-in-out"  
                         />
-                        <div className="w-full flex flex-row justify-between items-center">
-                            <div className="flex flex-row gap-3">
-                                <input type="checkbox" className="" />
-                                <label htmlFor="remember me">Remember me </label>
-                            </div>
-                            <div>
-                                <a 
-                                    href="/forgetpassword" 
-                                    className="text-green-600 
-                                    font-bold text-[16px]">
-                                        Forgot Password?
-                                </a>
-                            </div>
-                        </div>
                     </div>
                     <div className="flex justify-center items-center w-[40%] mx-auto mt-12 mb-6">
-                        <button className="bg-green-600 w-full rounded-[0.5rem] py-3 text-white">Login</button>
+                        <button className="bg-green-600 w-full rounded-[0.5rem] py-3 text-white">Sign Up</button>
                     </div>
                 </form>
             </div>
