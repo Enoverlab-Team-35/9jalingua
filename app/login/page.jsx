@@ -1,5 +1,6 @@
 "use client";
 
+import checkboxStyle from './checkbox.module.css'
 import { React, useState } from "react";
 import AuthLayout from "../layouts/AuthLayout";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -12,6 +13,7 @@ import {
   signInWithPopup,
   googleProvider,
 } from "../firebase/config";
+import Link from "next/link";
 
 export default function Page() {
   const [email, setEmail] = useState("");
@@ -19,13 +21,6 @@ export default function Page() {
   const [user, loading] = useAuthState(auth);
   const router = useRouter();
 
-  //   if (loading) {
-  //     return <div>Loading...</div>;
-  //   }
-
-  //   if (user) {
-  //     router.push("/");
-  //   }
   const handleGoogleSignIn = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
@@ -35,7 +30,8 @@ export default function Page() {
     }
   };
 
-  const handleEmailLogin = async () => {
+  const handleEmailLogin = async (event) => {
+    event.preventDefault()
     try {
       await signInWithEmailAndPassword(auth, email, password);
       //   router.push("/");
@@ -46,33 +42,49 @@ export default function Page() {
   };
   return (
     <AuthLayout text={"Log in"}>
-      <div className="flex flex-col justify-center items-center gap-3">
+      <div className="px-8 flex flex-col justify-center items-center gap-6">
         <button
           onClick={handleGoogleSignIn}
-          className="w-[40%] font-bold max-auto flex justify-center items-center border-[3px] border-gray-300 text-black py-2 text-lg rounded-[0.5rem]"
+          className="w-full font-bold flex justify-center items-center gap-3 border border-grays-900 text-grays-900 py-[10px] px-4 text-base rounded-lg hover:bg-grays-100"
         >
-          <FcGoogle className="mr-2 text-4xl rounded-full p-1" />
-          Sign in with google
+          <FcGoogle size={32} />
+          <span>
+            Sign in with google
+          </span>
         </button>
-        <button className="w-[40%] font-bold flex justify-center items-center border-[3px] border-gray-300 text-black py-2 text-lg rounded-[0.5rem]">
-          <FaFacebook className="mr-2 text-4xl text-blue-900 rounded-full p-1" />
-          Sign in with facebook
+
+        <button
+          className="w-full font-bold flex justify-center items-center gap-3 border border-grays-900 text-grays-900 py-[10px] px-4 text-base rounded-lg hover:bg-grays-100"
+        >
+          <FaFacebook size={32} />
+          <span>
+            Sign in with facebook
+          </span>
         </button>
-        <button className="w-[40%] font-bold flex justify-center items-center border-[3px] border-gray-300 text-black py-2 text-lg rounded-[0.5rem]">
-          <FaApple className="mr-2 text-4xl rounded-full p-1" />
-          Sign in with apple
+
+        <button
+          className="w-full font-bold flex justify-center items-center gap-3 border border-grays-900 text-grays-900 py-[10px] px-4 text-base rounded-lg hover:bg-grays-100"
+        >
+          <FaApple size={32} />
+          <span>
+            Sign in with apple
+          </span>
         </button>
       </div>
-      <div>
-        <div className="flex flex-col justify-center items-start w-[40%] mx-auto">
-          <h1 className="text-blue-800 mt-20 font-[900] text-3xl">Login</h1>
-          <p className="mt-2 font-[600] text-[16px]">
+
+      <div className="mt-11">
+        <div className="px-8 pt-6 pb-2 flex flex-col justify-center gap-2 border-b border-grays-200">
+          <h1 className="text-blues-900 font-bold text-4xl">
+            Login
+          </h1>
+          <p className="text-xl text-grays-800">
             Welcome back! Please enter your details.
           </p>
         </div>
-        <form onSubmit={handleEmailLogin}>
-          <div className="flex flex-col justify-center items-start w-[40%] mt-8 mx-auto">
-            <label htmlFor="email" className="font-bold text-[16px]">
+
+        <form className="px-8 pt-6 pb-10" onSubmit={handleEmailLogin}>
+          <div className="flex flex-col justify-center gap-[6px]">
+            <label htmlFor="email" className="text-grays-900 text-[16px]">
               Email
             </label>
             <input
@@ -80,16 +92,14 @@ export default function Page() {
               id="email"
               name="email"
               value={email}
-              className="mb-4 pl-4 w-full mx-auto  py-2 text-xl 
-                            text-gray-700 bg-white border border-gray-300 
-                            rounded-[0.5rem] transition ease-in-out"
+              className="py-[10px] px-[14px] w-full text-gray-700 border border-grays-300 rounded-lg"
               onChange={(event) => {
                 setEmail(event?.target.value);
               }}
             />
           </div>
-          <div className="flex flex-col justify-center items-start w-[40%] mx-auto">
-            <label htmlFor="email" className="font-bold text-[16px]">
+          <div className="mt-4 flex flex-col justify-center gap-[6px]">
+            <label htmlFor="email" className="text-grays-900 text-[16px]">
               Password
             </label>
             <input
@@ -97,35 +107,44 @@ export default function Page() {
               id="email"
               name="email"
               value={password}
-              className="mb-6 pl-4 w-full mx-auto px-5 py-2 text-xl 
-                          text-gray-700 bg-white border border-gray-300 
-                            rounded-[0.5rem] transition ease-in-out"
+              className="py-[10px] px-[14px] w-full text-gray-700 border border-grays-300 rounded-lg"
               onChange={(event) => {
                 setPassword(event?.target.value);
               }}
             />
-            <div className="w-full flex flex-row justify-between items-center">
-              <div className="flex flex-row gap-3">
-                <input type="checkbox" className="" />
-                <label htmlFor="remember me">Remember me </label>
+
+            <div className="mt-5 flex justify-between items-center gap-5">
+              <div className="relative flex items-center gap-2">
+                {/* <input type="checkbox" className="w-5 h-5 rounded-md" /> */}
+                <label className={checkboxStyle.checkbox_container}>
+                  <input className={checkboxStyle.custom_checkbox} type="checkbox" />
+                  <span className={checkboxStyle.checkmark}></span>
+                </label>
+                <label className="ms-7 text-grays-900" htmlFor="remember me">Remember me </label>
               </div>
               <div>
                 <a
                   href="/forgetpassword"
-                  className="text-green-600 
-                                    font-bold text-[16px]"
+                  className="text-greens-300 font-bold"
                 >
                   Forgot Password?
                 </a>
               </div>
             </div>
           </div>
-          <div className="flex justify-center items-center w-[40%] mx-auto mt-12 mb-6">
-            <button className="bg-green-600 w-full rounded-[0.5rem] py-3 text-white">
+
+          <div className="flex justify-center items-center mt-10">
+            <button className="w-full bg-greens-300 rounded-lg py-[10px] px-[18px] text-white border border-[#272727]">
               Login
             </button>
           </div>
         </form>
+      </div>
+
+      <div className="mt-8 pb-10 px-8 border-b border-grays-200">
+        <p className="text-center text-grays-800">
+          Don't have an account? <Link href={'/signup'} className="text-greens-300 font-bold">Sign up</Link>
+        </p>
       </div>
     </AuthLayout>
   );

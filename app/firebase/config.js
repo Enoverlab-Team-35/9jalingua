@@ -6,6 +6,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   FacebookAuthProvider,
+  signOut
 } from "firebase/auth";
 
 const firebaseConfig = {
@@ -34,4 +35,5 @@ export {
   FacebookAuthProvider,
   GoogleAuthProvider,
   signInWithEmailAndPassword,
+  signOut
 };
