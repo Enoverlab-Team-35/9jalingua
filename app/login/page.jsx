@@ -143,7 +143,7 @@ export default function Page() {
 
       <div className="mt-8 pb-10 px-8 border-b border-grays-200">
         <p className="text-center text-grays-800">
-          Don't have an account? <Link href={'/signup'} className="text-greens-300 font-bold">Sign up</Link>
+          Don&apos;t have an account? <Link href={'/signup'} className="text-greens-300 font-bold">Sign up</Link>
         </p>
       </div>
     </AuthLayout>
