@@ -15,6 +15,7 @@ import {
 } from "../firebase/config";
 import Link from "next/link";
 import { Loading } from '../components/SvgsComponent';
+import { toast } from 'react-toastify';
 
 export default function Page() {
   const [email, setEmail] = useState("");
@@ -27,8 +28,9 @@ export default function Page() {
     try {
       await signInWithPopup(auth, googleProvider);
       router.push("/select-language");
-      alert("Welcome");
+      toast("Welcome");
     } catch (error) {
+      toast(error.message)
       console.error(error.message);
     }
   };
@@ -38,8 +40,9 @@ export default function Page() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       router.push("/select-language");
-      alert("Welcome");
+      toast("Welcome");
     } catch (error) {
+      toast(error.message)
       console.error(error.message);
     }
   };

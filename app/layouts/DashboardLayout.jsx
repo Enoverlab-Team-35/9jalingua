@@ -1,6 +1,7 @@
 import React from 'react'
 import Sidebar from '../components/Sidebar'
 import DashboardNavbar from '../components/DashboardNavbar'
+import { ToastContainer } from 'react-toastify'
 
 export default function DashboardLayout({ children }) {
     return (

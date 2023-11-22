@@ -3,7 +3,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { signOut, auth } from "../firebase/config";
 import React from 'react'
+import { toast } from 'react-toastify';
 
 const sideLinks = [
     {
@@ -31,7 +33,16 @@ const sideLinks = [
 export default function Sidebar() {
     const pathname = usePathname()
 
-    console.log(pathname)
+    const logout = async (e) => {
+        e.preventDefault()
+        try {
+            await signOut(auth);
+            toast.error("sign out successfully")
+        } catch (error) {
+            toast(error.message)
+            console.error(error.message);
+        }
+    };
 
     return (
         <div className="w-full min-h-screen h-full max-w-[278px] px-2 py-6 bg-blues-900 text-white">
@@ -74,6 +85,7 @@ export default function Sidebar() {
                             src={item.img}
                             width={20}
                             height={20}
+                            alt={item.name}
                         />
                         {item.name}
                     </Link>
@@ -83,11 +95,13 @@ export default function Sidebar() {
             <div className='mt-52'>
                 <button
                     className='w-full px-[14px] py-3 flex items-center gap-2'
+                    onClick={logout}
                 >
                     <Image
                         src={'/svgs/log-out.svg'}
                         width={20}
                         height={20}
+                        alt='log out'
                     />
                     Log Out
                 </button>

@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
+import { toast } from 'react-toastify'
 
 const language = ["Yoruba", "Efik", "Isan", "Urhobo", "Gwari", "Egun", "Igbo", "Ibibio", "Nupe", "Igala", "Idoma", "Ogoni", "Hausa", "Bini", "Itsekiri", "Berom", "Ibira", "Isoko", "Birom", "Tangale", "Margi", "Owerri", "Kilba", "Kanufi", "Izon", "Mubi", "Owo", "Ijebu", "Egba", "Fulani"]
 
@@ -22,6 +23,7 @@ export default function Page() {
                             key={index}
                             onClick={() => {
                                 setSelected(item)
+                                toast(item, "Langauge Selected")
                                 router.push("/dashboard")
                             }}
                             className={`${selected === item ? 'bg-greens-300' : 'bg-blues-900'} text-white py-5 px-3 w-[151px] text-center rounded-lg font-arimo text-xl font-bold`}
@@ -36,7 +38,7 @@ export default function Page() {
                         if (selected) {
                             router.push('/dashboard')
                         } else {
-                            alert("Select language to learn")
+                            toast("Select language to learn")
                         }
                     }}
                 >
