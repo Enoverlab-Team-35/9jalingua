@@ -1,6 +1,7 @@
 import React from 'react'
-import Language from './Language'
 import Image from 'next/image'
+
+const language = ["Yoruba", "Igbo", "Hausa", "Efik", "Ibibio", "Bini"]
 
 export default function Languages() {
     return (
@@ -10,13 +11,14 @@ export default function Languages() {
                     Explore the Variety of languages you can learn
                 </h1>
                 <div className="mt-10 flex flex-wrap items-center justify-evenly gap-6">
-                    <Language title={'Yoruba'} />
-                    <Language title={'Igbo'} />
-                    <Language title={'Hausa'} />
-                    <Language title={'Efik'} />
-                    <Language title={'Ibibio'} />
-                    <Language title={'Bini'} />
-                    <Language title={'Bini'} />
+                    {language?.map((item, index) => (
+                        <button
+                            key={index}
+                            className={`bg-greens-300 text-white py-5 px-3 w-[151px] text-center rounded-lg font-arimo text-xl font-bold`}
+                        >
+                            {item}
+                        </button>
+                    ))}
                     <button className="bg-greens-300 text-white py-5 px-3 w-[151px] text-center rounded-lg font-arimo text-xl font-bold flex justify-center items-center gap-2">
                         <span>Others</span>
                         <Image

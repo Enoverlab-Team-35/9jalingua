@@ -14,6 +14,8 @@ import {
   googleProvider,
 } from "../firebase/config";
 import Link from "next/link";
+import { Loading } from '../components/SvgsComponent';
+import { toast } from 'react-toastify';
 
 export default function Page() {
   const [email, setEmail] = useState("");
@@ -21,11 +23,14 @@ export default function Page() {
   const [user, loading] = useAuthState(auth);
   const router = useRouter();
 
+  // console.log(loading, user)
   const handleGoogleSignIn = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
-      alert("Welcome");
+      router.push("/select-language");
+      toast("Welcome");
     } catch (error) {
+      toast(error.message)
       console.error(error.message);
     }
   };
@@ -34,9 +39,10 @@ export default function Page() {
     event.preventDefault()
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      //   router.push("/");
-      alert("Welcome");
+      router.push("/select-language");
+      toast("Welcome");
     } catch (error) {
+      toast(error.message)
       console.error(error.message);
     }
   };
@@ -99,13 +105,13 @@ export default function Page() {
             />
           </div>
           <div className="mt-4 flex flex-col justify-center gap-[6px]">
-            <label htmlFor="email" className="text-grays-900 text-[16px]">
+            <label htmlFor="password" className="text-grays-900 text-[16px]">
               Password
             </label>
             <input
               type="password"
-              id="email"
-              name="email"
+              id="password"
+              name="password"
               value={password}
               className="py-[10px] px-[14px] w-full text-gray-700 border border-grays-300 rounded-lg"
               onChange={(event) => {
@@ -134,8 +140,13 @@ export default function Page() {
           </div>
 
           <div className="flex justify-center items-center mt-10">
-            <button className="w-full bg-greens-300 rounded-lg py-[10px] px-[18px] text-white border border-[#272727]">
-              Login
+            <button
+              disabled={loading}
+              className="w-full bg-greens-300 rounded-lg py-[10px] px-[18px] text-white border border-[#272727] disabled:opacity-75"
+            >
+              {loading ? (
+                <Loading color={"#fff"} size={"28px"} />
+              ) : "Login"}
             </button>
           </div>
         </form>
