@@ -4,7 +4,7 @@ import Feature from './Feature'
 
 export default function Features() {
     return (
-        <section className="mt-24 bg-greens-1100 py-10 px-5">
+        <section className="bg-greens-1100 py-20 px-5">
             <div className="mx-auto container text-center">
                 <h1 className="font-arimo text-5xl text-blues-1100 font-bold">
                     Unleash Our Features

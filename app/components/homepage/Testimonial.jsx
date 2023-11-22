@@ -37,7 +37,7 @@ export default function Testimonial() {
                     {testimonials?.map((item, index) => (
                         <div
                             key={index}
-                            className={`w-full max-w-[387px] py-10 px-7 ${(index + 1) % 2 === 0 ? 'bg-greens-300 text-white' : 'bg-greens-1100 text-grays-600'}`}
+                            className={`w-full max-w-[387px] py-10 px-7 rounded-lg ${(index + 1) % 2 === 0 ? 'bg-greens-300 text-white' : 'bg-greens-1100 text-grays-600'}`}
                         >
                             <div className='flex place-items-center gap-6'>
                                 <div className='w-28 h-28'>
