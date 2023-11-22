@@ -16,6 +16,7 @@ import {
   GoogleAuthProvider,
 } from "../firebase/config";
 import Link from "next/link";
+import { Loading } from "../components/SvgsComponent";
 
 export default function Page() {
   const [email, setEmail] = useState("");
@@ -24,9 +25,12 @@ export default function Page() {
   const [user, loading] = useAuthState(auth);
   const router = useRouter();
 
+  console.log(loading, user)
+
   const handleGoogleSignIn = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
+      router.push("/dashboard");
       alert("Congratulations, You have successfully signed up");
     } catch (error) {
       setError(error.message);
@@ -36,6 +40,7 @@ export default function Page() {
   const handleSignUp = async (event) => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
+      router.push("/dashboard");
       alert("Congratulations, You have successfully signed up");
     } catch (error) {
       setError(error.message);
@@ -104,8 +109,13 @@ export default function Page() {
           </div>
 
           <div className="flex justify-center items-center mt-10">
-            <button className="w-full bg-greens-300 rounded-lg py-[10px] px-[18px] text-white border border-[#272727]">
-              Sign Up
+            <button
+              disabled={loading}
+              className="w-full bg-greens-300 rounded-lg py-[10px] px-[18px] text-white border border-[#272727] disabled:opacity-75"
+            >
+              {loading ? (
+                <Loading color={"#fff"} size={"28px"} />
+              ) : "Sign Up"}
             </button>
           </div>
         </form>
