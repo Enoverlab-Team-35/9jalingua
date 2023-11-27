@@ -10,12 +10,12 @@ import {
 } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA-vu-HrmPyA1_pbX_suj_SBHjFTmpsPhU",
-  authDomain: "jalingua-58863.firebaseapp.com",
-  projectId: "jalingua-58863",
-  storageBucket: "jalingua-58863.appspot.com",
-  messagingSenderId: "823617863292",
-  appId: "1:823617863292:web:534e8b6296fb22071dd3f9",
+  apiKey: "AIzaSyB31cEV6oxe7p7FttAqatqXg8AjtUyE2Io",
+  authDomain: "jalingua-5801b.firebaseapp.com",
+  projectId: "jalingua-5801b",
+  storageBucket: "jalingua-5801b.appspot.com",
+  messagingSenderId: "299306863141",
+  appId: "1:299306863141:web:ccba27199300e6cf714dcc"
 };
 
 export const app = initializeApp(firebaseConfig);
