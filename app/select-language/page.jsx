@@ -47,6 +47,7 @@ export default function Page() {
                         src={'/svgs/arrow-narrow-right.svg'}
                         width={20}
                         height={20}
+                        alt='Next'
                     />
                 </button>
             </div>
