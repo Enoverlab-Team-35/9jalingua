@@ -37,6 +37,7 @@ export default function VideoLibrary() {
                                     src={item.img}
                                     width={1880}
                                     height={1254}
+                                    alt={item.name}
                                 />
                             </div>
                             <h4 className='mt-8 font-bold text-xl text-grays-1000'>

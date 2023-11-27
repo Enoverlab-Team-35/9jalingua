@@ -28,7 +28,7 @@ export default function Linguistics() {
                         Linguistics Beats
                     </h1>
                     <p className='mt-6 text-grays-800 text-xl leading-normal'>
-                        Explore Nigeria's vibrant soundscape, a cultural journey through language, rhythm, and heritage in each curated track
+                        Explore Nigeria&apos;s vibrant soundscape, a cultural journey through language, rhythm, and heritage in each curated track
                     </p>
                 </div>
 

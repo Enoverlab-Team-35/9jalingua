@@ -43,6 +43,7 @@ export default function Articles() {
                                     src={item.img}
                                     width={1880}
                                     height={1253}
+                                    alt={item.title}
                                 />
                             </div>
                             <div className='mt-8 mb-12 mx-auto w-full max-w-[330px]'>
