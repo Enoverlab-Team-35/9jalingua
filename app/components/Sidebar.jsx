@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { signOut, auth } from "../firebase/config";
 import React from "react";
 import { toast } from "react-toastify";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const sideLinks = [
   {
