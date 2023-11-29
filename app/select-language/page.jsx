@@ -74,16 +74,16 @@ export default function Page() {
             if (selected) {
               router.push("/dashboard");
             } else {
-              notify();
+              toast("Select language to learn");
             }
           }}
         >
           <span className="text-xl font-bold">Continue</span>
           <Image
-            alt="svg right-arrow image"
             src={"/svgs/arrow-narrow-right.svg"}
             width={20}
             height={20}
+            alt="Next"
           />
         </button>
       </div>

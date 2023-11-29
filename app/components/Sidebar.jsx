@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { signOut, auth } from "../firebase/config";
 import React from "react";
 import { toast } from "react-toastify";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const sideLinks = [
   {
@@ -32,12 +33,16 @@ const sideLinks = [
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const [user, loading] = useAuthState(auth);
+  const router = useRouter();
+  // console.log(user)
 
   const logout = async (e) => {
     e.preventDefault();
     try {
       await signOut(auth);
-      toast.error("sign out successful");
+      router.push("/");
+      toast.error("sign out successfully");
     } catch (error) {
       toast(error.message);
       console.error(error.message);
@@ -60,9 +65,17 @@ export default function Sidebar() {
 
       <div className="mt-4 flex gap-4 items-center px-2 pb-6 border-b border-white">
         <div>
-          <Image src={"/svgs/user.svg"} width={24} height={24} alt="user" />
+          <Image
+            src={user?.photoURL || "/svgs/user.svg"}
+            width={24}
+            height={24}
+            alt="user"
+            className="rounded"
+          />
         </div>
-        <h4 className="font-bold text-[16px]">John Doe</h4>
+        <h4 className="font-bold text-[16px]">
+          {user?.displayName || "John Doe"}
+        </h4>
       </div>
 
       <div className="pt-2">

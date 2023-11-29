@@ -22,9 +22,12 @@ export default function Navbar() {
                 </Link>
                 {/* Buttons */}
                 <div className="hidden sm:flex items-center gap-10">
-                    <button className="text-grays-600 text-xl font-inter">
+                    <Link
+                        href={'/cultural-resources'}
+                        className="text-grays-600 text-xl font-inter"
+                    >
                         Cultural Resources
-                    </button>
+                    </Link>
                     <Link
                         href={'/login'}
                         className="rounded-lg px-8 py-4 bg-greens-300 text-white text-xl font-arimo"
