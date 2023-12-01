@@ -39,11 +39,11 @@ export default class BarChartComponent extends PureComponent {
     return (
       <ResponsiveContainer width={354} height={291}>
         <BarChart width={354} height={291} data={data}>
-          <XAxis dataKey="name" stroke="#FFFFFF" />
+          <XAxis dataKey="name" stroke="#8884d8" />
           <YAxis />
           <Tooltip />
           <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-          <Bar dataKey="uv" fill="#cccccc" barSize={30} />
+          <Bar dataKey="uv" fill="#8884d8" barSize={30} />
         </BarChart>
       </ResponsiveContainer>
     );
