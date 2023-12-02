@@ -160,7 +160,7 @@ export default function Footer() {
                         href={'/login'}
                         className="px-8 py-4 bg-blues-1100 shadow-md text-xl font-bold rounded-lg text-center"
                     >
-                        Get started
+                        Get Started
                     </Link>
                 </div>
 

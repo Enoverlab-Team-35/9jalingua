@@ -48,7 +48,7 @@ export default function Insights() {
                                     {item.title}
                                 </h4>
                                 <Link
-                                    href={`/articles/${item.title}`}
+                                    href={`/articles/${index}/${item.title}`}
                                     className='text-base text-greens-300'
                                 >
                                     Read more
