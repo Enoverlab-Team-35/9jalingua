@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const article = [
@@ -50,9 +51,14 @@ export default function Articles() {
                                 <h3 className='text-xl font-bold text-[#5C5C5C]'>
                                     {item.title}
                                 </h3>
-                                <button className='mt-10 text-blues-1100'>
-                                    Read more
-                                </button>
+                                <div className='mt-10'>
+                                    <Link
+                                        href={`/articles/${index}/${item.title}`}
+                                        className='text-blues-1100'
+                                    >
+                                        Read more
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     ))}
