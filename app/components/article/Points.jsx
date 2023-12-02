@@ -24,7 +24,7 @@ export default function Points() {
                         <span className='font-bold text-grays-900'>Personal Empowerment:</span> Learn how acquiring Nigerian languages empowers individuals on a personal and cultural level.
                     </li>
                     <li>
-                        <span className='font-bold text-grays-900'>Beyond Words:</span> Delve into the idea that language learning is more than just words; it's a transformative experience.
+                        <span className='font-bold text-grays-900'>Beyond Words:</span> Delve into the idea that language learning is more than just words; it&apos;s a transformative experience.
                     </li>
                 </ul>
             </div>
