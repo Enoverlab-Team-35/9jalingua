@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import { useAppContext } from "../context";
 
 const language = [
   "Yoruba",
@@ -39,11 +40,27 @@ const language = [
 ];
 
 export default function Page() {
-  const [selected, setSelected] = useState("");
+  const { selectedLanguage, setSelectedLanguage } = useAppContext();
   const router = useRouter();
   const notify = () => {
     toast("Please, select one or more language");
   };
+
+  const toggleLanguage = language => {
+    // Check if the language is in the array
+    const languageIndex = selectedLanguage.indexOf(language)
+
+    if (languageIndex !== -1) {
+      // Language is the array, so remove it
+      const updatedLanguages = [...selectedLanguage]
+      updatedLanguages.splice(languageIndex, 1)
+      setSelectedLanguage(updatedLanguages)
+    } else {
+      // Language is not in the array
+      setSelectedLanguage([...selectedLanguage, language])
+    }
+  }
+
 
   return (
     <section className="min-h-screen h-full p-5">
@@ -55,14 +72,9 @@ export default function Page() {
           {language?.map((item, index) => (
             <button
               key={index}
-              onClick={() => {
-                setSelected(item);
-                toast(item, "Langauge Selected");
-                router.push("/dashboard");
-              }}
-              className={`${
-                selected === item ? "bg-greens-300" : "bg-blues-900"
-              } text-white py-5 px-3 w-[151px] text-center rounded-lg font-arimo text-xl font-bold`}
+              onClick={() => toggleLanguage(item)}
+              className={`${selectedLanguage.indexOf(item) !== -1 ? "bg-greens-300" : "bg-blues-900"
+                } text-white py-5 px-3 w-[151px] text-center rounded-lg font-arimo text-xl font-bold`}
             >
               {item}
             </button>
@@ -71,7 +83,7 @@ export default function Page() {
         <button
           className="mt-28 ms-auto px-8 py-4 rounded-lg text-white bg-greens-300 flex place-items-center gap-2"
           onClick={() => {
-            if (selected) {
+            if (selectedLanguage.length > 0) {
               router.push("/dashboard");
             } else {
               toast("Select language to learn");

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { signOut, auth } from "../firebase/config";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { toast } from "react-toastify";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { AppContext, useAppContext } from "../context";
@@ -36,9 +36,23 @@ const sideLinks = [
 export default function Sidebar() {
   const pathname = usePathname();
   const [user, loading] = useAuthState(auth);
+  const sidebarRef = useRef()
   const router = useRouter();
 
   const { sidebarVisible, setSidebarVisible } = useAppContext()
+
+  const handleClickOutside = (event) => {
+    if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+      setSidebarVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside, true);
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true);
+    };
+  }, [])
 
   const logout = async (e) => {
     e.preventDefault();
@@ -53,8 +67,10 @@ export default function Sidebar() {
   };
 
   return (
-    <div className={`${sidebarVisible ? "w-full px-2" : "w-0 px-0"
-      } fixed top-0 left-0 bg-[#2967a5] lg:relative h-screen max-w-[425px] lg:max-w-[300px] lg:w-full lg:px-2 py-6 lg:bg-blues-900 text-white transition-all overflow-hidden z-10`}
+    <div
+      ref={sidebarRef}
+      className={`${sidebarVisible ? "w-full px-2" : "w-0 px-0"
+        } fixed top-0 left-0 bg-[#2967a5] lg:relative h-screen max-w-[425px] lg:max-w-[300px] lg:w-full lg:px-2 py-6 lg:bg-blues-900 text-white transition-all overflow-hidden z-10`}
     >
       <div className="flex items-center gap-10 justify-between">
         <div className="flex gap-4 items-center">
