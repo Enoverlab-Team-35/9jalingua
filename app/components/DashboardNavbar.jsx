@@ -4,9 +4,11 @@ import Image from 'next/image'
 import { HiMenu } from "react-icons/hi";
 import React from 'react'
 import { useAppContext } from '../context';
+import { usePathname } from 'next/navigation';
 
 export default function DashboardNavbar() {
-    const { sidebarVisible, setSidebarVisible } = useAppContext()
+    const { setSidebarVisible } = useAppContext()
+    const pathname = usePathname();
 
     return (
         <nav>
@@ -20,17 +22,27 @@ export default function DashboardNavbar() {
                         <HiMenu color='black' size={32} />
                     </button>
 
-                    <button
-                        className='flex items-center border gap-2 rounded-lg border-grays-500 py-3 px-6 font-bold'
-                    >
-                        Yoruba
-                        <Image
-                            src={'/svgs/chevron-down-black.svg'}
-                            width={20}
-                            height={20}
-                            alt='drop down'
-                        />
-                    </button>
+
+                    {pathname.toLowerCase() === '/community-forum' ? (
+                        <button
+                            className='flex items-center border gap-2 rounded-lg border-grays-500 py-3 px-6 font-bold'
+                        >
+                            Categories
+                        </button>
+                    ) : (
+                        <button
+                            className='flex items-center border gap-2 rounded-lg border-grays-500 py-3 px-6 font-bold'
+                        >
+                            Yoruba
+                            <Image
+                                src={'/svgs/chevron-down-black.svg'}
+                                width={20}
+                                height={20}
+                                alt='drop down'
+                            />
+                        </button>
+                    )}
+
                 </div>
 
                 <div className='flex gap-2 items-center'>
