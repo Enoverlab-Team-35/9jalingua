@@ -4,11 +4,12 @@ import { useContext, createContext, useState } from "react";
 
 export const AppContext = createContext({});
 
-export function AppContextProvider({children}) {
+export function AppContextProvider({ children }) {
   const [state, setState] = useState();
+  const [sidebarVisible, setSidebarVisible] = useState(false)
 
   return (
-    <AppContext.Provider value={(state, setState)}>
+    <AppContext.Provider value={{ state, setState, sidebarVisible, setSidebarVisible }}>
       {children}
     </AppContext.Provider>
   );

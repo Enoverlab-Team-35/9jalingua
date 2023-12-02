@@ -5,9 +5,9 @@ import { ToastContainer } from 'react-toastify'
 
 export default function DashboardLayout({ children }) {
     return (
-        <div className='font-arimo flex'>
+        <div className='relative font-arimo flex'>
             <Sidebar />
-            <div className='w-full px-10 py-5'>
+            <div className='w-full h-screen overflow-y-auto px-5 lg:px-10 py-5'>
                 <DashboardNavbar />
                 <div className='mt-14'>
                     {children}

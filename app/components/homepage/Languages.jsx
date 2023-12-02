@@ -14,7 +14,7 @@ export default function Languages() {
                     {language?.map((item, index) => (
                         <button
                             key={index}
-                            className={`bg-greens-300 text-white py-5 px-3 w-[151px] text-center rounded-lg font-arimo text-xl font-bold`}
+                            className={`bg-greens-300 text-white py-5 px-3 w-[151px] text-center rounded-lg font-arimo text-xl font-bold cursor-default`}
                         >
                             {item}
                         </button>

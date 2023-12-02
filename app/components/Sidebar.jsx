@@ -7,6 +7,8 @@ import { signOut, auth } from "../firebase/config";
 import React from "react";
 import { toast } from "react-toastify";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { AppContext, useAppContext } from "../context";
+import { IoClose } from "react-icons/io5";
 
 const sideLinks = [
   {
@@ -35,7 +37,8 @@ export default function Sidebar() {
   const pathname = usePathname();
   const [user, loading] = useAuthState(auth);
   const router = useRouter();
-  // console.log(user)
+
+  const { sidebarVisible, setSidebarVisible } = useAppContext()
 
   const logout = async (e) => {
     e.preventDefault();
@@ -50,17 +53,27 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="w-full min-h-screen h-full max-w-[278px] px-2 py-6 bg-blues-900 text-white">
-      <div className="flex gap-4 items-center">
-        <div>
-          <Image
-            src={"/9jalingua/white.svg"}
-            width={24}
-            height={26}
-            alt="9jaLingua"
-          />
+    <div className={`${sidebarVisible ? "w-full px-2" : "w-0 px-0"
+      } fixed top-0 left-0 bg-[#2967a5] lg:relative h-screen max-w-[425px] lg:max-w-[300px] lg:w-full lg:px-2 py-6 lg:bg-blues-900 text-white transition-all overflow-hidden`}
+    >
+      <div className="flex items-center gap-10 justify-between">
+        <div className="flex gap-4 items-center">
+          <div>
+            <Image
+              src={"/9jalingua/white.svg"}
+              width={24}
+              height={26}
+              alt="9jaLingua"
+            />
+          </div>
+          <h1 className="font-bold text-[32px]">9jaLingua</h1>
         </div>
-        <h1 className="font-bold text-[32px]">9jaLingua</h1>
+        <button
+          onClick={() => setSidebarVisible(false)}
+          className='lg:hidden'
+        >
+          <IoClose color='white' size={32} />
+        </button>
       </div>
 
       <div className="mt-4 flex gap-4 items-center px-2 pb-6 border-b border-white">
@@ -83,10 +96,9 @@ export default function Sidebar() {
           <Link
             href={item.href}
             key={index}
-            className={`${
-              pathname.toLowerCase() === item.href.toLowerCase() &&
+            className={`${pathname.toLowerCase() === item.href.toLowerCase() &&
               "bg-blues-1100"
-            } mt-4 w-full py-3 px-[14px] rounded-lg flex gap-2 items-center text-base font-bold`}
+              } mt-4 w-full py-3 px-[14px] rounded-lg flex gap-2 items-center text-base font-bold`}
           >
             <Image src={item.img} width={20} height={20} alt={item.name} />
             {item.name}

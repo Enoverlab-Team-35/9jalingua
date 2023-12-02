@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { HiMenu } from "react-icons/hi";
+import { IoClose } from "react-icons/io5";
 
 export default function Navbar() {
     const [isVisible, setIsVisible] = useState(false)
@@ -67,9 +68,9 @@ export default function Navbar() {
                     </Link>
                     <button
                         onClick={() => setIsVisible(false)}
-                        className='sm:hidden p-2'
+                        className=''
                     >
-                        <HiMenu color='black' size={32} />
+                        <IoClose color='black' size={32} />
                     </button>
                 </div>
 
