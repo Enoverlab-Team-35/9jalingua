@@ -72,8 +72,8 @@ export default function Sidebar() {
       className={`${sidebarVisible ? "w-full px-2" : "w-0 px-0"
         } fixed top-0 left-0 bg-[#2967a5] lg:relative h-screen max-w-[425px] lg:max-w-[300px] lg:w-full lg:px-2 py-6 lg:bg-blues-900 text-white transition-all overflow-hidden z-10`}
     >
-      <div className="flex items-center gap-10 justify-between">
-        <div className="flex gap-4 items-center">
+      <div className="flex items-center justify-between gap-10">
+        <div className="flex items-center gap-4">
           <div>
             <Image
               src={"/9jalingua/white.svg"}
@@ -92,7 +92,7 @@ export default function Sidebar() {
         </button>
       </div>
 
-      <div className="mt-4 flex gap-4 items-center px-2 pb-6 border-b border-white">
+      <div className="flex items-center gap-4 px-2 pb-6 mt-4 border-b border-white">
         <div>
           <Image
             src={user?.photoURL || "/svgs/user.svg"}
