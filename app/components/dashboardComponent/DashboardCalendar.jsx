@@ -12,20 +12,20 @@ export default function DashboardCalendar() {
   }
 
   return (
-    <div className="border border-white-900 rounded-lg shadow-black-500/100 mt-10 ml-4">
+    <div className="border border-white-900 rounded mt-10 shaddow-xl md:w-full shaddow-2xl">
       {" "}
       <div className="mt-2 mb-3">
         <h1 className="ml-4 mb-2 font-semibold">Progress Tracker</h1>
         <hr></hr>
       </div>
-      <div className="">
+      <div className="flex flex-col justify-items-center items-stretch">
         <Calendar
           onChange={onChange}
           value={value}
           className={calendarStyle.customCalendar}
         />
         <hr></hr>
-        <p className="ml-10 mt-2 mb-2">{days} Days with learning progress</p>
+        <p className="ml-10 mt-3 mb-3">{days} Days with learning progress</p>
       </div>
     </div>
   );

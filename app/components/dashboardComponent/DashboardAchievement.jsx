@@ -14,34 +14,44 @@ export default function DashboardAchievement() {
             My Achievements
           </h1>
         </div>
-        <div className="flex ">
+        <div className="flex md:flex flex-col justify-between lg:flex-row gap-2 md:w-full">
           {" "}
-          <div className="">
+          <div className="w-1/3">
             <IoMdTrophy className="fill-yellow-300 mt-3 " size="15.5rem" />
           </div>
-          <div className="ml-28">
-            <div className="flex mt-4">
-              <img className="mr-5" src="Ruby.png" />
+          <div className="ml-6 w-2/3">
+            <div className="flex md:flex flex-col mt-4">
+              <Image className="mr-5" src="/Ruby.png" width={150} height={70} />
               <div className="mt-3">
                 <h2>RUBY</h2>
                 <p>Finish a course</p>
               </div>
             </div>
-            <div className="flex mt-6">
-              <img className="bg-greens-400 pl-3 pr-2 mr-5" src="Pearl.png" />
+            <div className="flex md:flex flex-col mt-6">
+              <Image
+                className="bg-greens-400 pl-3 pr-2 mr-5"
+                src="/Pearl.png"
+                width={150}
+                height={70}
+              />
               <div>
                 <h2 className="mt-3">PEARL</h2>
                 <p>Complete a module</p>
               </div>
             </div>
-            <div className="flex mt-6">
-              <img className="bg-greens-400 pl-3 pr-2 mr-5" src="Diamond.png" />
+            <div className="flex md:flex flex-col mt-6">
+              <img
+                className="bg-greens-400 pl-3 pr-2 mr-5"
+                src="/Diamond.png"
+                width={150}
+                height={70}
+              />
               <div className="mt-3">
                 <h2>DIAMOND</h2>
                 <p>Maintain 5 day streak</p>
               </div>
             </div>
-            <div>
+            <div className=" md:flex justify-end mt-5">
               <span>
                 Show all achievements{" "}
                 <Image
