@@ -10,7 +10,7 @@ import React from 'react'
 
 export default function Page() {
     const params = useParams()
-    // console.log(params)
+    // console.log(decodeURI(params.articleNAME))
 
     return (
         <MainLayout>

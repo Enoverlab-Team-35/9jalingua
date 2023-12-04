@@ -144,15 +144,15 @@ const socialMedia = [
 
 export default function Footer() {
     return (
-        <footer className='bg-greens-300 px-5 py-16'>
+        <footer className='bg-greens-300 sm:px-5 py-16'>
             <div className="container mx-auto text-white font-arimo">
 
-                <div className="flex flex-col sm:flex-row justify-between sm:items-start sm:gap-8 gap-10">
-                    <div className='text-center sm:text-left'>
-                        <h1 className="text-3xl font-bold">
+                <div className="flex flex-col sm:flex-row justify-between sm:items-start sm:gap-6 gap-11 px-5 sm:px-0">
+                    <div className='sm:text-left'>
+                        <h1 className="text-3xl font-bold leading-normal">
                             Start your 30-days free trial
                         </h1>
-                        <p className="mt-4 text-xl">
+                        <p className="mt-10 sm:mt-4 text-xl leading-relaxed">
                             Join over 50+ people already learnig with 9jaLingua
                         </p>
                     </div>
@@ -166,9 +166,9 @@ export default function Footer() {
 
                 <hr className='my-16 w-full h-[1px] bg-[#EAECF0]' />
 
-                <div className='flex flex-col lg:flex-row justify-between gap-16'>
-                    <div className='w-full lg:max-w-[320px] text-center lg:text-left'>
-                        <h1 className='text-4xl font-bold flex items-center justify-center lg:justify-normal gap-4'>
+                <div className='flex flex-col lg:flex-row justify-between gap-16 px-5 sm:px-0'>
+                    <div className='w-full lg:max-w-[320px]'>
+                        <h1 className='text-4xl font-bold flex items-center gap-4'>
                             <Image
                                 src={'/9jalingua/white.svg'}
                                 width={38}
@@ -177,7 +177,7 @@ export default function Footer() {
                             />
                             <span>9jaLingua</span>
                         </h1>
-                        <p className='mt-8 text-base'>
+                        <p className='mt-10 sm:mt-8 text-base leading-relaxed'>
                             Design amazing digital experiences that create more happiness in the world
                         </p>
                     </div>
@@ -202,11 +202,11 @@ export default function Footer() {
 
                 <hr className='my-16 w-full h-[1px] bg-[#EAECF0]' />
 
-                <div className='flex flex-col-reverse sm:flex-row place-items-center justify-between gap-5 sm:gap-10'>
+                <div className='flex flex-col-reverse sm:flex-row sm:items-center justify-between gap-8 sm:gap-10 px-5 sm:px-0'>
                     <p className=''>
                         © 2023 9jaLingua. All rights reserved.
                     </p>
-                    <ul className='flex place-items-center gap-6'>
+                    <ul className='flex items-center gap-6'>
                         {socialMedia?.map((item, index) => (
                             <li key={index}>
                                 <a href={item.href}>

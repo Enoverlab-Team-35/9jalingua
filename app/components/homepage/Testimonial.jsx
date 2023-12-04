@@ -33,7 +33,7 @@ export default function Testimonial() {
                     Hear from our Happy Users
                 </h1>
 
-                <div className="mt-8 flex flex-wrap justify-evenly xl:justify-between gap-x-6 gap-y-14">
+                <div className="mt-12 sm:mt-8 flex flex-wrap justify-evenly xl:justify-between gap-x-6 gap-y-6 sm:gap-y-14">
                     {testimonials?.map((item, index) => (
                         <div
                             key={index}
@@ -58,7 +58,7 @@ export default function Testimonial() {
                                     </h6>
                                 </div>
                             </div>
-                            <p className="mt-8 text-xl">
+                            <p className="mt-8 text-xl leading-relaxed">
                                 {item.thoughts}
                             </p>
                         </div>

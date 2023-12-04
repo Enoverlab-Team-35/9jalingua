@@ -6,9 +6,9 @@ export default function DashboardLayout({ children }) {
     return (
         <div className='relative font-arimo flex'>
             <Sidebar />
-            <div className='w-full max-w[] h-screen overflow-y-auto px-5 lg:px-10 py-5'>
+            <div className='relative w-full h-screen overflow-hidden'>
                 <DashboardNavbar />
-                <div className='mt-14'>
+                <div className="mt-0 pb-20 px-5 lg:px-10 h-[calc(100vh-90px)] overflow-x-hidden overflow-y-auto">
                     {children}
                 </div>
             </div>

@@ -23,7 +23,7 @@ export default function Linguistics() {
     return (
         <section className='mt-24 font-arimo px-5'>
             <div className="container mx-auto">
-                <div className='w-full max-w-[710px] mx-auto text-center'>
+                <div className='w-full max-w-[710px] mx-auto sm:text-center'>
                     <h1 className='text-blues-1100 font-bold text-5xl leading-normal'>
                         Linguistics Beats
                     </h1>
@@ -36,9 +36,9 @@ export default function Linguistics() {
                     {linguistic?.map((item, index) => (
                         <div
                             key={index}
-                            className='w-full max-w-[318px]'
+                            className='flex-auto md:max-w-[318px] w-full'
                         >
-                            <button className='p-[13px] rounded-full bg-greens-900'>
+                            <button className='p-[13px] rounded-full bg-greens-900 w-[76px] sm:w-[105px] aspect-square'>
                                 <Image
                                     src={item.img}
                                     width={80}
@@ -49,7 +49,7 @@ export default function Linguistics() {
                             <h4 className='mt-8 text-blues-1100 font-bold text-xl'>
                                 {item.name}
                             </h4>
-                            <p className='mt-6 text-grays-800 text-xl'>
+                            <p className='mt-6 text-grays-800 text-xl leading-relaxed'>
                                 {item.description}
                             </p>
                         </div>

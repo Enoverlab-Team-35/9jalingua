@@ -51,7 +51,7 @@ export default function Page() {
         <DashboardLayout>
             {/* Name and Forms */}
             <div className="flex items-center gap-5 justify-between w-full mt-11 max-md:max-w-full max-md:flex-wrap max-md:mt-10 font-arimo">
-                <h1 className="text-4xl font-bold leading-10 text-stone-950 text-opacity-90 capitalize">
+                <h1 className="text-xl sm:text-4xl font-bold leading-10 text-stone-950 text-opacity-90 capitalize">
                     Hello, {user?.displayName || "John Doe"}
                 </h1>
                 <div className='md:max-w-[320px] w-full ms-auto rounded-lg border border-grays-300 overflow-hidden font-arimo'>
@@ -59,7 +59,7 @@ export default function Page() {
                         <input
                             type="search"
                             placeholder='Search Lession'
-                            className='flex-auto py-[10px] ps-[14px] text-grays-600 w-full'
+                            className='flex-auto py-[10px] ps-[14px] bg-white text-grays-600 w-full'
                         />
                         <button
                             className='py-[10px] pe-[14px]'

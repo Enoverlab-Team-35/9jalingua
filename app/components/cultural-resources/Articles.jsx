@@ -24,11 +24,11 @@ export default function Articles() {
     return (
         <section className='mt-24 px-5'>
             <div className='container mx-auto font-arimo p-[10px]'>
-                <div className='text-center'>
-                    <h1 className='text-greens-200 text-5xl leading-normal font-bold'>
+                <div className='w-full  text-center'>
+                    <h1 className='text-greens-200 text-[32px] sm:text-5xl font-bold leading-relaxed'>
                         Explore Our Articles
                     </h1>
-                    <p className='mt-3 text-grays-800 text-xl'>
+                    <p className='mt-3 text-grays-800 text-xl leading-relaxed'>
                         Delve into a world of knowledge and insights with our collection of articles
                     </p>
                 </div>

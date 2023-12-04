@@ -44,7 +44,7 @@ export default function Insights() {
                                 />
                             </div>
                             <div className='py-8 px-6'>
-                                <h4 className='mb-10 text-xl font-bold text-grays-900'>
+                                <h4 className='mb-10 text-xl font-bold text-grays-900 leading-normal'>
                                     {item.title}
                                 </h4>
                                 <Link

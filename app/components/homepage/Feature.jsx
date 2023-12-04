@@ -15,7 +15,7 @@ export default function Feature({ svg, title, description }) {
             <h4 className="mt-6 font-arimo text-xl font-bold text-blues-1100">
                 {title}
             </h4>
-            <p className="mt-6 text-xl text-grays-600 font-arimo">
+            <p className="mt-6 leading-relaxed text-xl text-grays-600 font-arimo">
                 {description}
             </p>
         </div>
