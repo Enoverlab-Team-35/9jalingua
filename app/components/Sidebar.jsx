@@ -49,6 +49,7 @@ export default function Sidebar() {
 
   useEffect(() => {
     document.addEventListener('click', handleClickOutside, true);
+    setSidebarVisible(false);
     return () => {
       document.removeEventListener('click', handleClickOutside, true);
     };
@@ -102,7 +103,7 @@ export default function Sidebar() {
             className="rounded"
           />
         </div>
-        <h4 className="font-bold text-[16px]">
+        <h4 className="font-bold text-[16px] capitalize">
           {user?.displayName || "John Doe"}
         </h4>
       </div>
