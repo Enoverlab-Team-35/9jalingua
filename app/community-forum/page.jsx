@@ -91,7 +91,7 @@ export default function Page() {
 
     return (
         <DashboardLayout>
-            <div className='md:max-w-[320px] w-full ms-auto rounded-lg border border-grays-300 overflow-hidden font-arimo'>
+            <div className='mt-6 sm:mt-14 md:max-w-[320px] w-full ms-auto rounded-lg border border-grays-300 overflow-hidden font-arimo'>
                 <form className='flex gap-2 items-center p-0' onSubmit={onSearch}>
                     <input
                         type="search"
