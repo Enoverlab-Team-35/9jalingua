@@ -1,0 +1,15 @@
+.sidebarContainer {
+  padding: 20px;
+  position: relative;
+}
+
+.menuWrapper {
+  position: absolute;
+  height: calc(100vh - 56px);
+  background: white;
+  width: 100%;
+  margin-top: 56px;
+  overflow: hidden;
+  /* z-index: 2;
+  position: fixed; */
+}
