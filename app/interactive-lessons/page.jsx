@@ -50,7 +50,7 @@ export default function Page() {
     return (
         <DashboardLayout>
             {/* Name and Forms */}
-            <div className="flex items-center justify-between w-full mt-11 max-md:max-w-full max-md:flex-wrap max-md:mt-10 font-arimo">
+            <div className="flex items-center gap-5 justify-between w-full mt-11 max-md:max-w-full max-md:flex-wrap max-md:mt-10 font-arimo">
                 <h1 className="text-4xl font-bold leading-10 text-stone-950 text-opacity-90 capitalize">
                     Hello, {user?.displayName || "John Doe"}
                 </h1>
