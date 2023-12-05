@@ -51,7 +51,7 @@ export default function Page() {
         <DashboardLayout>
             {/* Name and Forms */}
             <div className="flex items-center justify-between w-full gap-5 mt-11 max-md:max-w-full max-md:flex-wrap max-md:mt-10 font-arimo">
-                <h1 className="text-xl font-bold leading-10 capitalize sm:text-4xl text-stone-950 text-opacity-90">
+                <h1 className=" text-[16px] sm:text-xl font-bold leading-10 capitalize sm:text-4xl text-stone-950 text-opacity-90">
                     Hello, {user?.displayName || "John Doe"}
                 </h1>
                 <div className='md:max-w-[320px] w-full ms-auto rounded-lg border border-grays-300 overflow-hidden font-arimo'>
