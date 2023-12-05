@@ -23,11 +23,11 @@ export default function Explore() {
     return (
         <section className='px-5 bg-greens-1100 mt-24 pt-16 pb-[86px] font-arimo'>
             <div className="container mx-auto">
-                <h1 className='text-greens-200 font-bold text-5xl'>
+                <h1 className='text-greens-200 font-bold text-[32px] sm:text-5xl text-center sm:text-left'>
                     Explore Events
                 </h1>
 
-                <div className='mt-12 flex flex-wrap justify-evenly gap-x-6 gap-y-14'>
+                <div className='mt-10 sm:mt-12 flex flex-wrap justify-evenly gap-x-6 gap-y-10 sm:gap-y-14'>
                     {events?.map((item, index) => (
                         <div
                             key={index}
@@ -41,10 +41,10 @@ export default function Explore() {
                                     alt={item.name}
                                 />
                             </div>
-                            <h3 className='mt-8 text-greens-200 text-xl font-bold'>
+                            <h3 className='mt-6 text-greens-200 text-xl font-bold'>
                                 {item.name}
                             </h3>
-                            <p className='mt-6 text-grays-800 text-xl'>
+                            <p className='mt-6 text-grays-800 text-xl leading-relaxed'>
                                 {item.text}
                             </p>
                         </div>

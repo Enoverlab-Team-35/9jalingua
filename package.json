@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ramonak/react-progress-bar": "^5.1.1",
     "firebase": "^10.6.0",
     "next": "14.0.2",
     "next-routes": "^1.4.2",
@@ -21,7 +22,8 @@
     "react-lifecycles-compat": "^3.0.4",
     "react-toastify": "^9.1.3",
     "recharts": "^2.10.1",
-    "sassy-datepicker": "^0.10.2"
+    "sassy-datepicker": "^0.10.2",
+    "tailwind-merge": "^2.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

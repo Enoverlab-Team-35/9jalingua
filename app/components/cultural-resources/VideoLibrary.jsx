@@ -21,8 +21,8 @@ const Video = [
 
 export default function VideoLibrary() {
     return (
-        <section className='mt-[86px] font-arimo px-5'>
-            <div className='container mx-auto bg-greens-1100 pt-16 pb-[118px]'>
+        <section className='mt-[86px] font-arimo'>
+            <div className='container mx-auto bg-greens-1100 px-5 pt-16 pb-[118px]'>
                 <h1 className='text-center text-greens-200 font-bold text-5xl leading-normal'>
                     Video Library
                 </h1>
@@ -43,7 +43,7 @@ export default function VideoLibrary() {
                             <h4 className='mt-8 font-bold text-xl text-grays-1000'>
                                 {item.name}
                             </h4>
-                            <p className='mt-6 text-grays-800 text-xl'>
+                            <p className='mt-6 text-grays-800 text-xl leading-relaxed'>
                                 {item.text}
                             </p>
                         </div>

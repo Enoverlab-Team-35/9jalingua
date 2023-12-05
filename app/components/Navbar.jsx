@@ -11,7 +11,7 @@ export default function Navbar() {
 
     return (
         <>
-            <nav>
+            <nav className='fixed top-0 left-0 w-full bg-white z-10 shadow-md'>
                 <div className="container mx-auto flex items-center justify-between p-5 gap-10">
                     {/* logo */}
                     <Link
@@ -44,16 +44,20 @@ export default function Navbar() {
 
                     {/* Hamburger BTN */}
                     <button
-                        onClick={() => setIsVisible(true)}
+                        onClick={() => setIsVisible(!isVisible)}
                         className='sm:hidden p-2'
                     >
-                        <HiMenu color='black' size={32} />
+                        {isVisible ? (
+                            <IoClose color='black' size={32} />
+                        ) : (
+                            <HiMenu color='black' size={32} />
+                        )}
                     </button>
                 </div>
             </nav>
 
             <div className={`${isVisible ? "w-full px-5" : "w-0 px-0"} sm:hidden fixed top-0 right-0 h-screen bg-white transition-all py-5 overflow-hidden`}>
-                <div className='flex justify-between items-center gap-10 font-arimo'>
+                {/* <div className='flex justify-between items-center gap-10 font-arimo'>
                     <Link
                         href={'/'}
                         className="flex items-center gap-4 font-arimo"
@@ -72,9 +76,9 @@ export default function Navbar() {
                     >
                         <IoClose color='black' size={32} />
                     </button>
-                </div>
+                </div> */}
 
-                <ul className='mt-20 flex flex-col justify-center items-center gap-16'>
+                <ul className='mt-[168px] flex flex-col justify-center items-center gap-16'>
                     <li><Link
                         href={'/cultural-resources'}
                         className='px-8 py-4 text-grays-600 text-xl font-inter font-medium'

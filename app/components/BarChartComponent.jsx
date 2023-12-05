@@ -1,35 +1,36 @@
 "use client"
 
 import React, { PureComponent } from 'react'
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, CartesianAxis, ResponsiveContainer, Legend } from "recharts";
+
 const data = [
   {
     name: "Mon",
-    uv: 4,
+    Days: 4,
   },
   {
     name: "Tue",
-    uv: 5,
+    Days: 5,
   },
   {
     name: "Wed",
-    uv: 3,
+    Days: 3,
   },
   {
     name: "Thu",
-    uv: 4,
+    Days: 4,
   },
   {
     name: "Fri",
-    uv: 3,
+    Days: 3,
   },
   {
     name: "Sat",
-    uv: 4.7,
+    Days: 4.7,
   },
   {
     name: "Sun",
-    uv: 4.4,
+    Days: 4.4,
   },
 ]
 
@@ -37,13 +38,18 @@ export default class BarChartComponent extends PureComponent {
 
   render() {
     return (
-      <ResponsiveContainer width={354} height={291}>
-        <BarChart width={354} height={291} data={data}>
-          <XAxis dataKey="name" stroke="#8884d8" />
+      <ResponsiveContainer width={"100%"} height={350}>
+        <BarChart
+          width={"100%"}
+          height={450}
+          data={data}
+        >
+          <XAxis dataKey="name" stroke="#0D0D0DCC" />
           <YAxis />
           <Tooltip />
-          <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-          <Bar dataKey="uv" fill="#8884d8" barSize={30} />
+          <Legend />
+          <CartesianGrid strokeDasharray="3 3" />
+          <Bar dataKey="Days" fill="#004080CC" background={{ fill: "#0040801A" }} barSize={50} />
         </BarChart>
       </ResponsiveContainer>
     );

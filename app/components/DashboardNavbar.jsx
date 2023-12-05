@@ -29,7 +29,7 @@ export default function DashboardNavbar() {
 
     return (
         <nav>
-            <div className='flex gap-10 justify-between items-center font-arimo'>
+            <div className='w-full flex gap-10 justify-between items-center font-arimo px-5 lg:px-10 py-5 bg-white shadow-md'>
                 <div className='flex items-center gap-4'>
                     {/* Hamburger BTN */}
                     <button
@@ -97,17 +97,28 @@ export default function DashboardNavbar() {
 
                 </div>
 
-                <div className='flex gap-2 items-center'>
-                    <Image
-                        src={'/svgs/Flame.svg'}
-                        width={24}
-                        height={24}
-                        alt='drop down'
-                    />
-                    <span className='font-bold'>
-                        0
-                    </span>
-                </div>
+                {pathname.toLowerCase() === '/community-forum' ? (
+                    <div className='flex gap-2 items-center'>
+                        <Image
+                            src={'/svgs/profile.svg'}
+                            width={24}
+                            height={24}
+                            alt='drop down'
+                        />
+                    </div>
+                ) : (
+                    <div className='flex gap-2 items-center'>
+                        <Image
+                            src={'/svgs/Flame.svg'}
+                            width={24}
+                            height={24}
+                            alt='drop down'
+                        />
+                        <span className='font-bold'>
+                            0
+                        </span>
+                    </div>
+                )}
             </div>
         </nav>
     )
