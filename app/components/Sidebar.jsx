@@ -74,9 +74,8 @@ export default function Sidebar() {
   return (
     <div
       ref={sidebarRef}
-      className={`${
-        sidebarVisible ? "w-full px-2" : "w-0 px-0"
-      } fixed top-0 left-0 bg-[#2967a5] lg:relative h-screen max-w-[425px] lg:max-w-[300px] lg:w-full lg:px-2 py-6 lg:bg-blues-900 text-white transition-all overflow-hidden z-10`}
+      className={`${sidebarVisible ? "w-full px-2" : "w-0 px-0"
+        } fixed top-0 left-0 bg-[#2967a5] lg:relative h-screen max-w-[425px] lg:max-w-[300px] lg:w-full lg:px-2 py-6 lg:bg-blues-900 text-white transition-all overflow-hidden z-20`}
     >
       <div className="flex items-center justify-between gap-10">
         <div className="flex items-center gap-4">
@@ -115,10 +114,9 @@ export default function Sidebar() {
           <Link
             href={item.href}
             key={index}
-            className={`${
-              pathname.toLowerCase() === item.href.toLowerCase() &&
+            className={`${pathname.toLowerCase() === item.href.toLowerCase() &&
               "bg-blues-1100"
-            } mt-4 w-full py-3 px-[14px] rounded-lg flex gap-2 items-center text-base font-bold`}
+              } mt-4 w-full py-3 px-[14px] rounded-lg flex gap-2 items-center text-base font-bold`}
           >
             <Image src={item.img} width={20} height={20} alt={item.name} />
             {item.name}
