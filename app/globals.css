@@ -6,7 +6,7 @@
 
 .progressiveBarContainer,
 .progressiveBarContainer * {
-    height: 8px !important;
+    height: 10px !important;
 }
 
 .progressiveBarContainer>div>div {

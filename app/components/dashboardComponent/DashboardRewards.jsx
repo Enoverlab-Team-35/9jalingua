@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function DashboardRewards() {
   return (
     <div>
-      <div className="bg-blues-200 mt-10 border rounded md:w-full">
+      <div className="bg-blues-200 border rounded md:w-full">
         <div className="flex mb-2 font-semibold ">
           <FiGift className="mt-5 ml-4" />
           <h1 className="ml-2 mt-4  text-grays-900 ">Rewards</h1>

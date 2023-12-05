@@ -38,15 +38,15 @@ export default function Page() {
 
       {/* streak */}
       <div className="mt-10 flex flex-col items-start justify-between w-full lg:flex-row gap-9">
-        <div className="w-full md:w-2/3">
+        <div className="w-full lg:w-2/3">
           <DashboardStreaks />
-          <div className="md:flex flex-col justify-between lg:flex-row gap-2 md:w-full">
-            {" "}
+          <div className="mt-9 grid sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-9" >
             <DashboardTarget />
             <DashboardRewards />
           </div>
         </div>
-        <div className=" w-full md:w-1/3 md:max-w-full ">
+
+        <div className=" w-full md:w-1/3 md:max-w-full lg:mt-0 mt-10">
           <DashboardCalendar />
         </div>
       </div>

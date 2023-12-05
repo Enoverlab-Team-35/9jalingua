@@ -12,7 +12,7 @@ export default function DashboardCalendar() {
   }
 
   return (
-    <div className="border border-white-900 rounded mt-10 shaddow-xl md:w-full shaddow-2xl">
+    <div className="border border-white-900 rounded shaddow-xl md:w-full shaddow-2xl">
       {" "}
       <div className="mt-2 mb-3">
         <h1 className="ml-4 mb-2 font-semibold">Progress Tracker</h1>

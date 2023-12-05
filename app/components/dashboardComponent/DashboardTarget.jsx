@@ -4,34 +4,29 @@ import { CircularProgressbar } from "react-circular-progressbar";
 import { TbTargetArrow } from "react-icons/tb";
 
 export default function DashboardTarget() {
-  const [percentage, setPercentage] = useState(0);
-  return (
-    <div>
-      <div className="bg-greens-1000 mt-10 border rounded md:w-full pr-8">
-        <div className="flex mb-2 font-semibold">
-          {" "}
-          <TbTargetArrow className="mt-5 ml-4" />
-          <h1 className="ml-2 mt-4">Vocabulary Mastery Target</h1>
-        </div>
+  const [percentage, setPercentage] = useState(5);
 
-        <hr></hr>
-        <div className="ml-6 mt-6 mb-6 text-sm font-thin">
-          <span className="font-bold text-base">0</span>{" "}
-          <span className="text-grays-800">new words learned</span>
+  return (
+    <div className="bg-greens-1000 rounded-lg">
+      <div className="flex px-6 sm:px-3 sm:py-3 py-4 gap-2 items-center outline outline-1 outline-grays-200 rounded-t-lg">
+        <TbTargetArrow size={24} color="#0D0D0DCC" />
+        <h1 className="text-grays-900 font-bold">Vocabulary Mastery Target</h1>
+      </div>
+
+      <div className="mt-8 sm:mt-6 px-6 sm:px-4 flex items-center gap-1">
+        <p className="font-bold text-xl text-grays-900">0</p>
+        <p className="text-grays-800">new words learned</p>
+      </div>
+
+      <div className="mt-6 flex gap-2 items-center">
+        <div className=" w-20 aspect-square ml-6">
+          <CircularProgressbar value={percentage} strokeWidth={20} />
         </div>
-        <div className="flex">
-          {" "}
-          <div className=" w-32 ml-6 mb-3">
-            {" "}
-            <CircularProgressbar value={percentage} strokeWidth={20} />
-          </div>
-          <div className="ml-2 mt-16 ">
-            {" "}
-            <span className="font-bold">{`${percentage}%`} </span>
-            <span className="text-xs text-grays-800">
-              of weekly goal achieved
-            </span>
-          </div>
+        <div className="flex items-center gap-1">
+          <p className="font-bold text-xl text-grays-900">{`${percentage}%`} </p>
+          <p className="text-sm text-grays-900">
+            of weekly goal achieved
+          </p>
         </div>
       </div>
     </div>
