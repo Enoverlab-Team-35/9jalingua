@@ -34,12 +34,13 @@ const sideLinks = [
 ];
 
 export default function Sidebar() {
+  const [isOpen, setIsOpen] = React.useState(false);
   const pathname = usePathname();
   const [user, loading] = useAuthState(auth);
-  const sidebarRef = useRef()
+  const sidebarRef = useRef();
   const router = useRouter();
 
-  const { sidebarVisible, setSidebarVisible } = useAppContext()
+  const { sidebarVisible, setSidebarVisible } = useAppContext();
 
   const handleClickOutside = (event) => {
     if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
@@ -48,12 +49,15 @@ export default function Sidebar() {
   };
 
   useEffect(() => {
-    document.addEventListener('click', handleClickOutside, true);
+    document.addEventListener("click", handleClickOutside, true);
     setSidebarVisible(false);
+
     return () => {
-      document.removeEventListener('click', handleClickOutside, true);
+      document.removeEventListener("click", handleClickOutside, true);
     };
-  }, [])
+  }, []);
+
+  const toggle = () => setIsOpen(!isOpen);
 
   const logout = async (e) => {
     e.preventDefault();
@@ -71,7 +75,7 @@ export default function Sidebar() {
     <div
       ref={sidebarRef}
       className={`${sidebarVisible ? "w-full px-2" : "w-0 px-0"
-        } fixed top-0 left-0 bg-[#2967a5] lg:relative h-screen max-w-[425px] lg:max-w-[300px] lg:w-full lg:px-2 py-6 lg:bg-blues-900 text-white transition-all overflow-hidden z-10`}
+        } fixed top-0 left-0 bg-[#2967a5] lg:relative h-screen max-w-[425px] lg:max-w-[300px] lg:w-full lg:px-2 py-6 lg:bg-blues-900 text-white transition-all overflow-hidden z-20`}
     >
       <div className="flex items-center justify-between gap-10">
         <div className="flex items-center gap-4">
@@ -85,11 +89,8 @@ export default function Sidebar() {
           </div>
           <h1 className="font-bold text-[32px]">9jaLingua</h1>
         </div>
-        <button
-          onClick={() => setSidebarVisible(false)}
-          className='lg:hidden'
-        >
-          <IoClose color='white' size={32} />
+        <button onClick={() => setSidebarVisible(false)} className="lg:hidden">
+          <IoClose color="white" size={32} />
         </button>
       </div>
 

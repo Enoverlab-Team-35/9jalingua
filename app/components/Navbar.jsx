@@ -12,7 +12,7 @@ export default function Navbar() {
     return (
         <>
             <nav className='fixed top-0 left-0 w-full bg-white z-10 shadow-md'>
-                <div className="container mx-auto flex items-center justify-between p-5 gap-10">
+                <div className="container mx-auto flex items-center justify-between py-5 px-2 gap-10">
                     {/* logo */}
                     <Link
                         href={'/'}
