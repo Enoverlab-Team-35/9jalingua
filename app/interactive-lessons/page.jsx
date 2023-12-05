@@ -50,8 +50,8 @@ export default function Page() {
     return (
         <DashboardLayout>
             {/* Name and Forms */}
-            <div className="flex items-center gap-5 justify-between w-full mt-11 max-md:max-w-full max-md:flex-wrap max-md:mt-10 font-arimo">
-                <h1 className="text-xl sm:text-4xl font-bold leading-10 text-stone-950 text-opacity-90 capitalize">
+            <div className="flex items-center justify-between w-full gap-5 mt-11 max-md:max-w-full max-md:flex-wrap max-md:mt-10 font-arimo">
+                <h1 className="text-xl font-bold leading-10 capitalize sm:text-4xl text-stone-950 text-opacity-90">
                     Hello, {user?.displayName || "John Doe"}
                 </h1>
                 <div className='md:max-w-[320px] w-full ms-auto rounded-lg border border-grays-300 overflow-hidden font-arimo'>
@@ -76,12 +76,12 @@ export default function Page() {
                 </div>
             </div>
 
-            <div className="mt-[40px] flex flex-col items-start justify-between w-full xl:flex-row gap-10 xl:gap-8 2xl:gap-20">
+            <div className="mt-[40px] flex flex-col items-start justify-between w-full lg:flex-row gap-10 xl:gap-8 2xl:gap-20">
                 <div className="w-full xl:max-w-[699px] 2xl:max-w-full grid gap-6">
                     {initialData?.map((data, index) => (
                         <div
                             key={index}
-                            className="border gap-5 flex itemscenter shadow pr-6 rounded-lg overflow-hidden border-grays-200"
+                            className="flex items-center gap-5 mx-[8px] overflow-hidden border rounded-lg shadow border-grays-200"
                         >
                             <div className="max-w-[213px] w-full h-full">
                                 <Image
@@ -89,11 +89,11 @@ export default function Page() {
                                     width={1880}
                                     height={1253}
                                     src={data.img}
-                                    className="w-full h-full  object-cover"
+                                    className="object-cover w-full h-full"
                                 />
                             </div>
-                            <div className=" w-full my-auto py-6">
-                                <h4 className='text-xl font-bold text-grays-900'>
+                            <div className="w-full py-6 my-auto ">
+                                <h4 className='text-xl font-bold text-black'>
                                     {data.heading}
                                 </h4>
                                 <p className='mt-2 text-grays-800'>
@@ -102,17 +102,17 @@ export default function Page() {
                                 {data.progress > 0 && (
                                     <div className='mt-4 w-full max-w-[396px] flex items-center justify-between gap-3'>
                                         <ProgressBar
-                                            className="progressiveBarContainer w-full rounded-full"
+                                            className="w-full rounded-full progressiveBarContainer"
                                             customLabel={" "}
                                             completed={(data.progress / data.total_lesson) * 100}
                                         />
-                                        <h5 className='text-grays-900 font-medium text-sm font-inter'>
+                                        <h5 className='text-sm font-medium text-grays-900 font-inter'>
                                             {(data.progress / data.total_lesson) * 100}%
                                         </h5>
                                     </div>
                                 )}
-                                <div className='mt-4 flex justify-end'>
-                                    <button className='px-4 py-3 bg-blues-1000 text-white font-bold rounded-lg' onClick={() => toast("123")}>
+                                <div className='flex justify-start mt-4 lg:justify-end'>
+                                    <button className='px-4 py-3 font-bold rounded-lg bg--white gap-[8px] text-blues-1000 border-[1px] border-blues-500' onClick={() => toast("123")}>
                                         Take Lesson
                                     </button>
                                 </div>
@@ -122,18 +122,18 @@ export default function Page() {
                 </div>
 
                 <div className="w-full xl:max-w-[354px]">
-                    <div className="border border-grays-200 rounded-lg px-6 py-8">
+                    <div className="px-6 py-8 border rounded-lg border-grays-200">
                         <div className='w-full max-w-[245px] sm:max-w-[80%] xl:max-w-[245px]'>
-                            <h3 className='text-grays-900 text-lg font-bold'>
+                            <h3 className='text-lg font-bold text-grays-900'>
                                 Friday Freak
                             </h3>
                             <p className='mt-4 text-grays-800'>
                                 Complete a lesson on a Friday to add 2 days to streak count
                             </p>
                         </div>
-                        <div className='mt-6 flex justify-end'>
+                        <div className='flex justify-end mt-6'>
                             <button className='flex items-center gap-1'>
-                                <span className='text-blues-1100 font-bold'>Take Lesson</span>
+                                <span className='font-bold text-blues-1100'>Take Lesson</span>
                                 <Image
                                     src={'/svgs/arrow-right-blue.svg'}
                                     width={24}
@@ -143,18 +143,18 @@ export default function Page() {
                             </button>
                         </div>
                     </div>
-                    <div className="border mt-10 bg-blues-200 rounded-lg px-6 py-8">
+                    <div className="px-6 py-8 mt-10 border rounded-lg bg-blues-200">
                         <div className='w-full max-w-[245px] sm:max-w-[80%] xl:max-w-[245px]'>
-                            <h3 className='text-grays-900 text-lg font-bold'>
+                            <h3 className='text-lg font-bold text-grays-900'>
                                 Trailblazer
                             </h3>
                             <p className='mt-4 text-grays-800'>
                                 See all completed lessons here and track your progress so far
                             </p>
                         </div>
-                        <div className='mt-6 flex justify-end'>
+                        <div className='flex justify-end mt-6'>
                             <button className='flex items-center gap-1'>
-                                <span className='text-blues-1100 font-bold'>See All</span>
+                                <span className='font-bold text-blues-1100'>See All</span>
                                 <Image
                                     src={'/svgs/arrow-right-blue.svg'}
                                     width={24}
@@ -165,7 +165,7 @@ export default function Page() {
                         </div>
                     </div>
                     <div className='mt-10'>
-                        <h3 className='mb-2 text-grays-900 text-lg font-bold'>
+                        <h3 className='mb-2 text-lg font-bold text-grays-900'>
                             Lesson Taken
                         </h3>
                         <div className='relative'>
