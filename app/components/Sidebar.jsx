@@ -125,37 +125,6 @@ export default function Sidebar() {
           </Link>
         ))}
       </div>
-      <div className="mt-4 flex gap-4 items-center px-2 pb-6 border-b border-white">
-        <div>
-          <Image
-            src={user?.photoURL || "/svgs/user.svg"}
-            width={24}
-            height={24}
-            alt="user"
-            className="rounded"
-          />
-        </div>
-        <h4 className="font-bold text-[16px]">
-          {user?.displayName || "John Doe"}
-        </h4>
-      </div>
-      <div>
-        <div className="pt-2">
-          {sideLinks?.map((item, index) => (
-            <Link
-              href={item.href}
-              key={index}
-              className={`${
-                pathname.toLowerCase() === item.href.toLowerCase() &&
-                "bg-blues-1100"
-              } mt-4 w-full py-3 px-[14px] rounded-lg flex gap-2 items-center text-base font-bold`}
-            >
-              <Image src={item.img} width={20} height={20} alt={item.name} />
-              {item.name}
-            </Link>
-          ))}
-        </div>
-      </div>
 
       <div className="mt-52">
         <button

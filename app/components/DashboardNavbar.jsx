@@ -29,7 +29,7 @@ export default function DashboardNavbar() {
 
     return (
         <nav>
-            <div className='w-full flex gap-10 justify-between items-center font-arimo px-5 lg:px-10 py-5 bg-white shadow-md'>
+            <div className='w-full flex gap-10 justify-between items-center font-arimo px-5 lg:px-10 py-5 bg-white shadow-md relative z-10'>
                 <div className='flex items-center gap-4'>
                     {/* Hamburger BTN */}
                     <button

@@ -13,7 +13,7 @@ import DashboardRewards from "../components/dashboardComponent/DashboardRewards"
 export default function Page() {
   return (
     <DashboardLayout>
-      <div className=" bg-greens-200 border rounded-lg w-full">
+      <div className="mt-14 bg-greens-200 border rounded-lg w-full">
         <div className="mb-10 ml-3 mt-3 ">
           {" "}
           <div className=" flex text-white font-bold">
