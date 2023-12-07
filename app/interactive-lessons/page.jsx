@@ -76,7 +76,7 @@ export default function Page() {
                 </div>
             </div>
 
-            <div className="mt-[40px] flex flex-col items-start justify-between w-full lg:flex-row gap-10 xl:gap-8 2xl:gap-20">
+            <div className="mt-[40px] flex flex-col items-start justify-between w-full xl:flex-row gap-10 xl:gap-8 2xl:gap-20">
                 <div className="w-full xl:max-w-[699px] 2xl:max-w-full grid gap-6">
                     {initialData?.map((data, index) => (
                         <div
@@ -92,7 +92,7 @@ export default function Page() {
                                     className="object-cover w-full h-full"
                                 />
                             </div>
-                            <div className="w-full py-6 my-auto ">
+                            <div className="w-full p-6 my-auto ">
                                 <h4 className='text-xl font-bold text-black'>
                                     {data.heading}
                                 </h4>
@@ -112,7 +112,7 @@ export default function Page() {
                                     </div>
                                 )}
 
-                                <div className='mt-4 flex justify-end'>
+                                <div className='mt-6 flex lg:justify-end'>
                                     {data.progress > 0 ? (
                                         <button className='px-7 py-3 bg-blues-1000 text-white font-bold rounded-lg' onClick={() => toast("123")}>
                                             Continue
