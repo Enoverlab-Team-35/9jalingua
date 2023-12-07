@@ -25,7 +25,7 @@ export default function Insights() {
         <section className="relative my-24 py-20">
             <div className='absolute z-[-1] top-0 left-0 w-full max-w-[720px] h-full bg-blues-200'></div>
             <div className="container mx-auto px-5">
-                <h1 className="font-bold text-5xl text-blues-1100">
+                <h1 className="font-bold text-[32px] sm:text-5xl text-blues-1100 text-center md:text-left">
                     Explore Insights
                 </h1>
                 <div className="flex flex-wrap justify-around xl:justify-between gap-6">

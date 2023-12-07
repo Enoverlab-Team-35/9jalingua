@@ -24,7 +24,7 @@ export default function Linguistics() {
         <section className='mt-24 font-arimo px-5'>
             <div className="container mx-auto">
                 <div className='w-full max-w-[710px] mx-auto sm:text-center'>
-                    <h1 className='text-blues-1100 font-bold text-5xl leading-normal'>
+                    <h1 className='text-blues-1100 font-bold text-[32px] sm:text-5xl leading-normal'>
                         Linguistics Beats
                     </h1>
                     <p className='mt-6 text-grays-800 text-xl leading-normal'>

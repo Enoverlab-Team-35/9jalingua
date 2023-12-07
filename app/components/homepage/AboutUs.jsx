@@ -17,7 +17,7 @@ export default function AboutUs() {
                 </div>
                 {/* Text */}
                 <div className='lg:max-w-[657px] w-full'>
-                    <h1 className="font-arimo text-blues-1100 font-bold text-5xl">
+                    <h1 className="font-arimo text-blues-1100 font-bold text-[32px] sm:text-5xl">
                         About Us
                     </h1>
                     <p className="mt-8 font-arimo text-xl text-grays-600 leading-relaxed">

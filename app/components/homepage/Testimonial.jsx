@@ -29,7 +29,7 @@ export default function Testimonial() {
                 <h5 className='text-greens-100 text-xl text-center'>
                     Testimonial
                 </h5>
-                <h1 className="mt-8 text-blues-1100 text-5xl font-bold text-center">
+                <h1 className="mt-8 text-blues-1100 text-[32px] sm:text-5xl font-bold text-center">
                     Hear from our Happy Users
                 </h1>
 

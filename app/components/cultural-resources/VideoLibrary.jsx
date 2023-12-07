@@ -23,7 +23,7 @@ export default function VideoLibrary() {
     return (
         <section className='mt-[86px] font-arimo'>
             <div className='container mx-auto bg-greens-1100 px-5 pt-16 pb-[118px]'>
-                <h1 className='text-center text-greens-200 font-bold text-5xl leading-normal'>
+                <h1 className='text-center text-greens-200 font-bold text-[32px] sm:text-5xl leading-normal'>
                     Video Library
                 </h1>
                 <div className='mt-12 flex flex-wrap justify-evenly gap-x-6 gap-y-14'>

@@ -48,7 +48,7 @@ export default function Page() {
   };
   return (
     <AuthLayout text={"Log in"}>
-      <div className="px-8 flex flex-col justify-center items-center gap-6">
+      <div className="px-6 sm:px-8 flex flex-col justify-center items-center gap-6">
         <button
           onClick={handleGoogleSignIn}
           className="w-full font-bold flex justify-center items-center gap-3 border border-grays-900 text-grays-900 py-[10px] px-4 text-base rounded-lg hover:bg-grays-100"
@@ -79,8 +79,8 @@ export default function Page() {
       </div>
 
       <div className="mt-11">
-        <div className="px-8 pt-6 pb-2 flex flex-col justify-center gap-2 border-b border-grays-200">
-          <h1 className="text-blues-900 font-bold text-4xl">
+        <div className="px-6 sm:px-8 pt-6 pb-2 flex flex-col justify-center gap-2 border-b border-grays-200">
+          <h1 className="text-blues-900 font-bold text-2xl sm:text-4xl">
             Login
           </h1>
           <p className="text-xl text-grays-800">
@@ -88,7 +88,7 @@ export default function Page() {
           </p>
         </div>
 
-        <form className="px-8 pt-6 pb-10" onSubmit={handleEmailLogin}>
+        <form className="px-6 sm:px-8 pt-6 pb-10" onSubmit={handleEmailLogin}>
           <div className="flex flex-col justify-center gap-[6px]">
             <label htmlFor="email" className="text-grays-900 text-[16px]">
               Email
@@ -98,7 +98,7 @@ export default function Page() {
               id="email"
               name="email"
               value={email}
-              className="py-[10px] px-[14px] w-full text-gray-700 border border-grays-300 rounded-lg"
+              className="py-[10px] px-[14px] w-full text-gray-700 border border-grays-300 focus-within:outline-greens-300 rounded-lg"
               onChange={(event) => {
                 setEmail(event?.target.value);
               }}
@@ -113,7 +113,7 @@ export default function Page() {
               id="password"
               name="password"
               value={password}
-              className="py-[10px] px-[14px] w-full text-gray-700 border border-grays-300 rounded-lg"
+              className="py-[10px] px-[14px] w-full text-gray-700 border border-grays-300 focus-within:outline-greens-300 rounded-lg"
               onChange={(event) => {
                 setPassword(event?.target.value);
               }}
@@ -152,7 +152,7 @@ export default function Page() {
         </form>
       </div>
 
-      <div className="mt-8 pb-10 px-8 border-b border-grays-200">
+      <div className="mt-8 pb-10 px-6 sm:px-8 border-b border-grays-200">
         <p className="text-center text-grays-800">
           Don&apos;t have an account? <Link href={'/signup'} className="text-greens-300 font-bold">Sign up</Link>
         </p>
