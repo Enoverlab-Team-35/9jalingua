@@ -65,10 +65,10 @@ export default function Page() {
   return (
     <section className="min-h-screen h-full p-5">
       <div className="container mx-auto mt-12">
-        <h1 className="text-center text-[40px] font-bold text-grays-900 mb-10">
+        <h1 className="text-center text-[32px] sm:text-[40px] font-bold text-grays-900 mb-10">
           What Nigerian Language will you Like to learn?
         </h1>
-        <div className="flex flex-wrap justify-between gap-x-12 gap-y-2">
+        <div className="flex flex-wrap justify-evenly gap-3 md:gap-x-12 gap-y-2">
           {language?.map((item, index) => (
             <button
               key={index}
