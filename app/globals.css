@@ -50,6 +50,7 @@ abbr:where([title]) {
     font-family: "Arimo", sans-serif !important;
     font-size: 1rem !important;
     color: #0D0D0DCC !important;
+    border-radius: 8px;
 }
 
 .react-calendar__month-view__days__day--neighboringMonth {
@@ -59,5 +60,4 @@ abbr:where([title]) {
 .react-calendar__tile--active {
     background: #004080CC !important;
     color: white !important;
-    border-radius: 8px;
 }
