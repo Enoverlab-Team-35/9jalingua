@@ -19,3 +19,45 @@
     transform: rotate(270deg);
 
 }
+
+/* React Calender Custom Styling */
+.react-calendar {
+    width: 100% !important;
+    border: none !important;
+    font-family: "Arimo", sans-serif !important;
+}
+
+.react-calendar__navigation__label__labelText,
+.react-calendar__navigation__label__labelText--from {
+    color: #0D0D0DCC !important;
+    font-size: 1rem !important;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+    padding: 10px 8px !important;
+    color: #0D0D0DCC !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+}
+
+abbr:where([title]) {
+    -webkit-text-decoration: none;
+    text-decoration: none;
+}
+
+.react-calendar__tile {
+    padding: 10px 8px !important;
+    font-family: "Arimo", sans-serif !important;
+    font-size: 1rem !important;
+    color: #0D0D0DCC !important;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+    color: #0D0D0D4D !important;
+}
+
+.react-calendar__tile--active {
+    background: #004080CC !important;
+    color: white !important;
+    border-radius: 8px;
+}

@@ -7,7 +7,7 @@ export default function Languages() {
     return (
         <section className="mt-24 px-5">
             <div className="container mx-auto text-center">
-                <h1 className="font-arimo text-5xl font-bold text-blues-1100">
+                <h1 className="font-arimo text-[32px] sm:text-5xl font-bold text-blues-1100 leading-relaxed">
                     Explore the Variety of languages you can learn
                 </h1>
                 <div className="mt-10 flex flex-wrap items-center justify-evenly gap-6">

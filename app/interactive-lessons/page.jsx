@@ -111,10 +111,17 @@ export default function Page() {
                                         </h5>
                                     </div>
                                 )}
+
                                 <div className='mt-4 flex justify-end'>
-                                    <button className='px-4 py-3 bg-blues-1000 text-white font-bold rounded-lg' onClick={() => toast("123")}>
-                                        Take Lesson
-                                    </button>
+                                    {data.progress > 0 ? (
+                                        <button className='px-7 py-3 bg-blues-1000 text-white font-bold rounded-lg' onClick={() => toast("123")}>
+                                            Continue
+                                        </button>
+                                    ) : (
+                                        <button className='px-4 py-3 border border-blues-1000 text-blues-1000 font-bold rounded-lg' onClick={() => toast("123")}>
+                                            Take Lesson
+                                        </button>
+                                    )}
                                 </div>
                             </div>
                         </div>

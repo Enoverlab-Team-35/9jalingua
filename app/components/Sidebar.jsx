@@ -75,7 +75,7 @@ export default function Sidebar() {
     <div
       ref={sidebarRef}
       className={`${sidebarVisible ? "w-full px-2" : "w-0 px-0"
-        } fixed top-0 left-0 bg-[#2967a5] lg:relative h-screen max-w-[425px] lg:max-w-[300px] lg:w-full lg:px-2 py-6 lg:bg-blues-900 text-white transition-all overflow-hidden z-20`}
+        } fixed top-0 left-0 bg-[#2967a5] lg:relative h-screen max-w-[425px] lg:max-w-[300px] lg:w-full lg:px-2 py-6 lg:bg-blues-900 text-white transition-all overflow-hidden z-20 overflow-x-hidden overflow-y-hidden`}
     >
       <div className="flex items-center justify-between gap-10">
         <div className="flex items-center gap-4">

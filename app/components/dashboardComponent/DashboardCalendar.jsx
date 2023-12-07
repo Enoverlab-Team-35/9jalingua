@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import calendarStyle from "../../dashboard/calendar.module.css";
+import Image from "next/image";
 
 export default function DashboardCalendar() {
   const [value, setValue] = useState(new Date());
@@ -12,20 +12,30 @@ export default function DashboardCalendar() {
   }
 
   return (
-    <div className="border border-white-900 rounded shaddow-xl md:w-full shaddow-2xl">
-      {" "}
-      <div className="mt-2 mb-3">
-        <h1 className="ml-4 mb-2 font-semibold">Progress Tracker</h1>
-        <hr></hr>
+    <div className="rounded-lg shaddow-xl w-full shadow-lg">
+      <div className="flex px-3 py-2 gap-[10px] items-center outline outline-1 outline-grays-200 rounded-t-lg">
+        <Image
+          src={'/svgs/Progress.svg'}
+          height={24}
+          width={24}
+          alt="Progress"
+        />
+        <h1 className="font-bold text-xl text-grays-900">Progress Tracker</h1>
       </div>
-      <div className="flex flex-col justify-items-center items-stretch">
+      <div className="py-4 px-6 outline outline-1 outline-grays-200">
         <Calendar
           onChange={onChange}
           value={value}
-          className={calendarStyle.customCalendar}
         />
-        <hr></hr>
-        <p className="ml-10 mt-3 mb-3">{days} Days with learning progress</p>
+      </div>
+      <div className="flex px-[14px] py-2 gap-2 items-center rounded-b-lg">
+        <Image
+          src={'/svgs/Progress.svg'}
+          height={20}
+          width={20}
+          alt="Progress"
+        />
+        <h1 className="font-bold text-grays-900">{days} Days with learning progress</h1>
       </div>
     </div>
   );
