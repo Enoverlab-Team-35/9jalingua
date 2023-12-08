@@ -23,7 +23,7 @@ export default function Page() {
     return (
         <DashboardLayout>
             {/* Name and Forms */}
-            <div className="flex items-center justify-between w-full gap-5 mt-11 max-md:max-w-full max-md:flex-wrap max-md:mt-10 font-arimo pb-20">
+            <div className="flex items-center justify-between w-full gap-5 mt-11 max-md:max-w-full max-md:flex-wrap max-md:mt-10 font-arimo">
                 <h1 className=" text-[16px] sm:text-xl font-bold leading-10 capitalize text-stone-950 text-opacity-90">
                     Hello, {user?.displayName || "John Doe"}
                 </h1>
@@ -54,15 +54,15 @@ export default function Page() {
                     {topics?.map((data, index) => (
                         <div
                             key={index}
-                            className="flex items-center gap-5 mx-[8px] overflow-hidden border rounded-lg shadow border-grays-200"
+                            className="flex items-center gap-5 mx-[8px] border rounded-lg shadow border-grays-200"
                         >
-                            <div className="max-w-[213px] w-full h-full">
+                            <div className="max-w-[213px] rounded-s-lg w-full h-full">
                                 <Image
                                     alt="Image"
                                     width={1880}
                                     height={1253}
                                     src={data.img}
-                                    className="object-cover w-full h-full"
+                                    className="object-cover w-full rounded-s-lg h-full"
                                 />
                             </div>
                             <div className="w-full p-6 my-auto ">
@@ -109,7 +109,10 @@ export default function Page() {
                             </p>
                         </div>
                         <div className='flex justify-end mt-6'>
-                            <button className='flex items-center gap-1'>
+                            <button
+                                onClick={() => router.push(`/lesson/${selectedLanguage}/${data.id}/${data.heading}`)}
+                                className='flex items-center gap-1'
+                            >
                                 <span className='font-bold text-blues-1100'>Take Lesson</span>
                                 <Image
                                     src={'/svgs/arrow-right-blue.svg'}

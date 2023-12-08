@@ -43,7 +43,7 @@
     padding: 10px 8px !important;
     color: #0D0D0DCC !important;
     font-size: 1rem !important;
-    font-weight: 400 !important;
+    font-weight: 500 !important;
 }
 
 abbr:where([title]) {
@@ -66,4 +66,18 @@ abbr:where([title]) {
 .react-calendar__tile--active {
     background: #004080CC !important;
     color: white !important;
+}
+
+/* Circular Bar */
+.CircularProgressbar.CircularProgressbar-inverted .CircularProgressbar-background {
+    fill: #004080CC !important;
+}
+
+.CircularProgressbar .CircularProgressbar-path {
+    stroke: #004080CC !important;
+    stroke-linecap: square !important;
+}
+
+.CircularProgressbar .CircularProgressbar-text {
+    fill: #004080CC !important;
 }
