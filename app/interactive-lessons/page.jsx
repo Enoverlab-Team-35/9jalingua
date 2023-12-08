@@ -9,44 +9,17 @@ import BarChartComponent from '../components/BarChartComponent';
 import { twMerge } from 'tailwind-merge';
 import { toast } from 'react-toastify';
 import ProgressBar from '@ramonak/react-progress-bar';
-
-const initialData = [
-    {
-        heading: "Greetings",
-        title: "Learn how to introduce yourself, greet friends and the elderly",
-        img: "/interactivePage/mask-group@2x.png",
-        progress: 3,
-        total_lesson: 5
-    },
-    {
-        heading: "Part of the Body",
-        title: "Learn how to identify every part of the body",
-        img: "/interactivePage/mask-group1@2x.png",
-        progress: 0,
-        total_lesson: 5
-    },
-    {
-        heading: "Singular and plural",
-        title: "Know how to call one and know how to call two or more",
-        img: "/interactivePage/mask-group2@2x.png",
-        progress: 0,
-        total_lesson: 5
-    },
-    {
-        heading: "Know your Objects",
-        title: "Identify any object and learn the correct pronunciation.",
-        img: "/interactivePage/mask-group3@2x.png",
-        progress: 0,
-        total_lesson: 5
-    },
-    // Add more images here
-];
+import { useAppContext } from '../context';
+import { useRouter } from 'next/navigation';
 
 export default function Page() {
+    const { topics, selectedLanguage } = useAppContext();
+    const [user, loading] = useAuthState(auth);
+    const router = useRouter()
+
     function onSearch(e) {
         e.preventDefault()
     }
-    const [user, loading] = useAuthState(auth);
     return (
         <DashboardLayout>
             {/* Name and Forms */}
@@ -78,7 +51,7 @@ export default function Page() {
 
             <div className="mt-[40px] flex flex-col items-start justify-between w-full xl:flex-row gap-10 xl:gap-8 2xl:gap-20">
                 <div className="w-full xl:max-w-[699px] 2xl:max-w-full grid gap-6">
-                    {initialData?.map((data, index) => (
+                    {topics?.map((data, index) => (
                         <div
                             key={index}
                             className="flex items-center gap-5 mx-[8px] overflow-hidden border rounded-lg shadow border-grays-200"
@@ -104,24 +77,21 @@ export default function Page() {
                                         <ProgressBar
                                             className="w-full rounded-full progressiveBarContainer"
                                             customLabel={" "}
-                                            completed={(data.progress / data.total_lesson) * 100}
+                                            completed={Math.floor((data.progress / data.total_lesson) * 100)}
                                         />
                                         <h5 className='text-sm font-medium text-grays-900 font-inter'>
-                                            {(data.progress / data.total_lesson) * 100}%
+                                            {Math.floor((data.progress / data.total_lesson) * 100)}%
                                         </h5>
                                     </div>
                                 )}
 
                                 <div className='mt-6 flex lg:justify-end'>
-                                    {data.progress > 0 ? (
-                                        <button className='px-7 py-3 bg-blues-1000 text-white font-bold rounded-lg' onClick={() => toast("123")}>
-                                            Continue
-                                        </button>
-                                    ) : (
-                                        <button className='px-4 py-3 border border-blues-1000 text-blues-1000 font-bold rounded-lg' onClick={() => toast("123")}>
-                                            Take Lesson
-                                        </button>
-                                    )}
+                                    <button
+                                        className={`px-4 py-3 font-bold rounded-lg border border-blues-1000 text-blues-1000 ${data.progress > 0 && 'px-7 bg-blues-1000 text-white'}`}
+                                        onClick={() => router.push(`/lesson/${selectedLanguage}/${data.id}/${data.heading}`)}
+                                    >
+                                        {data.progress > 0 ? "Continue" : "Take Lesson"}
+                                    </button>
                                 </div>
                             </div>
                         </div>

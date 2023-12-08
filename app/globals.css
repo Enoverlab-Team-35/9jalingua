@@ -9,7 +9,13 @@
     height: 10px !important;
 }
 
-.progressiveBarContainer>div>div {
+.lessonBarContainer {
+    height: 32px !important;
+
+}
+
+.progressiveBarContainer>div>div,
+.lessonBarContainer>div>div {
     background: #004080CC !important;
 }
 

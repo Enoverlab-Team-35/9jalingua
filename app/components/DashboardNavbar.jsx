@@ -10,7 +10,6 @@ import Link from 'next/link';
 export default function DashboardNavbar() {
     const pathname = usePathname();
     const { setSidebarVisible, selectedLanguage } = useAppContext()
-    const [currentLanguage, setCurrentLanguage] = useState(selectedLanguage[0] || "Yoruba")
     const [isLanguageVisible, setIsLanguageVisible] = useState(false)
     const languageRef = useRef()
 
@@ -51,7 +50,7 @@ export default function DashboardNavbar() {
                                 onClick={() => setIsLanguageVisible(!isLanguageVisible)}
                                 className='flex items-center border gap-2 rounded-lg border-grays-500 py-3 px-6 font-bold'
                             >
-                                {currentLanguage}
+                                {selectedLanguage || "Yoruba"}
                                 <Image
                                     src={'/svgs/chevron-down-black.svg'}
                                     width={20}
@@ -67,15 +66,11 @@ export default function DashboardNavbar() {
                             className={`${isLanguageVisible ? 'h-auto py-4 shadow-lg border border-grays-200' : 'h-0'} absolute mt-2 bg-white rounded-lg w-[195px] transition-all overflow-hidden`}
                         >
                             <div className='grid gap-2 px-2'>
-                                {selectedLanguage?.map((item, index) => (
-                                    <button
-                                        key={index}
-                                        onClick={() => setCurrentLanguage(item)}
-                                        className={`px-3 py-2 rounded font-bold text-grays-900 text-left font-arimo hover:bg-blues-900 hover:text-white ${item === currentLanguage && 'bg-blues-1100 hover:bg-blues-1100 text-white'}`}
-                                    >
-                                        {item}
-                                    </button>
-                                ))}
+                                <button
+                                    className={`px-3 py-2 rounded font-bold text-grays-900 text-left font-arimo cursor-auto`}
+                                >
+                                    {selectedLanguage || "Yoruba"}
+                                </button>
                             </div>
                             <div className='h-[1.25px] w-[150px] bg-[#0D0D0D4D] mt-4 mx-2 rounded-full'></div>
                             <div className='my-4 px-5'>
