@@ -76,8 +76,6 @@ abbr:where([title]) {
 .CircularProgressbar .CircularProgressbar-path {
     stroke: #004080CC !important;
     stroke-linecap: square !important;
-    -webkit-transition: stroke-dashoffset 0.5s ease 0s;
-    transition: stroke-dashoffset 0.5s ease 0s;
 }
 
 .CircularProgressbar .CircularProgressbar-text {

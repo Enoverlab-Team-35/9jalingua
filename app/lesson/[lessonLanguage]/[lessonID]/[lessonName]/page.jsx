@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import React, { useState } from 'react'
 
-export default function page() {
+export default function Page() {
     const { lessonLanguage, lessonID, lessonName } = useParams()
     const { topics, setTopics, lessons } = useAppContext();
     const [topic, setTopic] = useState(topics.filter((item) => item.id === Number(lessonID)))
