@@ -28,7 +28,7 @@ export function AppContextProvider({ children }) {
       heading: "Greetings",
       title: "Learn how to introduce yourself, greet friends and the elderly",
       img: "/interactivePage/mask-group@2x.png",
-      progress: 1,
+      progress: 0,
       total_lesson: lessons?.length
     },
     {

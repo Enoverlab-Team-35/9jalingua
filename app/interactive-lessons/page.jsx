@@ -23,7 +23,7 @@ export default function Page() {
     return (
         <DashboardLayout>
             {/* Name and Forms */}
-            <div className="flex items-center justify-between w-full gap-5 mt-11 max-md:max-w-full max-md:flex-wrap max-md:mt-10 font-arimo pb-20">
+            <div className="flex items-center justify-between w-full gap-5 mt-11 max-md:max-w-full max-md:flex-wrap max-md:mt-10 font-arimo">
                 <h1 className=" text-[16px] sm:text-xl font-bold leading-10 capitalize text-stone-950 text-opacity-90">
                     Hello, {user?.displayName || "John Doe"}
                 </h1>
