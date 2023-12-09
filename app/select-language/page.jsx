@@ -63,53 +63,54 @@ export default function Page() {
     router.push("/dashboard");
   }
 
-    function onSearch(e) {
-        e.preventDefault()
-    }
+  function onSearch(e) {
+    e.preventDefault()
+  }
 
   return (
     <>
-      <nav className='fixed top-0 left-0 w-full bg-white z-10 sm:hidden pl-3 pt-3'>
-          <div className="container mx-auto flex items-center justify-between py-5 px-2 gap-10">
-              {/* logo */}
-              <Link
-                  href={'/'}
-                  className="flex items-center gap-4 font-arimo"
-              >
-                  <Image
-                      src={'/9jalingua/green.svg'}
-                      width={38}
-                      height={43}
-                      alt='9jaLingua'
-                  />
-                  <span className="text-4xl font-bold text-blues-1100">9jaLingua</span>
-              </Link>
-            </div>
+      <nav className='fixed top-0 left-0 w-full bg-white z-10 px-5 pt-10 pb-6'>
+        <div className="container mx-auto">
+          {/* logo */}
+          <Link
+            href={'/'}
+            className="flex items-center gap-4 font-arimo"
+          >
+            <Image
+              src={'/9jalingua/green.svg'}
+              width={38}
+              height={43}
+              alt='9jaLingua'
+            />
+            <span className="text-4xl font-bold text-blues-1100">9jaLingua</span>
+          </Link>
+        </div>
       </nav>
-      <section className="min-h-screen h-full p-5 mt-[40px]">
-        <div className="container mx-auto mt-12">
+
+      <section className="min-h-screen h-full p-5 mt-36">
+        <div className="container mx-auto">
           <h1 className="text-center text-[32px] sm:text-[40px] font-bold text-grays-900 mb-10">
             What Nigerian Language will you Like to learn?
           </h1>
           <div className='w-full my-[24px] ms-auto rounded-lg border border-grays-300 overflow-hidden font-arimo sm:hidden'>
-              <form className='flex items-center gap-2 p-0' onSubmit={onSearch}>
-                  <input
-                      type="search"
-                      placeholder='Search Lession'
-                      className='flex-auto py-[10px] ps-[14px] bg-white text-grays-600 w-full'
-                  />
-                  <button
-                      className='py-[10px] pe-[14px]'
-                      type='submit'
-                  >
-                      <Image
-                          src={'/community/search-sm.svg'}
-                          height={20}
-                          width={20}
-                          alt='Search'
-                      />
-                  </button>
-              </form>
+            <form className='flex items-center gap-2 p-0' onSubmit={onSearch}>
+              <input
+                type="search"
+                placeholder='Search Lession'
+                className='flex-auto py-[10px] ps-[14px] bg-white text-grays-600 w-full'
+              />
+              <button
+                className='py-[10px] pe-[14px]'
+                type='submit'
+              >
+                <Image
+                  src={'/community/search-sm.svg'}
+                  height={20}
+                  width={20}
+                  alt='Search'
+                />
+              </button>
+            </form>
           </div>
           <div className="flex flex-wrap justify-evenly gap-3 md:gap-x-12 gap-y-2">
             {language?.map((item, index) => (
