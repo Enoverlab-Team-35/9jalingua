@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { useAppContext } from "../context";
+import Link from "next/link";
 
 const language = [
   "Yoruba",
@@ -62,44 +63,86 @@ export default function Page() {
     router.push("/dashboard");
   }
 
+    function onSearch(e) {
+        e.preventDefault()
+    }
 
   return (
-    <section className="min-h-screen h-full p-5">
-      <div className="container mx-auto mt-12">
-        <h1 className="text-center text-[32px] sm:text-[40px] font-bold text-grays-900 mb-10">
-          What Nigerian Language will you Like to learn?
-        </h1>
-        <div className="flex flex-wrap justify-evenly gap-3 md:gap-x-12 gap-y-2">
-          {language?.map((item, index) => (
-            <button
-              key={index}
-              onClick={() => toggleLanguage(item)}
-              className={`${selectedLanguage === item ? "bg-greens-300" : "bg-blues-900"
-                } text-white py-5 px-3 w-[151px] text-center rounded-lg font-arimo text-xl font-bold`}
-            >
-              {item}
-            </button>
-          ))}
+    <>
+      <nav className='fixed top-0 left-0 w-full bg-white z-10 sm:hidden pl-3 pt-3'>
+          <div className="container mx-auto flex items-center justify-between py-5 px-2 gap-10">
+              {/* logo */}
+              <Link
+                  href={'/'}
+                  className="flex items-center gap-4 font-arimo"
+              >
+                  <Image
+                      src={'/9jalingua/green.svg'}
+                      width={38}
+                      height={43}
+                      alt='9jaLingua'
+                  />
+                  <span className="text-4xl font-bold text-blues-1100">9jaLingua</span>
+              </Link>
+            </div>
+      </nav>
+      <section className="min-h-screen h-full p-5 mt-[40px]">
+        <div className="container mx-auto mt-12">
+          <h1 className="text-center text-[32px] sm:text-[40px] font-bold text-grays-900 mb-10">
+            What Nigerian Language will you Like to learn?
+          </h1>
+          <div className='w-full my-[24px] ms-auto rounded-lg border border-grays-300 overflow-hidden font-arimo sm:hidden'>
+              <form className='flex items-center gap-2 p-0' onSubmit={onSearch}>
+                  <input
+                      type="search"
+                      placeholder='Search Lession'
+                      className='flex-auto py-[10px] ps-[14px] bg-white text-grays-600 w-full'
+                  />
+                  <button
+                      className='py-[10px] pe-[14px]'
+                      type='submit'
+                  >
+                      <Image
+                          src={'/community/search-sm.svg'}
+                          height={20}
+                          width={20}
+                          alt='Search'
+                      />
+                  </button>
+              </form>
+          </div>
+          <div className="flex flex-wrap justify-evenly gap-3 md:gap-x-12 gap-y-2">
+            {language?.map((item, index) => (
+              <button
+                key={index}
+                onClick={() => toggleLanguage(item)}
+                className={`${selectedLanguage === item ? "bg-greens-300" : "bg-blues-900"
+                  } text-white py-5 px-3 w-[151px] text-center rounded-lg font-arimo text-xl font-bold`}
+              >
+                {item}
+              </button>
+            ))}
+          </div>
+          <button
+            className="mt-28 ms-auto px-8 py-4 rounded-lg text-white bg-greens-300 flex place-items-center gap-2"
+            onClick={() => {
+              if (selectedLanguage) {
+                router.push("/dashboard");
+              } else {
+                toast("Select language to learn");
+              }
+            }}
+          >
+            <span className="text-xl font-bold">Continue</span>
+            <Image
+              src={"/svgs/arrow-narrow-right.svg"}
+              width={20}
+              height={20}
+              alt="Next"
+            />
+          </button>
         </div>
-        <button
-          className="mt-28 ms-auto px-8 py-4 rounded-lg text-white bg-greens-300 flex place-items-center gap-2"
-          onClick={() => {
-            if (selectedLanguage) {
-              router.push("/dashboard");
-            } else {
-              toast("Select language to learn");
-            }
-          }}
-        >
-          <span className="text-xl font-bold">Continue</span>
-          <Image
-            src={"/svgs/arrow-narrow-right.svg"}
-            width={20}
-            height={20}
-            alt="Next"
-          />
-        </button>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
