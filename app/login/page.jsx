@@ -74,7 +74,7 @@ export default function Page() {
           >
             <FcGoogle size={32} />
             <span>
-              Sign in with google
+              Sign in with Google
             </span>
           </button>
 
@@ -83,7 +83,7 @@ export default function Page() {
           >
             <FaFacebook size={32} />
             <span>
-              Sign in with facebook
+              Sign in with Facebook
             </span>
           </button>
 
@@ -92,7 +92,7 @@ export default function Page() {
           >
             <FaApple size={32} />
             <span>
-              Sign in with apple
+              Sign in with Apple
             </span>
           </button>
         </div>
