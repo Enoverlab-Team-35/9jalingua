@@ -71,7 +71,7 @@ export default function Page() {
             <div className='mt-[52px] container mx-auto px-5 sm:px-10 pb-28 flex flex-col md:flex-row gap-8 md:gap-12 md:items-center'>
                 <div className='w-full md:max-w-[350px] md:aspect-square rounded-lg overflow-hidden'>
                     <Image
-                        src={'/unsplash.svg'}
+                        src={topic[0].img}
                         width={2500}
                         height={1666}
                         alt='Image'
