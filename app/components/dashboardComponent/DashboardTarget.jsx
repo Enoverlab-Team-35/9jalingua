@@ -16,7 +16,7 @@ export default function DashboardTarget() {
       </div>
 
       <div className="mt-8 sm:mt-6 px-6 sm:px-4 flex items-center gap-1">
-        <p className="font-bold text-xl text-grays-900">0</p>
+        <p className="font-bold text-xl text-grays-900">{topics.reduce((total, obj) => total + obj.progress, 0)}</p>
         <p className="text-grays-800">new words learned</p>
       </div>
 
