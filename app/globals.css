@@ -4,6 +4,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Scroll Bar */
+::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+    background: #0040804D;
+    border-radius: 100vw;
+    margin-block: 0.3em;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #004080B2;
+    border-radius: 100vw;
+}
+
+/* Progressive Bar */
 .progressiveBarContainer,
 .progressiveBarContainer * {
     height: 10px !important;
