@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { HiOutlineLightBulb } from "react-icons/hi";
 import ProgressBar from "@ramonak/react-progress-bar";
+import { useAppContext } from "@/app/context";
 
 export default function DashboardStreaks() {
-  const [percentage, setPercentage] = useState(0);
-  const [streakdays, setStreakDays] = useState(0);
+  const { streakdays } = useAppContext()
   return (
     <div className="border border-grays-200 rounded-lg shadow-sm pb-10 md:pb-3">
       <div className="flex items-center py-2 px-3 gap-[10px] border-b shadow-sm">
@@ -22,7 +22,7 @@ export default function DashboardStreaks() {
           <ProgressBar
             className="progressiveBarContainer flex-1 max-w-[550px] w-full rounded-full"
             customLabel={" "}
-            completed={50}
+            completed={(streakdays / 7) * 100}
           />
           <div className="flex gap-6 items-center">
             <p className="text-grays-400">{streakdays} days</p>
@@ -34,7 +34,7 @@ export default function DashboardStreaks() {
           <ProgressBar
             className="progressiveBarContainer flex-1 max-w-[550px] w-full rounded-full"
             customLabel={" "}
-            completed={50}
+            completed={(streakdays / 7) * 100}
           />
           <div className="flex gap-6 items-center">
             <p className="text-grays-400">{streakdays} days</p>

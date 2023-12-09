@@ -10,12 +10,13 @@ import React, { useState } from 'react'
 
 export default function Page() {
     const { lessonLanguage, lessonID, lessonName } = useParams()
-    const { topics, setTopics, lessons } = useAppContext();
+    const { topics, setTopics, lessons, setStreakDays } = useAppContext();
     const [topic, setTopic] = useState(topics.filter((item) => item.id === Number(lessonID)))
     const [load, setLoad] = useState(false)
 
     const onNext = () => {
         setLoad(true)
+        setStreakDays(1)
         window.scrollTo({
             top: 0,
             behavior: "smooth"

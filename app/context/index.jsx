@@ -8,7 +8,8 @@ export function AppContextProvider({ children }) {
   const [state, setState] = useState();
   const [sidebarVisible, setSidebarVisible] = useState(false)
   const [selectedLanguage, setSelectedLanguage] = useState("Yoruba");
-  const [lessons, setLessons] = useState([
+  const [streakdays, setStreakDays] = useState(0);
+  const lessons = [
     {
       from: "e kaaro",
       to: "Good morning"
@@ -21,7 +22,7 @@ export function AppContextProvider({ children }) {
       from: "e kaale",
       to: "Good night"
     },
-  ])
+  ]
   const [topics, setTopics] = useState([
     {
       id: 1,
@@ -59,7 +60,7 @@ export function AppContextProvider({ children }) {
 
 
   return (
-    <AppContext.Provider value={{ state, setState, sidebarVisible, setSidebarVisible, selectedLanguage, setSelectedLanguage, topics, setTopics, lessons }}>
+    <AppContext.Provider value={{ state, setState, sidebarVisible, setSidebarVisible, selectedLanguage, setSelectedLanguage, topics, setTopics, lessons, streakdays, setStreakDays }}>
       {children}
     </AppContext.Provider>
   );
