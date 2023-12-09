@@ -48,7 +48,10 @@ export default function DashboardStreaks() {
           Take a lesson to increase your streak days
         </p>
         <div className="ms-auto">
-          <Link className=" text-blues-1100 font-bold" href="#">
+          <Link
+            className=" text-blues-1100 font-bold"
+            href={`/interactive-lessons`}
+          >
             Take a lesson →
           </Link>
         </div>

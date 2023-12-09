@@ -28,9 +28,9 @@ export default function Page() {
     try {
       await signInWithPopup(auth, googleProvider);
       router.push("/select-language");
-      toast("Welcome");
+      toast.success("Welcome");
     } catch (error) {
-      toast(error.message)
+      toast.error(error.message)
       console.error(error.message);
     }
   };
@@ -40,9 +40,9 @@ export default function Page() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       router.push("/select-language");
-      toast("Welcome");
+      toast.success("Welcome");
     } catch (error) {
-      toast(error.message)
+      toast.error(error.message)
       console.error(error.message);
     }
   };

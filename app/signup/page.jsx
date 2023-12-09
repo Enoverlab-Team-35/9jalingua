@@ -30,9 +30,9 @@ export default function Page() {
     try {
       await signInWithPopup(auth, googleProvider);
       router.push("/dashboard");
-      toast("Congratulations, You have successfully signed up");
+      toast.success("Congratulations, You have successfully signed up");
     } catch (error) {
-      toast(error.message)
+      toast.error(error.message)
       setError(error.message);
     }
   };
@@ -41,9 +41,9 @@ export default function Page() {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       router.push("/dashboard");
-      toast("Congratulations, You have successfully signed up");
+      toast.success("Congratulations, You have successfully signed up");
     } catch (error) {
-      toast(error.message)
+      toast.error(error.message)
       setError(error.message);
     }
     event.preventDefault();

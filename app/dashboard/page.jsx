@@ -1,16 +1,19 @@
 "use client";
-import React, { useState } from "react";
+
+import React from "react";
 import { BsFileEarmarkCheck } from "react-icons/bs";
 import { BsCalendarDate } from "react-icons/bs";
 import "react-circular-progressbar/dist/styles.css";
 import DashboardLayout from "../layouts/DashboardLayout";
 import DashboardStreaks from "../components/dashboardComponent/DashboardStreaks";
-import Link from "next/link";
 import DashboardCalendar from "../components/dashboardComponent/DashboardCalendar";
 import DashboardTarget from "../components/dashboardComponent/DashboardTarget";
 import DashboardRewards from "../components/dashboardComponent/DashboardRewards";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
+  const router = useRouter()
+
   return (
     <DashboardLayout>
       <div className="mt-14 bg-greens-200 text-white rounded-lg w-full px-8 md:ps-3 md:pe-9 pb-12 md:pb-8">
@@ -30,7 +33,10 @@ export default function Page() {
               goals into achievements
             </p>
           </div>
-          <button className="bg-blues-1100 font-bold text-white rounded-lg py-4 px-8 wfull text-xl ">
+          <button
+            onClick={() => router.push(`/interactive-lessons`)}
+            className="bg-blues-1100 font-bold text-white rounded-lg py-4 px-8 wfull text-xl "
+          >
             Set Goals
           </button>
         </div>
@@ -50,7 +56,7 @@ export default function Page() {
           <DashboardCalendar />
         </div>
       </div>
-
+      {/* To Be refactor */}
       <div>
         <div className="flex border border-1 rounded mt-6 pb-2">
           <BsCalendarDate className="mt-5 ml-4" />
