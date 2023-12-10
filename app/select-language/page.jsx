@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
@@ -41,24 +41,22 @@ const language = [
 ];
 
 export default function Page() {
+  const [data, setData] = useState(language)
+  const [value, setValue] = useState()
   const { selectedLanguage, setSelectedLanguage } = useAppContext();
   const router = useRouter();
 
+  useEffect(() => {
+    if (value && value.trim().length !== 0) {
+      setData(language.filter(item => item.toLowerCase().includes(value.trim().toLowerCase())))
+    } else {
+      setData(language)
+    }
+  }, [value])
+
   const toggleLanguage = language => {
-    // // Check if the language is in the array
-    // const languageIndex = selectedLanguage.indexOf(language)
-
-    // if (languageIndex !== -1) {
-    //   // Language is the array, so remove it
-    //   const updatedLanguages = [...selectedLanguage]
-    //   updatedLanguages.splice(languageIndex, 1)
-    //   setSelectedLanguage(updatedLanguages)
-    // } else {
-    //   // Language is not in the array
-    //   setSelectedLanguage([...selectedLanguage, language])
-    // }
-
     setSelectedLanguage(language)
+    sessionStorage.setItem("language", language)
     toast.success(`You have selected ${language.toUpperCase()}`);
     router.push("/dashboard");
   }
@@ -97,7 +95,9 @@ export default function Page() {
               <input
                 type="search"
                 placeholder='Search Lession'
-                className='flex-auto py-[10px] ps-[14px] bg-white text-grays-600 w-full'
+                value={value}
+                onChange={e => setValue(e.target.value)}
+                className='flex-auto py-[10px] ps-[14px] bg-white text-grays-600 w-full focus-within:outline-none'
               />
               <button
                 className='py-[10px] pe-[14px]'
@@ -113,7 +113,7 @@ export default function Page() {
             </form>
           </div>
           <div className="flex flex-wrap justify-evenly gap-3 md:gap-x-12 gap-y-2">
-            {language?.map((item, index) => (
+            {data.length > 0 ? (data.map((item, index) => (
               <button
                 key={index}
                 onClick={() => toggleLanguage(item)}
@@ -122,7 +122,9 @@ export default function Page() {
               >
                 {item}
               </button>
-            ))}
+            ))) : (
+              <p className="text-grays-900"><span className="font-medium">{value.toUpperCase()}</span> not found, try another language</p>
+            )}
           </div>
           <button
             className="mt-28 ms-auto px-8 py-4 rounded-lg text-white bg-greens-300 flex place-items-center gap-2"

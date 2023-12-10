@@ -96,7 +96,7 @@ export default function Page() {
                     <input
                         type="search"
                         placeholder='Search Lession'
-                        className='flex-auto py-[10px] ps-[14px] bg-white text-grays-600 w-full'
+                        className='flex-auto py-[10px] ps-[14px] bg-white text-grays-600 w-full focus-within:outline-none'
                     />
                     <button
                         className='py-[10px] pe-[14px]'

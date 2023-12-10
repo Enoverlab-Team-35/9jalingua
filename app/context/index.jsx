@@ -1,13 +1,13 @@
 "use client";
 
-import { useContext, createContext, useState } from "react";
+import { useContext, createContext, useState, useEffect } from "react";
 
 export const AppContext = createContext({});
 
 export function AppContextProvider({ children }) {
   const [state, setState] = useState();
   const [sidebarVisible, setSidebarVisible] = useState(false)
-  const [selectedLanguage, setSelectedLanguage] = useState("Yoruba");
+  const [selectedLanguage, setSelectedLanguage] = useState();
   const [streakdays, setStreakDays] = useState(0);
   const lessons = [
     {
@@ -57,6 +57,17 @@ export function AppContextProvider({ children }) {
       total_lesson: lessons?.length
     },
   ])
+
+  useEffect(() => {
+    const sessionLanguage = sessionStorage.getItem("language")
+    const sessionTopics = sessionStorage.getItem("topics")
+    if (sessionLanguage) {
+      setSelectedLanguage(sessionLanguage)
+    }
+    if (sessionTopics) {
+      setTopics(JSON.parse(sessionTopics))
+    }
+  }, [])
 
 
   return (

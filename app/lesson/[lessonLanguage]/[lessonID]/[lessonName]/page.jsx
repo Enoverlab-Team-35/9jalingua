@@ -6,7 +6,7 @@ import ProgressBar from '@ramonak/react-progress-bar'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function Page() {
     const { lessonLanguage, lessonID, lessonName } = useParams()
@@ -14,7 +14,7 @@ export default function Page() {
     const [topic, setTopic] = useState(topics.filter((item) => item.id === Number(lessonID)))
     const [load, setLoad] = useState(false)
 
-    const onNext = () => {
+    const onNext = async () => {
         setLoad(true)
         setStreakDays(1)
         window.scrollTo({
@@ -26,13 +26,15 @@ export default function Page() {
                 setTopics((prev) => prev.map((item) => item.id === Number(lessonID) ?
                     { ...item, progress: item.progress + 1 } : item
                 ))
-                setTopic((prev) => prev.map((item) => item.id === Number(lessonID) ?
-                    { ...item, progress: item.progress + 1 } : item
-                ))
             }
             setLoad(false)
         }, 1000)
     }
+
+    useEffect(() => {
+        sessionStorage.setItem("topics", JSON.stringify(topics))
+        setTopic(topics.filter((item) => item.id === Number(lessonID)))
+    }, [topics])
 
     return (
         <>
