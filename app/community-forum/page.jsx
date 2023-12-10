@@ -122,9 +122,9 @@ export default function Page() {
                         {topics?.map((item, index) => (
                             <div
                                 key={index}
-                                className='flex items-center justify-between gap-8 outline outline-1 outline-grays-200 pe-[18px]'
+                                className='flex items-center justify-between gap-6 outline outline-1 outline-grays-200 pe-[18px]'
                             >
-                                <div className='flex items-center gap-6'>
+                                <div className='flex items-center gap-5 sm:gap-6'>
                                     <div className={`${item.bg} h-[55px] w-[9px]`}></div>
                                     <p className='text-grays-900 font-bold md:font-normal text-base md:text-xl'>{item.tip}</p>
                                 </div>
@@ -141,7 +141,7 @@ export default function Page() {
                         {latest?.map((item, index) => (
                             <div
                                 key={index}
-                                className='flex items-center gap-6 outline outline-1 outline-grays-200 ps-6 pe-[15px] py-4'
+                                className='flex items-center gap-5 sm:gap-6 outline outline-1 outline-grays-200 ps-5 sm:ps-6 pe-[15px] py-4'
                             >
                                 <div className='w-[69px] aspect-square'>
                                     <Image

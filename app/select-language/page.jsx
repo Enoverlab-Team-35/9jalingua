@@ -85,7 +85,7 @@ export default function Page() {
         </div>
       </nav>
 
-      <section className="min-h-screen h-full p-5 mt-36">
+      <section className="min-h-screen h-full p-5 mt-36 pb-20">
         <div className="container mx-auto">
           <h1 className="text-center text-[32px] sm:text-[40px] font-bold text-grays-900 mb-10">
             What Nigerian Language will you Like to learn?
@@ -112,13 +112,13 @@ export default function Page() {
               </button>
             </form>
           </div>
-          <div className="flex flex-wrap justify-evenly gap-3 md:gap-x-12 gap-y-2">
+          <div className="flex flex-wrap justify-evenly gap-5 md:gap-x-12 md:gap-y-2">
             {data.length > 0 ? (data.map((item, index) => (
               <button
                 key={index}
                 onClick={() => toggleLanguage(item)}
                 className={`${selectedLanguage === item ? "bg-greens-300" : "bg-blues-900"
-                  } text-white py-5 px-3 w-[151px] text-center rounded-lg font-arimo text-xl font-bold`}
+                  } text-white py-5 px-3 w-[100px] sm:w-[151px] text-center rounded-lg font-arimo text-xl font-bold`}
               >
                 {item}
               </button>
@@ -126,7 +126,7 @@ export default function Page() {
               <p className="text-grays-900"><span className="font-medium">{value.toUpperCase()}</span> not found, try another language</p>
             )}
           </div>
-          <button
+          {/* <button
             className="mt-28 ms-auto px-8 py-4 rounded-lg text-white bg-greens-300 flex place-items-center gap-2"
             onClick={() => {
               if (selectedLanguage) {
@@ -143,7 +143,7 @@ export default function Page() {
               height={20}
               alt="Next"
             />
-          </button>
+          </button> */}
         </div>
       </section>
     </>

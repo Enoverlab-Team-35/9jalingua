@@ -61,8 +61,12 @@ export function AppContextProvider({ children }) {
   useEffect(() => {
     const sessionLanguage = sessionStorage.getItem("language")
     const sessionTopics = sessionStorage.getItem("topics")
+    const sessionDays = sessionStorage.getItem("days")
     if (sessionLanguage) {
       setSelectedLanguage(sessionLanguage)
+    }
+    if (sessionDays) {
+      setStreakDays(sessionDays)
     }
     if (sessionTopics) {
       setTopics(JSON.parse(sessionTopics))

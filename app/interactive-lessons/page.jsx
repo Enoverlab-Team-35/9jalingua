@@ -55,7 +55,7 @@ export default function Page() {
                     {topics?.map((data, index) => (
                         <div
                             key={index}
-                            className="flex items-center gap-5 mx-[8px] border rounded-lg shadow border-grays-200"
+                            className="flex items-center sm:gap-5 mx-[8px] border rounded-lg shadow border-grays-200"
                         >
                             <div className="max-w-[213px] rounded-s-lg w-full h-full">
                                 <Image
@@ -66,7 +66,7 @@ export default function Page() {
                                     className="object-cover w-full rounded-s-lg h-full"
                                 />
                             </div>
-                            <div className="w-full p-6 my-auto ">
+                            <div className="w-full px-4 py-6 sm:px-6 my-auto ">
                                 <h4 className='text-xl font-bold text-black'>
                                     {data.heading}
                                 </h4>

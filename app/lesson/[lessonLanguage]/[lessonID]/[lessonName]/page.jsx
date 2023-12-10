@@ -17,6 +17,7 @@ export default function Page() {
     const onNext = async () => {
         setLoad(true)
         setStreakDays(1)
+        sessionStorage.setItem("days", 1)
         window.scrollTo({
             top: 0,
             behavior: "smooth"
