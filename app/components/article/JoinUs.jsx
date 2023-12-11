@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function JoinUs() {
     return (
-        <section className='mt-20 sm:mt-10 bg-greens-1000 px-5 py-16 md:py-28 font-arimo'>
+        <section className='mt-20 sm:mt-10 bg-greens-1000 px-5 py-16 md:py-28 font-arimo sm:mx-5 sm:rounded'>
             <div className='container mx-auto flex flex-col md:flex-row md:items-center md:gap-8 gap-14 justify-between'>
                 <div>
                     <h4 className='text-greens-200 text-2xl font-bold'>Join us on this transformative exploration</h4>

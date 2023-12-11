@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import { useRouter } from "next/navigation";
 
 const Video = [
     {
@@ -20,6 +21,8 @@ const Video = [
 ]
 
 export default function VideoLibrary() {
+  const router = useRouter()
+
     return (
         <section className='mt-[86px] font-arimo'>
             <div className='container mx-auto bg-greens-1100 px-5 pt-16 pb-[118px]'>
@@ -40,7 +43,10 @@ export default function VideoLibrary() {
                                     alt={item.name}
                                 />
                             </div>
-                            <h4 className='mt-8 font-bold text-xl text-grays-1000'>
+                            <h4 
+                                onClick={() => router.push(`/articles/${index}/${item.title}`)}
+                                className='mt-8 font-bold text-xl text-grays-1000 cursor-pointer'
+                            >
                                 {item.name}
                             </h4>
                             <p className='mt-6 text-grays-800 text-xl leading-relaxed'>

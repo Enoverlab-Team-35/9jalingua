@@ -46,7 +46,10 @@ export default function Linguistics() {
                                     alt='Waves'
                                 />
                             </button>
-                            <h4 className='mt-8 text-blues-1100 font-bold text-xl'>
+                            <h4 
+                                onClick={() => router.push(`/articles/${index}/${item.title}`)}
+                                className='mt-8 text-blues-1100 font-bold text-xl cursor-pointer'
+                            >
                                 {item.name}
                             </h4>
                             <p className='mt-6 text-grays-800 text-xl leading-relaxed'>
