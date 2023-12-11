@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import { useRouter } from "next/navigation";
 
 const events = [
     {
@@ -20,6 +21,7 @@ const events = [
 ]
 
 export default function Explore() {
+  const router = useRouter()
     return (
         <section className='px-5 bg-greens-1100 mt-24 pt-16 pb-[86px] font-arimo'>
             <div className="container mx-auto">
@@ -41,7 +43,10 @@ export default function Explore() {
                                     alt={item.name}
                                 />
                             </div>
-                            <h3 className='mt-6 text-greens-200 text-xl font-bold'>
+                            <h3 
+                                onClick={() => router.push(`/articles/${index}/${item.title}`)}
+                                className='mt-6 text-greens-200 text-xl font-bold cursor-pointer'
+                            >
                                 {item.name}
                             </h3>
                             <p className='mt-6 text-grays-800 text-xl leading-relaxed'>

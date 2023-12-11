@@ -22,7 +22,7 @@ const article = [
 
 export default function Articles() {
     return (
-        <section className='mt-24 px-5'>
+        <section className='mt-24'>
             <div className='container mx-auto font-arimo p-[10px]'>
                 <div className='w-full  text-center'>
                     <h1 className='text-greens-200 text-[32px] sm:text-5xl font-bold leading-relaxed'>
@@ -54,7 +54,7 @@ export default function Articles() {
                                 <div className='mt-10'>
                                     <Link
                                         href={`/articles/${index}/${item.title}`}
-                                        className='text-blues-1100'
+                                        className='text-green-500'
                                     >
                                         Read more
                                     </Link>
