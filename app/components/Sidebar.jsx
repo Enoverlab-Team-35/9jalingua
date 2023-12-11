@@ -64,9 +64,9 @@ export default function Sidebar() {
     try {
       await signOut(auth);
       router.push("/");
-      toast.error("sign out successfully");
+      toast.info("sign out successfully");
     } catch (error) {
-      toast(error.message);
+      toast.error(error.message);
       console.error(error.message);
     }
   };

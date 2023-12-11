@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import Image from "next/image";
+import { useAppContext } from "@/app/context";
 
 export default function DashboardCalendar() {
   const [value, setValue] = useState(new Date());
-  const [days, setDays] = useState(0);
+  const { streakdays } = useAppContext()
 
   function onChange(nextValue) {
     setValue(nextValue);
@@ -35,7 +36,7 @@ export default function DashboardCalendar() {
           width={20}
           alt="Progress"
         />
-        <h1 className="font-bold text-grays-900">{days} Days with learning progress</h1>
+        <h1 className="font-bold text-grays-900">{streakdays} Days with learning progress</h1>
       </div>
     </div>
   );
