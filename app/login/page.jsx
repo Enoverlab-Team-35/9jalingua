@@ -14,7 +14,6 @@ import {
   googleProvider,
 } from "../firebase/config";
 import Link from "next/link";
-import Image from 'next/image';
 import { Loading } from '../components/SvgsComponent';
 import { toast } from 'react-toastify';
 
