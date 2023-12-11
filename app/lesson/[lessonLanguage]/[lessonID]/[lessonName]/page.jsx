@@ -1,39 +1,46 @@
 "use client"
 
+import { Loading } from '@/app/components/SvgsComponent'
 import { useAppContext } from '@/app/context'
 import ProgressBar from '@ramonak/react-progress-bar'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function Page() {
     const { lessonLanguage, lessonID, lessonName } = useParams()
-    const { topics, setTopics, lessons } = useAppContext();
+    const { topics, setTopics, lessons, setStreakDays } = useAppContext();
     const [topic, setTopic] = useState(topics.filter((item) => item.id === Number(lessonID)))
-    const [sliceIndex, setSliceIndex] = useState(1)
-    // console.log(lessons.slice((sliceIndex - 1), sliceIndex))
-    console.log(topic)
-    // console.log(lessonLanguage, lessonID, lessonName)
-    // console.log(decodeURI(params.articleNAME))
+    const [load, setLoad] = useState(false)
 
-    const onNext = () => {
-        if (topic[0].progress < lessons.length) {
-            // setSliceIndex(sliceIndex + 1)
-            setTopics((prev) => prev.map((item) => item.id === Number(lessonID) ?
-                {...item, progress: item.progress + 1}: item
-            ))
-            setTopic((prev) => prev.map((item) => item.id === Number(lessonID) ?
-                {...item, progress: item.progress + 1}: item
-            ))
-        }
+    const onNext = async () => {
+        setLoad(true)
+        setStreakDays(1)
+        sessionStorage.setItem("days", 1)
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+        setTimeout(() => {
+            if (topic[0].progress < lessons.length) {
+                setTopics((prev) => prev.map((item) => item.id === Number(lessonID) ?
+                    { ...item, progress: item.progress + 1 } : item
+                ))
+            }
+            setLoad(false)
+        }, 1000)
     }
 
+    useEffect(() => {
+        sessionStorage.setItem("topics", JSON.stringify(topics))
+        setTopic(topics.filter((item) => item.id === Number(lessonID)))
+    }, [topics])
 
     return (
         <>
             {/* Nav */}
-            <nav className='px-5 py-4 shadow-md'>
+            <nav className='fixed top-0 left-0 w-full bg-white px-5 py-4 shadow-md z-10'>
                 <div className="container mx-auto flex items-center justify-between gap-5">
                     <button className='py-3 px-6 rounded-lg border border-grays-500 shadow-sm font-bold text-grays-900 text-base font-arimo cursor-auto'>
                         {lessonLanguage}
@@ -52,8 +59,11 @@ export default function Page() {
                 </div>
             </nav>
 
+            {/* Break the Margin */}
+            <div className='mt-32'></div>
+
             {/* Progress Bar */}
-            <div className='mt-12 container mx-auto px-5 sm:px-10'>
+            <div className='container mx-auto px-5 sm:px-10'>
                 <ProgressBar
                     className="rounded-full lessonBarContainer"
                     customLabel={" "}
@@ -65,7 +75,7 @@ export default function Page() {
             <div className='mt-[52px] container mx-auto px-5 sm:px-10 pb-28 flex flex-col md:flex-row gap-8 md:gap-12 md:items-center'>
                 <div className='w-full md:max-w-[350px] md:aspect-square rounded-lg overflow-hidden'>
                     <Image
-                        src={'/unsplash.svg'}
+                        src={topic[0].img}
                         width={2500}
                         height={1666}
                         alt='Image'
@@ -110,6 +120,13 @@ export default function Page() {
                     </button>
                 </div>
             </div>
+
+            {/* Loading State */}
+            {load && (
+                <div className='fixed top-0 left-0 z-20 w-screen h-screen flex justify-center items-center bg-[#ffffff75]'>
+                    <Loading color={"#004080"} size={"56px"} />
+                </div>
+            )}
         </>
     )
 }

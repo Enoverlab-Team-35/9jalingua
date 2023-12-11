@@ -4,6 +4,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Scroll Bar */
+::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+    background: #0040804D;
+    border-radius: 100vw;
+    margin-block: 0.3em;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #004080B2;
+    border-radius: 100vw;
+}
+
+/* Progressive Bar */
 .progressiveBarContainer,
 .progressiveBarContainer * {
     height: 10px !important;
@@ -56,11 +73,16 @@ abbr:where([title]) {
     font-family: "Arimo", sans-serif !important;
     font-size: 1rem !important;
     color: #0D0D0DCC !important;
-    border-radius: 8px;
+    border-radius: 9999px;
+    aspect-ratio: 1 /1 !important;
 }
 
 .react-calendar__month-view__days__day--neighboringMonth {
     color: #0D0D0D4D !important;
+}
+
+.react-calendar__tile--now {
+    background: #0080001A !important;
 }
 
 .react-calendar__tile--active {

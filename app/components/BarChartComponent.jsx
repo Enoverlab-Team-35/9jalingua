@@ -1,7 +1,7 @@
 "use client"
 
 import React, { PureComponent } from 'react'
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, CartesianAxis, ResponsiveContainer, Legend } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer, Legend } from "recharts";
 
 const data = [
   {

@@ -1,14 +1,15 @@
 "use client";
 
-import { useContext, createContext, useState } from "react";
+import { useContext, createContext, useState, useEffect } from "react";
 
 export const AppContext = createContext({});
 
 export function AppContextProvider({ children }) {
   const [state, setState] = useState();
   const [sidebarVisible, setSidebarVisible] = useState(false)
-  const [selectedLanguage, setSelectedLanguage] = useState("Yoruba");
-  const [lessons, setLessons] = useState([
+  const [selectedLanguage, setSelectedLanguage] = useState();
+  const [streakdays, setStreakDays] = useState(0);
+  const lessons = [
     {
       from: "e kaaro",
       to: "Good morning"
@@ -21,7 +22,7 @@ export function AppContextProvider({ children }) {
       from: "e kaale",
       to: "Good night"
     },
-  ])
+  ]
   const [topics, setTopics] = useState([
     {
       id: 1,
@@ -57,9 +58,24 @@ export function AppContextProvider({ children }) {
     },
   ])
 
+  useEffect(() => {
+    const sessionLanguage = sessionStorage.getItem("language")
+    const sessionTopics = sessionStorage.getItem("topics")
+    const sessionDays = sessionStorage.getItem("days")
+    if (sessionLanguage) {
+      setSelectedLanguage(sessionLanguage)
+    }
+    if (sessionDays) {
+      setStreakDays(sessionDays)
+    }
+    if (sessionTopics) {
+      setTopics(JSON.parse(sessionTopics))
+    }
+  }, [])
+
 
   return (
-    <AppContext.Provider value={{ state, setState, sidebarVisible, setSidebarVisible, selectedLanguage, setSelectedLanguage, topics, setTopics, lessons }}>
+    <AppContext.Provider value={{ state, setState, sidebarVisible, setSidebarVisible, selectedLanguage, setSelectedLanguage, topics, setTopics, lessons, streakdays, setStreakDays }}>
       {children}
     </AppContext.Provider>
   );

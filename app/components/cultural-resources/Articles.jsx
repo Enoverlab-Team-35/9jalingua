@@ -47,7 +47,7 @@ export default function Articles() {
                                     alt={item.title}
                                 />
                             </div>
-                            <div className='mt-8 mb-12 mx-auto w-full max-w-[330px]'>
+                            <div className='mt-8 mb-12 px-4 sm:px-0 mx-auto w-full max-w-[330px]'>
                                 <h3 className='text-xl font-bold text-[#5C5C5C]'>
                                     {item.title}
                                 </h3>
