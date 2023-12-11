@@ -11,7 +11,6 @@ import { toast } from 'react-toastify';
 import ProgressBar from '@ramonak/react-progress-bar';
 import { useAppContext } from '../context';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 
 export default function Page() {
     const { topics, selectedLanguage } = useAppContext();
@@ -41,7 +40,9 @@ export default function Page() {
                         <input
                             type="search"
                             placeholder='Search Lession'
-                            className='flex-auto py-[10px] ps-[14px] bg-white text-grays-600 w-full focus-within:outline-none'
+                            value={searchTerm}
+                            onChange={handleSearchChange}
+                            className='flex-auto py-[10px] ps-[14px] bg-white text-grays-600 w-full'
                         />
                         <button
                             className='py-[10px] pe-[14px]'
@@ -68,7 +69,7 @@ export default function Page() {
                         return (
                         <div
                             key={index}
-                            className="flex items-center sm:gap-5 mx-[8px] border rounded-lg shadow border-grays-200"
+                            className="flex items-center gap-5 mx-[8px] border rounded-lg shadow border-grays-200"
                         >
                             <div className="max-w-[213px] rounded-s-lg w-full h-full">
                                 <Image
@@ -79,7 +80,7 @@ export default function Page() {
                                     className="object-cover w-full rounded-s-lg h-full"
                                 />
                             </div>
-                            <div className="w-full px-4 py-6 sm:px-6 my-auto ">
+                            <div className="w-full p-6 my-auto ">
                                 <h4 className='text-xl font-bold text-black'>
                                     {data.heading}
                                 </h4>
@@ -100,12 +101,12 @@ export default function Page() {
                                 )}
 
                                 <div className='mt-6 flex lg:justify-end'>
-                                    <Link
-                                        href={`/lesson/${selectedLanguage}/${data.id}/${data.heading}`}
+                                    <button
                                         className={`px-4 py-3 font-bold rounded-lg border border-blues-1000 text-blues-1000 ${data.progress > 0 && 'px-7 bg-blues-1000 text-white'}`}
+                                        onClick={() => router.push(`/lesson/${selectedLanguage}/${data.id}/${data.heading}`)}
                                     >
                                         {data.progress > 0 ? "Continue" : "Take Lesson"}
-                                    </Link>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -127,6 +128,7 @@ export default function Page() {
                         </div>
                         <div className='flex justify-end mt-6'>
                             <button
+                                onClick={() => router.push(`/lesson/${selectedLanguage}/${data.id}/${data.heading}`)}
                                 className='flex items-center gap-1'
                             >
                                 <span className='font-bold text-blues-1100'>Take Lesson</span>
