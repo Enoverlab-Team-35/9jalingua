@@ -10,8 +10,10 @@ import DashboardCalendar from "../components/dashboardComponent/DashboardCalenda
 import DashboardTarget from "../components/dashboardComponent/DashboardTarget";
 import DashboardRewards from "../components/dashboardComponent/DashboardRewards";
 import { useRouter } from "next/navigation";
+import { useAppContext } from "../context";
 
 export default function Page() {
+  const { topics } = useAppContext()
   const router = useRouter()
 
   return (
@@ -29,15 +31,14 @@ export default function Page() {
               Achieve your language learning goals
             </h2>
             <p className="mt-4">
-              Embark on your language learning journey with us and turn your
-              goals into achievements
+              {topics.reduce((total, obj) => total + obj.progress, 0) > 0 ? `Increase your word count to reach your language mastery target` : `Embark on your language learning journey with us and turn your goals into achievements`}
             </p>
           </div>
           <button
             onClick={() => router.push(`/interactive-lessons`)}
             className="bg-blues-1100 font-bold text-white rounded-lg py-4 px-8 wfull text-xl "
           >
-            Set Goals
+            {topics.reduce((total, obj) => total + obj.progress, 0) > 0 ? "Continue Learning" : "Set Goals"}
           </button>
         </div>
       </div>

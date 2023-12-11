@@ -1,8 +1,29 @@
-import React from 'react'
+"use client"
+
+import React, { useEffect } from 'react'
 import Sidebar from '../components/Sidebar'
 import DashboardNavbar from '../components/DashboardNavbar'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../firebase/config';
+import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
+import { useAppContext } from '../context';
 
 export default function DashboardLayout({ children }) {
+    const [user, loading] = useAuthState(auth);
+    const { selectedLanguage } = useAppContext();
+    const router = useRouter()
+
+    useEffect(() => {
+        if (!user && !loading) {
+            router.push('/login')
+            toast.warning("Please Login");
+        }
+        if (!selectedLanguage && !loading) {
+            router.push('/select-language')
+            toast.warning("Please Select Language to learn");
+        }
+    }, [user, loading, selectedLanguage])
     return (
         <div className='relative font-arimo flex h-screen overflow-hidden m-0 p-0'>
             <Sidebar />
