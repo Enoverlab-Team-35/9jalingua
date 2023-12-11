@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react'
+import React, {useState} from 'react'
 import Image from 'next/image'
 import DashboardLayout from '../layouts/DashboardLayout';
 import { auth } from "../firebase/config";
@@ -16,11 +16,19 @@ import Link from 'next/link';
 export default function Page() {
     const { topics, selectedLanguage } = useAppContext();
     const [user, loading] = useAuthState(auth);
+    const [searchTerm, setSearchTerm] = useState('');
     const router = useRouter()
 
     function onSearch(e) {
         e.preventDefault()
     }
+
+    // Handle search input change
+    function handleSearchChange(event) {
+        const searchTerm = event.target.value;
+        setSearchTerm(searchTerm);
+    }
+
     return (
         <DashboardLayout>
             {/* Name and Forms */}
@@ -52,7 +60,12 @@ export default function Page() {
 
             <div className="mt-[40px] flex flex-col items-start justify-between w-full xl:flex-row gap-10 xl:gap-8 2xl:gap-20">
                 <div className="w-full xl:max-w-[699px] 2xl:max-w-full grid gap-6">
-                    {topics?.map((data, index) => (
+                    {topics?.map((data, index) => {
+                        if (
+                            data.heading.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                            searchTerm === ''
+                        ){
+                        return (
                         <div
                             key={index}
                             className="flex items-center sm:gap-5 mx-[8px] border rounded-lg shadow border-grays-200"
@@ -96,7 +109,10 @@ export default function Page() {
                                 </div>
                             </div>
                         </div>
-                    ))}
+                        );
+                      }
+                    })}
+
                 </div>
 
                 <div className="w-full xl:max-w-[354px]">
