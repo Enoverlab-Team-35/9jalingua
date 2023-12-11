@@ -24,7 +24,7 @@ export default function Page() {
 
     // Handle search input change
     function handleSearchChange(e) {
-        const searchValue = e.target.value;
+        const searchTerm = e.target.value;
         setSearchTerm(searchTerm);
     }
 
@@ -40,7 +40,7 @@ export default function Page() {
                         <input
                             type="search"
                             placeholder='Search Lession'
-                            value={searchValue}
+                            value={searchTerm}
                             onChange={handleSearchChange}
                             className='flex-auto py-[10px] ps-[14px] bg-white text-grays-600 w-full'
                         />
@@ -63,7 +63,7 @@ export default function Page() {
                 <div className="w-full xl:max-w-[699px] 2xl:max-w-full grid gap-6">
                     {topics?.map((data, index) => {
                         if (
-                            data.heading.toLowerCase().includes(searchValue.toLowerCase()) ||
+                            data.heading.toLowerCase().includes(searchTerm.toLowerCase()) ||
                             searchTerm === ''
                         ){
                         return (
