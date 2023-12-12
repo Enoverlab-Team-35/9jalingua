@@ -33,7 +33,7 @@ export default function VideoLibrary() {
                     {Video?.map((item, index) => (
                         <div
                             key={index}
-                            className='w-full max-w-[382px]'
+                            className='w-full sm:max-w-[382px]'
                         >
                             <div>
                                 <Image
