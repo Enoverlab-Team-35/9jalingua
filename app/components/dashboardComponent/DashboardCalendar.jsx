@@ -30,12 +30,20 @@ export default function DashboardCalendar() {
         />
       </div>
       <div className="flex px-[14px] py-2 gap-2 items-center rounded-b-lg">
+        {streakdays > 0 ? 
         <Image
-          src={'/svgs/Progress.svg'}
+          src={'/svgs/placeholder2.svg'}
+          height={20}
+          width={20}
+          alt="Progress"
+        /> : 
+        <Image
+          src={'/svgs/placeholder.svg'}
           height={20}
           width={20}
           alt="Progress"
         />
+        }
         <h1 className="font-bold text-grays-900">{streakdays} Days with learning progress</h1>
       </div>
     </div>

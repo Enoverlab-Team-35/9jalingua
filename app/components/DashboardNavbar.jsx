@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
 export default function DashboardNavbar() {
+  const { topics } = useAppContext()
     const pathname = usePathname();
     const { setSidebarVisible, selectedLanguage } = useAppContext()
     const [isLanguageVisible, setIsLanguageVisible] = useState(false)
@@ -110,7 +111,7 @@ export default function DashboardNavbar() {
                             alt='drop down'
                         />
                         <span className='font-bold'>
-                            0
+                            {topics.reduce((total, obj) => total + obj.progress, 0)}
                         </span>
                     </div>
                 )}
