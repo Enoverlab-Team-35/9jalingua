@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import { useRouter } from "next/navigation";
 
 const linguistic = [
     {
@@ -20,6 +21,7 @@ const linguistic = [
 ]
 
 export default function Linguistics() {
+  const router = useRouter()
     return (
         <section className='mt-24 font-arimo px-5'>
             <div className="container mx-auto">
