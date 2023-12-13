@@ -18,12 +18,13 @@ export default function DashboardLayout({ children }) {
         if (!user && !loading) {
             router.push('/login')
             toast.warning("Please Login");
-        }
-        if (!selectedLanguage && !loading) {
+            return
+        } else if (!selectedLanguage && !loading) {
             router.push('/select-language')
             toast.warning("Please Select Language to learn");
+            return
         }
-    }, [user, loading, selectedLanguage])
+    }, [loading])
     return (
         <div className='relative font-arimo flex h-screen overflow-hidden m-0 p-0'>
             <Sidebar />

@@ -57,8 +57,6 @@ export default function Sidebar() {
     };
   }, []);
 
-  const toggle = () => setIsOpen(!isOpen);
-
   const logout = async (e) => {
     e.preventDefault();
     try {

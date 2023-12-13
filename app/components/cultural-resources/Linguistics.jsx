@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 import { useRouter } from "next/navigation";
 
@@ -21,7 +22,7 @@ const linguistic = [
 ]
 
 export default function Linguistics() {
-  const router = useRouter()
+    const router = useRouter()
     return (
         <section className='mt-24 font-arimo px-5'>
             <div className="container mx-auto">
@@ -40,7 +41,10 @@ export default function Linguistics() {
                             key={index}
                             className='flex-auto md:max-w-[318px] w-full'
                         >
-                            <button className='p-[13px] rounded-full bg-greens-900 w-[76px] sm:w-[105px] aspect-square'>
+                            <button
+                                onClick={() => router.push(`/articles/${index}/${item.title}`)}
+                                className='p-[13px] rounded-full bg-greens-900 w-[76px] sm:w-[105px] aspect-square'
+                            >
                                 <Image
                                     src={item.img}
                                     width={80}
@@ -48,7 +52,7 @@ export default function Linguistics() {
                                     alt='Waves'
                                 />
                             </button>
-                            <h4 
+                            <h4
                                 onClick={() => router.push(`/articles/${index}/${item.title}`)}
                                 className='mt-8 text-blues-1100 font-bold text-xl cursor-pointer'
                             >

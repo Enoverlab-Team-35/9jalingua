@@ -21,7 +21,7 @@ const events = [
 ]
 
 export default function Explore() {
-  const router = useRouter()
+    const router = useRouter()
     return (
         <section className='px-5 bg-greens-1100 mt-24 pt-16 pb-[86px] font-arimo'>
             <div className="container mx-auto">
@@ -33,7 +33,7 @@ export default function Explore() {
                     {events?.map((item, index) => (
                         <div
                             key={index}
-                            className='w-full max-w-[385px]'
+                            className='w-full sm:max-w-[385px]'
                         >
                             <div>
                                 <Image
@@ -43,7 +43,7 @@ export default function Explore() {
                                     alt={item.name}
                                 />
                             </div>
-                            <h3 
+                            <h3
                                 onClick={() => router.push(`/articles/${index}/${item.title}`)}
                                 className='mt-6 text-greens-200 text-xl font-bold cursor-pointer'
                             >
