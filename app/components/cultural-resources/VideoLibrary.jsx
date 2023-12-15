@@ -21,12 +21,15 @@ const Video = [
 ]
 
 export default function VideoLibrary() {
-  const router = useRouter()
+    const router = useRouter()
 
     return (
         <section className='mt-[86px] font-arimo'>
             <div className='container mx-auto bg-greens-1100 px-5 pt-16 pb-[118px]'>
-                <h1 className='text-center text-greens-200 font-bold text-[32px] sm:text-5xl leading-normal'>
+                <h1
+                    className='text-center text-greens-200 font-bold text-[32px] sm:text-5xl leading-normal'
+                    data-aos="zoom-in"
+                >
                     Video Library
                 </h1>
                 <div className='mt-12 flex flex-wrap justify-evenly gap-x-6 gap-y-14'>
@@ -34,6 +37,8 @@ export default function VideoLibrary() {
                         <div
                             key={index}
                             className='w-full sm:max-w-[382px]'
+                            data-aos="flip-up"
+                            data-aos-delay={(index * 100) + 100}
                         >
                             <div>
                                 <Image
@@ -43,7 +48,7 @@ export default function VideoLibrary() {
                                     alt={item.name}
                                 />
                             </div>
-                            <h4 
+                            <h4
                                 onClick={() => router.push(`/articles/${index}/${item.title}`)}
                                 className='mt-8 font-bold text-xl text-grays-1000 cursor-pointer'
                             >

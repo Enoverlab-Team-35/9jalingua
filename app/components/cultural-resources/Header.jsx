@@ -7,7 +7,10 @@ export default function Header() {
         <header className="bg-blues-100 px-5 py-20">
             <div className="mx-auto container flex flex-col lg:flex-row lg:items-center justify-between gap-20 lg:gap-32">
                 {/* Text */}
-                <div className='max-w-[345px] sm:max-w-[554px] w-full'>
+                <div
+                    className='max-w-[345px] sm:max-w-[554px] w-full'
+                    data-aos="fade-right"
+                >
                     <h1 className='font-bold font-arimo text-blues-1100 text-[44px] sm:text-[56px]'>
                         Discover the Rich Tapestry of Nigeria
                     </h1>
@@ -24,7 +27,11 @@ export default function Header() {
                     </div>
                 </div>
                 {/* Image */}
-                <div className='w-full lg:w-auto flex-auto'>
+                <div
+                    className='w-full lg:w-auto flex-auto'
+                    data-aos="fade-left"
+                    data-aos-delay="100"
+                >
                     <Image
                         src={'/cultural-resources/cottonbro.svg'}
                         width={1880}
