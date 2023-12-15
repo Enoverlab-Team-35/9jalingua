@@ -26,10 +26,16 @@ export default function Testimonial() {
     return (
         <section className="mt-24">
             <div className="container mx-auto px-5 font-arimo">
-                <h5 className='text-greens-100 text-xl text-center'>
+                <h5
+                    data-aos="zoom-in"
+                    className='text-greens-100 text-xl text-center'
+                >
                     Testimonial
                 </h5>
-                <h1 className="mt-8 text-blues-1100 text-[32px] sm:text-5xl font-bold text-center">
+                <h1
+                    data-aos="zoom-in"
+                    className="mt-8 text-blues-1100 text-[32px] sm:text-5xl font-bold text-center"
+                >
                     Hear from our Happy Users
                 </h1>
 
@@ -37,6 +43,8 @@ export default function Testimonial() {
                     {testimonials?.map((item, index) => (
                         <div
                             key={index}
+                            data-aos="flip-up"
+                            data-aos-delay={(index * 100) + 100}
                             className={`w-full max-w-[387px] py-10 px-7 rounded-lg ${(index + 1) % 2 === 0 ? 'bg-greens-300 text-white' : 'bg-greens-1100 text-grays-600'}`}
                         >
                             <div className='flex place-items-center gap-6'>

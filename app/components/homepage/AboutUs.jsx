@@ -6,7 +6,10 @@ export default function AboutUs() {
         <section className='mt-24'>
             <div className="container mx-auto px-5 flex flex-col lg:flex-row justify-between gap-20 items-center">
                 {/* Image */}
-                <div className='w-full lg:w-auto flex-auto'>
+                <div
+                    data-aos="flip-left"
+                    className='w-full lg:w-auto flex-auto'
+                >
                     <Image
                         src={'/Frame25.png'}
                         width={1880}
@@ -16,7 +19,11 @@ export default function AboutUs() {
                     />
                 </div>
                 {/* Text */}
-                <div className='lg:max-w-[657px] w-full'>
+                <div
+                    className='lg:max-w-[657px] w-full'
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                >
                     <h1 className="font-arimo text-blues-1100 font-bold text-[32px] sm:text-5xl">
                         About Us
                     </h1>

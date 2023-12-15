@@ -5,7 +5,7 @@ const language = ["Yoruba", "Igbo", "Hausa", "Efik", "Ibibio", "Bini"]
 
 export default function Languages() {
     return (
-        <section className="mt-24 px-5">
+        <section className="mt-24 px-5" data-aos="fade-right">
             <div className="container mx-auto text-center">
                 <h1 className="font-arimo text-[32px] sm:text-5xl font-bold text-blues-1100 leading-relaxed">
                     Explore the Variety of languages you can learn

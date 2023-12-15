@@ -25,12 +25,17 @@ export default function Insights() {
         <section className="relative my-24 py-20">
             <div className='absolute z-[-1] top-0 left-0 w-full max-w-[720px] h-full bg-blues-200'></div>
             <div className="container mx-auto px-5">
-                <h1 className="font-bold text-[32px] sm:text-5xl text-blues-1100 text-center md:text-left">
+                <h1
+                    data-aos="fade-right"
+                    className="font-bold text-[32px] sm:text-5xl text-blues-1100 text-center md:text-left"
+                >
                     Explore Insights
                 </h1>
                 <div className="flex flex-wrap justify-around xl:justify-between gap-6">
                     {insights?.map((item, index) => (
                         <div
+                            data-aos="flip-left"
+                            data-aos-delay={(index * 100) + 100}
                             key={index}
                             className="w-full max-w-[385px] mt-10 rounded-lg bg-white shadow-lg overflow-hidden"
                         >

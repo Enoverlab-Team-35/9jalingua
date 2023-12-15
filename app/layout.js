@@ -3,6 +3,7 @@ import "./globals.css";
 import { AppContextProvider } from "./context";
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import 'aos/dist/aos.css'
 
 const inter = Inter({ subsets: ["latin"] });
 

@@ -34,7 +34,10 @@ export default function Features() {
     return (
         <section className="bg-greens-1100 py-20 px-5">
             <div className="mx-auto container text-center">
-                <h1 className="font-arimo text-[32px] sm:text-5xl text-blues-1100 font-bold">
+                <h1
+                    className="font-arimo text-[32px] sm:text-5xl text-blues-1100 font-bold"
+                    data-aos="zoom-in"
+                >
                     Unleash Our Features
                 </h1>
                 {/* Features */}
