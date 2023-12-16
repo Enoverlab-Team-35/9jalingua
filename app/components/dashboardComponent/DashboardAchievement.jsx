@@ -1,16 +1,39 @@
 "use client"
 
-import { React, useState } from "react";
-import Image from "next/image";
-import { BsCalendarDate } from "react-icons/bs";
-import { IoMdTrophy } from "react-icons/io";
-import { IoIosArrowDown } from "react-icons/io";
+import { React, useEffect, useState } from "react";
 import { AchievementsSVG, DiamondSVG, PearlSVG, RubySVG, TrophySVG } from "../SvgsComponent";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { useAppContext } from "@/app/context";
 
 export default function DashboardAchievement() {
-  const { streakdays } = useAppContext()
+  const { streakdays, topics } = useAppContext()
+  const [highestProgressTopic, setHighestProgressTopic] = useState(null)
+
+  useEffect(() => {
+    setHighestProgressTopic(topics.reduce((maxProgressTopic, currentTopic) => {
+      return currentTopic.progress > maxProgressTopic.progress ? currentTopic : maxProgressTopic;
+    }, topics[0]))
+  }, [topics])
+
+  const targetDate = new Date();
+
+  function calculateTimeDifference() {
+
+    // Get the current time
+    const currentDate = new Date();
+
+    // Calculate the time difference in milliseconds
+    const timeDifferenceMillis = currentDate - targetDate;
+
+    // Convert milliseconds to hours
+    const timeDifferenceHours = timeDifferenceMillis / (1000 * 60 * 60);
+
+    return timeDifferenceHours;
+  }
+
+  setInterval(() => {
+    console.log(calculateTimeDifference())
+  }, 5000 * 60);
 
   return (
     <div>
@@ -38,10 +61,15 @@ export default function DashboardAchievement() {
                     <ProgressBar
                       className="progressiveBarContainer w-full rounded-full"
                       customLabel={" "}
-                      completed={40}
+                      completed={highestProgressTopic ? (
+                        Math.floor((highestProgressTopic.progress / highestProgressTopic.total_lesson) * 100)
+                      ): 0}
+                      // highestProgressTopic?.total_lesson
                     />
                     <span className="font-bold text-grays-900">
-                      40%
+                      {highestProgressTopic ? (
+                        Math.floor((highestProgressTopic.progress / highestProgressTopic.total_lesson) * 100)
+                      ) : 0}%
                     </span>
                   </div>
                 </div>
