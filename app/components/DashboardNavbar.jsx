@@ -105,12 +105,6 @@ export default function DashboardNavbar() {
                     </div>
                 ) : (
                     <div className='flex gap-2 items-center'>
-                        {/* <Image
-                            src={'/svgs/Flame.svg'}
-                            width={24}
-                            height={24}
-                            alt='drop down'
-                        /> */}
                         <StreakSVG color={topics.reduce((total, obj) => total + obj.progress, 0) > 0 && "#004080E5"} />
                         <span className='font-bold'>
                             {topics.reduce((total, obj) => total + obj.progress, 0)}

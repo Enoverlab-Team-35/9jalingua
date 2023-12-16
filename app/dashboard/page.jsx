@@ -11,6 +11,7 @@ import DashboardTarget from "../components/dashboardComponent/DashboardTarget";
 import DashboardRewards from "../components/dashboardComponent/DashboardRewards";
 import { useRouter } from "next/navigation";
 import { useAppContext } from "../context";
+import DashboardAchievement from "../components/dashboardComponent/DashboardAchievement";
 
 export default function Page() {
   const { topics } = useAppContext()
@@ -31,14 +32,20 @@ export default function Page() {
               Achieve your language learning goals
             </h2>
             <p className="mt-4">
-              {topics.reduce((total, obj) => total + obj.progress, 0) > 0 ? `Increase your word count to reach your language mastery target` : `Embark on your language learning journey with us and turn your goals into achievements`}
+              {topics.reduce((total, obj) => total + obj.progress, 0) > 0 ?
+                `Increase your word count to reach your language mastery target`
+                : `Embark on your language learning journey with us and turn your goals into achievements`
+              }
             </p>
           </div>
           <button
             onClick={() => router.push(`/interactive-lessons`)}
             className="bg-blues-1100 font-bold text-white rounded-lg py-4 px-8 wfull text-xl "
           >
-            {topics.reduce((total, obj) => total + obj.progress, 0) > 0 ? "Continue Learning" : "Set Goals"}
+            {topics.reduce((total, obj) => total + obj.progress, 0) > 0 ?
+              "Continue Learning"
+              : "Set Goals"
+            }
           </button>
         </div>
       </div>
@@ -58,19 +65,8 @@ export default function Page() {
         </div>
       </div>
       {/* To Be refactor */}
-      <div>
-        <div className="flex border border-1 rounded mt-6 pb-2">
-          <BsCalendarDate className="mt-5 ml-4" />
-          <h1 className="ml-2 mt-4 text-grays-900 font-semibold">
-            My Achievements
-          </h1>
-        </div>
-        <div className="border border-1 mt-1 pt-20 pb-20 mb-10">
-          <p className="text-center">
-            Continue your learning journey to unlock your badges
-          </p>
-        </div>
-      </div>
+      <DashboardAchievement />
+
     </DashboardLayout>
   );
 }
