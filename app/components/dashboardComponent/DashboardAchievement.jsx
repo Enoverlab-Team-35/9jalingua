@@ -23,7 +23,7 @@ export default function DashboardAchievement() {
       <div className="outline outline-1 outline-grays-200 mt-1 py-4 px-6 sm:px-3">
         {/* conditions */}
         {streakdays > 0 ? (
-          <div className="flex items-center gap-10 justify-evenly">
+          <div className="pt-16 sm:pt-0 flex flex-col sm:flex-row sm:items-center gap-20 sm:gap-10 justify-evenly">
             <TrophySVG />
             <div className="w-full max-w-[630px] grid gap-[30px]">
               {/* Ruby */}
@@ -90,7 +90,7 @@ export default function DashboardAchievement() {
             </div>
           </div>
         ) : (
-          <p className="text-center text-grays-800 font-bold text-xl py-16">
+          <p className="sm:text-center text-grays-800 font-bold text-xl py-16">
             Continue your learning journey to unlock your badges
           </p>
         )}
