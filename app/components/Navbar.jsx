@@ -56,7 +56,7 @@ export default function Navbar() {
                 </div>
             </nav>
 
-            <div className={`${isVisible ? "w-full px-5" : "w-0 px-0"} sm:hidden fixed top-0 right-0 h-screen bg-white transition-all py-5 overflow-hidden`}>
+            <div className={`${isVisible ? "w-full px-5" : "w-0 px-0"} sm:hidden fixed top-0 right-0 h-screen bg-white transition-all py-5 z-[29] overflow-hidden`}>
                 {/* <div className='flex justify-between items-center gap-10 font-arimo'>
                     <Link
                         href={'/'}
