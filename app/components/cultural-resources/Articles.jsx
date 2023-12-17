@@ -24,7 +24,10 @@ export default function Articles() {
     return (
         <section className='mt-24'>
             <div className='container mx-auto font-arimo px-5'>
-                <div className='w-full text-center'>
+                <div
+                    className='w-full text-center'
+                    data-aos="zoom-in"
+                >
                     <h1 className='text-greens-200 text-[32px] sm:text-5xl font-bold leading-relaxed'>
                         Explore Our Articles
                     </h1>
@@ -38,6 +41,8 @@ export default function Articles() {
                         <div
                             key={index}
                             className='w-full sm:max-w-[384px] rounded-lg shadow-lg overflow-hidden'
+                            data-aos="flip-left"
+                            data-aos-delay={(index * 100) + 100}
                         >
                             <div>
                                 <Image

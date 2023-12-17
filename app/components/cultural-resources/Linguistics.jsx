@@ -25,7 +25,10 @@ export default function Linguistics() {
     return (
         <section className='mt-24 font-arimo px-5'>
             <div className="container mx-auto">
-                <div className='w-full max-w-[710px] mx-auto sm:text-center'>
+                <div
+                    className='w-full max-w-[710px] mx-auto sm:text-center'
+                    data-aos="zoom-in"
+                >
                     <h1 className='text-blues-1100 font-bold text-[32px] sm:text-5xl leading-normal'>
                         Linguistics Beats
                     </h1>
@@ -38,6 +41,8 @@ export default function Linguistics() {
                     {linguistic?.map((item, index) => (
                         <div
                             key={index}
+                            data-aos="fade-right"
+                            data-aos-delay={(index * 100) + 100}
                             className='flex-auto md:max-w-[318px] w-full'
                         >
                             <button

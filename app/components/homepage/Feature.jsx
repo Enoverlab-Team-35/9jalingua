@@ -3,7 +3,10 @@ import React from 'react'
 
 export default function Feature({ svg, title, description }) {
     return (
-        <div className='max-w-[240px] w-full'>
+        <div
+            className='max-w-[240px] w-full'
+            data-aos="flip-up"
+        >
             <div className='mx-auto w-[91px] h-[91px] rounded-full bg-greens-300 flex justify-center items-center'>
                 <Image
                     src={svg}

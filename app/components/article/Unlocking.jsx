@@ -30,7 +30,8 @@ export default function Unlocking() {
                 {text?.map((item, index) => (
                     <div
                         key={index}
-                        className=''
+                        data-aos="fade-up"
+                        data-aos-delay={(index * 100) + 100}
                     >
                         <h4 className='text-grays-1000 text-2xl font-bold'>{item.title}</h4>
                         <p className='mt-6 leading-relaxed text-xl font-normal text-grays-800'>{item.description}</p>

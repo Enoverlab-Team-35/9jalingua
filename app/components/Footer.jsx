@@ -144,7 +144,10 @@ const socialMedia = [
 
 export default function Footer() {
     return (
-        <footer className='bg-greens-300 sm:px-5 py-16'>
+        <footer
+            className='bg-greens-300 sm:px-5 py-16'
+            data-aos="fade-up">
+
             <div className="container mx-auto text-white font-arimo">
 
                 <div className="flex flex-col sm:flex-row justify-between sm:items-start sm:gap-6 gap-11 px-5 sm:px-0">

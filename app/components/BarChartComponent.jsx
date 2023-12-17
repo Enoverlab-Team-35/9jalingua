@@ -33,16 +33,47 @@ const data = [
     Days: 4.4,
   },
 ]
+const noData = [
+  {
+    name: "Mon",
+    Days: 0,
+  },
+  {
+    name: "Tue",
+    Days: 0,
+  },
+  {
+    name: "Wed",
+    Days: 0,
+  },
+  {
+    name: "Thu",
+    Days: 0,
+  },
+  {
+    name: "Fri",
+    Days: 0,
+  },
+  {
+    name: "Sat",
+    Days: 0,
+  },
+  {
+    name: "Sun",
+    Days: 0,
+  },
+]
 
 export default class BarChartComponent extends PureComponent {
-
   render() {
+    const { topics } = this.props
+
     return (
       <ResponsiveContainer width={"100%"} height={350}>
         <BarChart
           width={"100%"}
           height={450}
-          data={data}
+          data={topics.reduce((total, obj) => total + obj.progress, 0) > 0 ? data : noData}
         >
           <XAxis dataKey="name" stroke="#0D0D0DCC" />
           <YAxis />

@@ -1,6 +1,6 @@
 "use client"
 
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import DashboardLayout from '../layouts/DashboardLayout';
 import { auth } from "../firebase/config";
@@ -65,53 +65,53 @@ export default function Page() {
                         if (
                             data.heading.toLowerCase().includes(searchTerm.toLowerCase()) ||
                             searchTerm === ''
-                        ){
-                        return (
-                        <div
-                            key={index}
-                            className="flex items-center gap-5 mx-[8px] border rounded-lg shadow border-grays-200"
-                        >
-                            <div className="max-w-[213px] rounded-s-lg w-full h-full">
-                                <Image
-                                    alt="Image"
-                                    width={1880}
-                                    height={1253}
-                                    src={data.img}
-                                    className="object-cover w-full rounded-s-lg h-full"
-                                />
-                            </div>
-                            <div className="w-full p-6 my-auto ">
-                                <h4 className='text-xl font-bold text-black'>
-                                    {data.heading}
-                                </h4>
-                                <p className='mt-2 text-grays-800'>
-                                    {data.title}
-                                </p>
-                                {data.progress > 0 && (
-                                    <div className='mt-4 w-full max-w-[396px] flex items-center justify-between gap-3'>
-                                        <ProgressBar
-                                            className="w-full rounded-full progressiveBarContainer"
-                                            customLabel={" "}
-                                            completed={Math.floor((data.progress / data.total_lesson) * 100)}
+                        ) {
+                            return (
+                                <div
+                                    key={index}
+                                    className="flex items-center gap-2 sm:gap-5 mx-[8px] border rounded-lg shadow border-grays-200"
+                                >
+                                    <div className="max-w-[213px] rounded-s-lg w-full h-full">
+                                        <Image
+                                            alt="Image"
+                                            width={1880}
+                                            height={1253}
+                                            src={data.img}
+                                            className="object-cover w-full rounded-s-lg h-full"
                                         />
-                                        <h5 className='text-sm font-medium text-grays-900 font-inter'>
-                                            {Math.floor((data.progress / data.total_lesson) * 100)}%
-                                        </h5>
                                     </div>
-                                )}
+                                    <div className="w-full px-3 sm:px-6 py-6 my-auto ">
+                                        <h4 className='text-xl font-bold text-black'>
+                                            {data.heading}
+                                        </h4>
+                                        <p className='mt-2 text-grays-800'>
+                                            {data.title}
+                                        </p>
+                                        {data.progress > 0 && (
+                                            <div className='mt-4 w-full max-w-[396px] flex items-center justify-between gap-3'>
+                                                <ProgressBar
+                                                    className="w-full rounded-full progressiveBarContainer"
+                                                    customLabel={" "}
+                                                    completed={Math.floor((data.progress / data.total_lesson) * 100)}
+                                                />
+                                                <h5 className='text-sm font-medium text-grays-900 font-inter'>
+                                                    {Math.floor((data.progress / data.total_lesson) * 100)}%
+                                                </h5>
+                                            </div>
+                                        )}
 
-                                <div className='mt-6 flex lg:justify-end'>
-                                    <button
-                                        className={`px-4 py-3 font-bold rounded-lg border border-blues-1000 text-blues-1000 ${data.progress > 0 && 'px-7 bg-blues-1000 text-white'}`}
-                                        onClick={() => router.push(`/lesson/${selectedLanguage}/${data.id}/${data.heading}`)}
-                                    >
-                                        {data.progress > 0 ? "Continue" : "Take Lesson"}
-                                    </button>
+                                        <div className='mt-6 flex lg:justify-end'>
+                                            <button
+                                                className={`px-4 py-3 font-bold rounded-lg border border-blues-1000 text-blues-1000 ${data.progress > 0 && 'px-7 bg-blues-1000 text-white'}`}
+                                                onClick={() => router.push(`/lesson/${selectedLanguage}/${data.id}/${data.heading}`)}
+                                            >
+                                                {data.progress > 0 ? "Continue" : "Take Lesson"}
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        );
-                      }
+                            );
+                        }
                     })}
 
                 </div>
@@ -170,7 +170,7 @@ export default function Page() {
                             <h3 className='absolute -left-2 top-[40%] -translate-y-1/2 vertical-mode text-blues-900'>
                                 Lessons
                             </h3>
-                            <BarChartComponent />
+                            <BarChartComponent topics={topics} />
                         </div>
                     </div>
                 </div>

@@ -25,7 +25,7 @@ export default function Explore() {
     return (
         <section className='px-5 bg-greens-1100 mt-24 pt-16 pb-[86px] font-arimo'>
             <div className="container mx-auto">
-                <h1 className='text-greens-200 font-bold text-[32px] sm:text-5xl text-center '>
+                <h1 className='text-greens-200 font-bold text-[32px] sm:text-5xl text-center sm:text-left'>
                     Explore Events
                 </h1>
 
@@ -34,6 +34,8 @@ export default function Explore() {
                         <div
                             key={index}
                             className='w-full sm:max-w-[385px]'
+                            data-aos="flip-up"
+                            data-aos-delay={(index * 100) + 100}
                         >
                             <div>
                                 <Image

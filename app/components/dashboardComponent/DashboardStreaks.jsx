@@ -25,8 +25,8 @@ export default function DashboardStreaks() {
             completed={(streakdays / 7) * 100}
           />
           <div className="flex gap-6 items-center">
-            <p className={`text-black font-bold ${streakdays < 1 && "text-grays-400 font-bold"}`}>{streakdays} days</p>
-            <p className={`text-black font-bold text-xl ${streakdays < 1 && "text-grays-900 font-bold"}`}> Longest</p>
+            <p className={`text-grays-900 font-bold ${streakdays < 1 && "text-grays-400 font-normal"}`}>{streakdays} <span className="font-normal">days</span></p>
+            <p className={`text-grays-900 text-xl`}>Longest</p>
           </div>
         </div>
 
@@ -37,8 +37,8 @@ export default function DashboardStreaks() {
             completed={(streakdays / 7) * 100}
           />
           <div className="flex gap-6 items-center">
-            <p className={`text-black font-bold ${streakdays < 1 && "text-grays-400 font-bold"}`}>{streakdays} days</p>
-            <p className={`text-black font-bold text-xl ${streakdays < 1 && "text-grays-900 font-bold"}`}> Current</p>
+            <p className={`text-grays-900 font-bold ${streakdays < 1 && "text-grays-400 font-normal"}`}>{streakdays} <span className="font-normal">days</span></p>
+            <p className={`text-grays-900 text-xl`}>Current</p>
           </div>
         </div>
       </div>
