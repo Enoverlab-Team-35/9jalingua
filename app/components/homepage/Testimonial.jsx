@@ -43,7 +43,6 @@ export default function Testimonial() {
                     {testimonials?.map((item, index) => (
                         <div
                             key={index}
-                            data-aos="flip-up"
                             data-aos-delay={(index * 100) + 100}
                             className={`w-full max-w-[387px] py-10 px-7 rounded-lg ${(index + 1) % 2 === 0 ? 'bg-greens-300 text-white' : 'bg-greens-1100 text-grays-600'}`}
                         >
@@ -55,18 +54,28 @@ export default function Testimonial() {
                                         src={item.img}
                                         alt={item.name}
                                         className='w-full'
+                                        data-aos="zoom-in"
                                     />
                                 </div>
                                 <div>
-                                    <h3 className={`text-xl font-bold ${(index + 1) % 2 != 0 && 'text-blues-1100'}`}>
+                                    <h3 
+                                        className={`text-xl font-bold ${(index + 1) % 2 != 0 && 'text-blues-1100'}`}
+                                        data-aos="fade-down"
+                                    >
                                         {item.name}
                                     </h3>
-                                    <h6 className="mt-3 text-base">
+                                    <h6 
+                                        className="mt-3 text-base"
+                                        data-aos="fade-down"
+                                    >
                                         {item.profession}
                                     </h6>
                                 </div>
                             </div>
-                            <p className="mt-8 text-xl leading-relaxed">
+                            <p 
+                                className="mt-8 text-xl leading-relaxed"
+                                data-aos="zoom-in"
+                            >
                                 {item.thoughts}
                             </p>
                         </div>
