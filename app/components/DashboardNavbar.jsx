@@ -14,6 +14,7 @@ export default function DashboardNavbar() {
     const { setSidebarVisible, selectedLanguage } = useAppContext()
     const [isLanguageVisible, setIsLanguageVisible] = useState(false)
     const languageRef = useRef()
+    const { streakdays } = useAppContext()
 
     const handleClickOutside = (event) => {
         if (languageRef.current && !languageRef.current.contains(event.target)) {
@@ -107,7 +108,7 @@ export default function DashboardNavbar() {
                     <div className='flex gap-2 items-center'>
                         <StreakSVG color={topics.reduce((total, obj) => total + obj.progress, 0) > 0 && "#004080E5"} />
                         <span className='font-bold'>
-                            {topics.reduce((total, obj) => total + obj.progress, 0)}
+                            {streakdays}
                         </span>
                     </div>
                 )}

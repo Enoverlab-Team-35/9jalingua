@@ -146,22 +146,23 @@ export default function Footer() {
     return (
         <footer
             className='bg-greens-300 sm:px-5 py-16'
-            data-aos="fade-up">
+        >
 
             <div className="container mx-auto text-white font-arimo">
 
                 <div className="flex flex-col sm:flex-row justify-between sm:items-start sm:gap-6 gap-11 px-5 sm:px-0">
                     <div className='sm:text-left'>
-                        <h1 className="text-3xl font-bold leading-normal">
+                        <h1 className="text-3xl font-bold leading-normal" data-aos="fade-up">
                             Start your 30-days free trial
                         </h1>
-                        <p className="mt-10 sm:mt-4 text-xl leading-relaxed">
-                            Join over 50+ people already learnig with 9jaLingua
+                        <p className="mt-10 sm:mt-4 text-xl leading-relaxed" data-aos="fade-up">
+                            Join over 50+ people already learning with 9jaLingua
                         </p>
                     </div>
                     <Link
                         href={'/login'}
                         className="w-max sm:w-auto px-8 py-4 bg-blues-1100 shadow-md text-xl font-bold rounded-lg text-center"
+                        data-aos="fade-up"
                     >
                         Get Started
                     </Link>
@@ -171,7 +172,7 @@ export default function Footer() {
 
                 <div className='flex flex-col lg:flex-row justify-between gap-16 px-5 sm:px-0'>
                     <div className='w-full lg:max-w-[320px]'>
-                        <h1 className='text-4xl font-bold flex items-center gap-4'>
+                        <h1 className='text-4xl font-bold flex items-center gap-4' data-aos="fade-up">
                             <Image
                                 src={'/9jalingua/white.svg'}
                                 width={38}
@@ -180,20 +181,20 @@ export default function Footer() {
                             />
                             <span>9jaLingua</span>
                         </h1>
-                        <p className='mt-10 sm:mt-8 text-base leading-relaxed'>
+                        <p className='mt-10 sm:mt-8 text-base leading-relaxed' data-aos="fade-up">
                             Design amazing digital experiences that create more happiness in the world
                         </p>
                     </div>
                     <div className='w-full max-w-[805px] flex flex-wrap justify-between gap-x-8 gap-y-12'>
                         {Object.entries(footerLinks).map(([category, items], index) => (
                             <div key={index}>
-                                <h2 className='mb-4 text-base'>
+                                <h2 className='mb-4 text-base' data-aos="fade-up">
                                     {category}
                                 </h2>
 
                                 {items?.map((item, itemIndex) => (
                                     <ul key={itemIndex} className='text-base font-bold'>
-                                        <li className='mt-3'>
+                                        <li className='mt-3' data-aos="fade-up">
                                             <Link href={item.href}>{item.name}</Link>
                                         </li>
                                     </ul>

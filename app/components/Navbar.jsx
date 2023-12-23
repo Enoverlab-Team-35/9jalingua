@@ -17,6 +17,7 @@ export default function Navbar() {
                     <Link
                         href={'/'}
                         className="flex items-center gap-4 font-arimo"
+                        data-aos="fade-right"
                     >
                         <Image
                             src={'/9jalingua/green.svg'}
@@ -27,7 +28,7 @@ export default function Navbar() {
                         <span className="text-4xl font-bold text-blues-1100">9jaLingua</span>
                     </Link>
                     {/* Buttons */}
-                    <div className="hidden sm:flex items-center gap-10">
+                    <div className="hidden sm:flex items-center gap-10" data-aos="fade-left">
                         <Link
                             href={'/cultural-resources'}
                             className="text-grays-600 text-xl font-inter"
@@ -45,7 +46,8 @@ export default function Navbar() {
                     {/* Hamburger BTN */}
                     <button
                         onClick={() => setIsVisible(!isVisible)}
-                        className='sm:hidden p-2'
+                        className='sm:hidden p-2' 
+                        data-aos="fade-left"
                     >
                         {isVisible ? (
                             <IoClose color='black' size={32} />
@@ -57,19 +59,23 @@ export default function Navbar() {
             </nav>
 
             <div className={`${isVisible ? "w-full px-5" : "w-0 px-0"} sm:hidden fixed top-0 right-0 h-screen bg-white transition-all py-5 z-[29] overflow-hidden`}>
-                <ul className='mt-[168px] flex flex-col justify-center items-center gap-16'>
-                    <li><Link
+                <ul className='mt-[168px] flex flex-col justify-center items-center gap-16' data-aos="fade-down">
+                    <li data-aos="fade-left">
+                        <Link
                         href={'/cultural-resources'}
                         className='px-8 py-4 text-grays-600 text-xl font-inter font-medium'
-                    >
-                        Cultural Resources
-                    </Link></li>
-                    <li><Link
+                        >
+                            Cultural Resources
+                        </Link>
+                    </li>
+                    <li data-aos="fade-left">
+                        <Link
                         href={'/login'}
                         className='px-8 py-4 text-white text-xl font-inter rounded-lg bg-greens-300 font-bold'
-                    >
-                        Log In
-                    </Link></li>
+                        >
+                            Log In
+                        </Link>
+                    </li>
                 </ul>
             </div>
         </>
