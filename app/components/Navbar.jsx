@@ -28,16 +28,20 @@ export default function Navbar() {
                         <span className="text-4xl font-bold text-blues-1100">9jaLingua</span>
                     </Link>
                     {/* Buttons */}
-                    <div className="hidden sm:flex items-center gap-10" data-aos="fade-left">
+                    <div className="hidden sm:flex items-center gap-10">
                         <Link
                             href={'/cultural-resources'}
                             className="text-grays-600 text-xl font-inter"
+                            data-aos="fade-left"
+                            data-aos-delay="100"
                         >
                             Cultural Resources
                         </Link>
                         <Link
                             href={'/login'}
                             className="rounded-lg px-8 py-4 bg-greens-300 text-white text-xl font-arimo"
+                            data-aos="fade-left"
+                            data-aos-delay="200"
                         >
                             Log In
                         </Link>
@@ -60,7 +64,7 @@ export default function Navbar() {
 
             <div className={`${isVisible ? "w-full px-5" : "w-0 px-0"} sm:hidden fixed top-0 right-0 h-screen bg-white transition-all py-5 z-[29] overflow-hidden`}>
                 <ul className='mt-[168px] flex flex-col justify-center items-center gap-16' data-aos="fade-down">
-                    <li data-aos="fade-left">
+                    <li data-aos="fade-left" data-aos-delay="100">
                         <Link
                         href={'/cultural-resources'}
                         className='px-8 py-4 text-grays-600 text-xl font-inter font-medium'
@@ -68,7 +72,7 @@ export default function Navbar() {
                             Cultural Resources
                         </Link>
                     </li>
-                    <li data-aos="fade-left">
+                    <li data-aos="fade-left" data-aos-delay="200">
                         <Link
                         href={'/login'}
                         className='px-8 py-4 text-white text-xl font-inter rounded-lg bg-greens-300 font-bold'

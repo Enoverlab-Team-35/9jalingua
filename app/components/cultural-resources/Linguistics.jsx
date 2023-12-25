@@ -27,12 +27,11 @@ export default function Linguistics() {
             <div className="container mx-auto">
                 <div
                     className='w-full max-w-[710px] mx-auto sm:text-center'
-                    data-aos="zoom-in"
                 >
-                    <h1 className='text-blues-1100 font-bold text-[32px] sm:text-5xl leading-normal'>
+                    <h1 className='text-blues-1100 font-bold text-[32px] sm:text-5xl leading-normal' data-aos='fade-up' data-aos-delay='100'>
                         Linguistics Beats
                     </h1>
-                    <p className='mt-6 text-grays-800 text-xl leading-normal'>
+                    <p className='mt-6 text-grays-800 text-xl leading-normal'data-aos='fade-up' data-aos-delay='200'>
                         Explore Nigeria&apos;s vibrant soundscape, a cultural journey through language, rhythm, and heritage in each curated track
                     </p>
                 </div>
@@ -41,13 +40,13 @@ export default function Linguistics() {
                     {linguistic?.map((item, index) => (
                         <div
                             key={index}
-                            data-aos="fade-right"
                             data-aos-delay={(index * 100) + 100}
                             className='flex-auto md:max-w-[318px] w-full'
                         >
                             <button
                                 onClick={() => router.push(`/articles/${index}/${item.title}`)}
                                 className='p-[13px] rounded-full bg-greens-900 w-[76px] sm:w-[105px] aspect-square'
+                                data-aos='fade-right'
                             >
                                 <Image
                                     src={item.img}
@@ -59,10 +58,11 @@ export default function Linguistics() {
                             <h4
                                 onClick={() => router.push(`/articles/${index}/${item.title}`)}
                                 className='mt-8 text-blues-1100 font-bold text-xl cursor-pointer'
+                                data-aos='fade-right'
                             >
                                 {item.name}
                             </h4>
-                            <p className='mt-6 text-grays-800 text-xl leading-relaxed'>
+                            <p className='mt-6 text-grays-800 text-xl leading-relaxed' data-aos='fade-right'>
                                 {item.description}
                             </p>
                         </div>

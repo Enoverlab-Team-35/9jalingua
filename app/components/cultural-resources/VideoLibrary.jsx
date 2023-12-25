@@ -28,7 +28,7 @@ export default function VideoLibrary() {
             <div className='container mx-auto bg-greens-1100 px-5 pt-16 pb-[118px]'>
                 <h1
                     className='text-center text-greens-200 font-bold text-[32px] sm:text-5xl leading-normal'
-                    data-aos="zoom-in"
+                    data-aos="fade-up"
                 >
                     Video Library
                 </h1>
@@ -37,10 +37,9 @@ export default function VideoLibrary() {
                         <div
                             key={index}
                             className='w-full sm:max-w-[382px]'
-                            data-aos="flip-up"
-                            data-aos-delay={(index * 100) + 100}
+                            data-aos-delay={(index * 100) + 200}
                         >
-                            <div>
+                            <div data-aos="zoom-in">
                                 <Image
                                     src={item.img}
                                     width={1880}
@@ -51,10 +50,11 @@ export default function VideoLibrary() {
                             <h4
                                 onClick={() => router.push(`/articles/${index}/${item.title}`)}
                                 className='mt-8 font-bold text-xl text-grays-1000 cursor-pointer'
+                                data-aos="fade-right"
                             >
                                 {item.name}
                             </h4>
-                            <p className='mt-6 text-grays-800 text-xl leading-relaxed'>
+                            <p className='mt-6 text-grays-800 text-xl leading-relaxed' data-aos="fade-right">
                                 {item.text}
                             </p>
                         </div>

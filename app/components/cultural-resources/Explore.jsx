@@ -25,7 +25,7 @@ export default function Explore() {
     return (
         <section className='px-5 bg-greens-1100 mt-24 pt-16 pb-[86px] font-arimo'>
             <div className="container mx-auto">
-                <h1 className='text-greens-200 font-bold text-[32px] sm:text-5xl text-center sm:text-left'>
+                <h1 className='text-greens-200 font-bold text-[32px] sm:text-5xl text-center sm:text-left' data-aos='fade-right'>
                     Explore Events
                 </h1>
 
@@ -34,7 +34,6 @@ export default function Explore() {
                         <div
                             key={index}
                             className='w-full sm:max-w-[385px]'
-                            data-aos="flip-up"
                             data-aos-delay={(index * 100) + 100}
                         >
                             <div>
@@ -43,15 +42,17 @@ export default function Explore() {
                                     width={996}
                                     height={560}
                                     alt={item.name}
+                                    data-aos="zoom-in"
                                 />
                             </div>
                             <h3
                                 onClick={() => router.push(`/articles/${index}/${item.title}`)}
                                 className='mt-6 text-greens-200 text-xl font-bold cursor-pointer'
+                                data-aos="fade-right"
                             >
                                 {item.name}
                             </h3>
-                            <p className='mt-6 text-grays-800 text-xl leading-relaxed'>
+                            <p className='mt-6 text-grays-800 text-xl leading-relaxed' data-aos="fade-right">
                                 {item.text}
                             </p>
                         </div>
