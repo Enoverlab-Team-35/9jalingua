@@ -13,12 +13,14 @@ export default function HomeHeader() {
                     <h1 
                         className='font-bold font-arimo text-white text-[44px] sm:text-[56px]'
                         data-aos="fade-up"
+                        data-aos-delay='100'
                     >
                         Embrace and Discover Your Language Roots
                     </h1>
                     <p 
                         className="mt-5 text-[#ECECEC] leading-relaxed font-normal text-xl"
                         data-aos="fade-up"
+                        data-aos-delay='200'
                     >
                         Celebrate the richness of culture and connect with people from diverse backgrounds through language learning
                     </p>
@@ -27,6 +29,7 @@ export default function HomeHeader() {
                             href={"/login"}
                             className="px-8 py-4 rounded-lg bg-greens-300 text-white text-xl font-bold"
                             data-aos="fade-up"
+                            data-aos-delay='300'
                         >
                             Get Started
                         </Link>

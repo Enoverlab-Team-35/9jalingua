@@ -26,12 +26,11 @@ export default function Articles() {
             <div className='container mx-auto font-arimo px-5'>
                 <div
                     className='w-full text-center'
-                    data-aos="zoom-in"
                 >
-                    <h1 className='text-greens-200 text-[32px] sm:text-5xl font-bold leading-relaxed'>
+                    <h1 className='text-greens-200 text-[32px] sm:text-5xl font-bold leading-relaxed' data-aos="fade-up">
                         Explore Our Articles
                     </h1>
-                    <p className='mt-3 text-grays-800 text-xl leading-relaxed'>
+                    <p className='mt-3 text-grays-800 text-xl leading-relaxed' data-aos="fade-up">
                         Delve into a world of knowledge and insights with our collection of articles
                     </p>
                 </div>
@@ -41,10 +40,9 @@ export default function Articles() {
                         <div
                             key={index}
                             className='w-full sm:max-w-[384px] rounded-lg shadow-lg overflow-hidden'
-                            data-aos="flip-left"
                             data-aos-delay={(index * 100) + 100}
                         >
-                            <div>
+                            <div data-aos="zoom-in">
                                 <Image
                                     src={item.img}
                                     width={1880}
@@ -53,10 +51,10 @@ export default function Articles() {
                                 />
                             </div>
                             <div className='mt-8 mb-12 px-6 sm:px-0 mx-auto w-full sm:max-w-[330px]'>
-                                <h3 className='text-xl font-bold text-[#5C5C5C]'>
+                                <h3 className='text-xl font-bold text-[#5C5C5C]' data-aos="fade-right">
                                     {item.title}
                                 </h3>
-                                <div className='mt-10'>
+                                <div className='mt-10' data-aos="fade-right">
                                     <Link
                                         href={`/articles/${index}/${item.title}`}
                                         className='text-green-500'
