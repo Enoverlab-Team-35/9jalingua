@@ -73,7 +73,7 @@ export default function Page() {
             </div>
 
             {/* Test */}
-            <div className='mt-8 container mx-auto px-5 sm:px-10 pb-28 flex flex-col md:flex-row gap-8 md:gap-12 md:items-center justify-between'>
+            <div className='mt-8 container mx-auto px-5 sm:px-10 pb-28 flex flex-col md:flex-row gap-[75px] sm:gap-8 md:gap-12 md:items-center justify-between'>
                 <div className='flex-1 grid gap-[44px] sm:gap-20'>
                     <p className='text-grays-800 text-[20px] sm:text-[32px]'>Choose the correct word</p>
                     <h1 className='sm:text-center text-grays-1000 text-[32px] sm:text-[52px]'>{test[currentTest].question}</h1>
