@@ -126,24 +126,6 @@ export default function Page() {
               <p className="text-grays-900"><span className="font-medium">{value.toUpperCase()}</span> not found, try another language</p>
             )}
           </div>
-          {/* <button
-            className="mt-28 ms-auto px-8 py-4 rounded-lg text-white bg-greens-300 flex place-items-center gap-2"
-            onClick={() => {
-              if (selectedLanguage) {
-                router.push("/dashboard");
-              } else {
-                toast("Select language to learn");
-              }
-            }}
-          >
-            <span className="text-xl font-bold">Continue</span>
-            <Image
-              src={"/svgs/arrow-narrow-right.svg"}
-              width={20}
-              height={20}
-              alt="Next"
-            />
-          </button> */}
         </div>
       </section>
     </>

@@ -1,5 +1,7 @@
+"use client"
+
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 
 const testimonials = [
     {
@@ -23,6 +25,8 @@ const testimonials = [
 ]
 
 export default function Testimonial() {
+    const [hoverState, setHoverState] = useState(null)
+
     return (
         <section className="mt-24">
             <div className="container mx-auto px-5 font-arimo">
@@ -44,7 +48,9 @@ export default function Testimonial() {
                         <div
                             key={index}
                             data-aos-delay={(index * 100) + 100}
-                            className={`w-full max-w-[387px] py-10 px-7 rounded-lg ${(index + 1) % 2 === 0 ? 'bg-greens-300 text-white' : 'bg-greens-1100 text-grays-600'}`}
+                            className={`w-full max-w-[387px] py-10 px-7 rounded-lg hover:bg-greens-300 hover:text-white bg-greens-1100 text-grays-600`}
+                            onMouseEnter={() => setHoverState(index)}
+                            onMouseLeave={() => setHoverState(null)}
                         >
                             <div className='flex place-items-center gap-6'>
                                 <div className='w-28 h-28'>
@@ -58,13 +64,12 @@ export default function Testimonial() {
                                     />
                                 </div>
                                 <div>
-                                    <h3 
-                                        className={`text-xl font-bold ${(index + 1) % 2 != 0 && 'text-blues-1100'}`}
-                                        data-aos="fade-down"
+                                    <h3
+                                        className={`text-xl font-bold ${hoverState === index ? 'text-white' : 'text-blues-1100'}`}
                                     >
                                         {item.name}
                                     </h3>
-                                    <h6 
+                                    <h6
                                         className="mt-3 text-base"
                                         data-aos="fade-down"
                                     >
@@ -72,7 +77,7 @@ export default function Testimonial() {
                                     </h6>
                                 </div>
                             </div>
-                            <p 
+                            <p
                                 className="mt-8 text-xl leading-relaxed"
                                 data-aos="zoom-in"
                             >

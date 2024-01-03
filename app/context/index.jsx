@@ -58,6 +58,27 @@ export function AppContextProvider({ children }) {
     },
   ])
 
+  const [test, setTest] = useState([
+    {
+      id: 1,
+      question: "Good morning",
+      options: ['e kaale', 'e kaaro', 'e kaasan', 'e ku irole'],
+      answer: 'e kaaro'
+    },
+    {
+      id: 2,
+      question: "Good night",
+      options: ['e kaale', 'e kaaro', 'e kaasan', 'e ku irole'],
+      answer: 'e kaale'
+    },
+    {
+      id: 3,
+      question: "Good afternoon",
+      options: ['e kaale', 'e kaaro', 'e kaasan', 'e ku irole'],
+      answer: 'e kaasan'
+    }
+  ])
+
   useEffect(() => {
     const sessionLanguage = sessionStorage.getItem("language")
     const sessionTopics = sessionStorage.getItem("topics")
@@ -75,7 +96,7 @@ export function AppContextProvider({ children }) {
 
 
   return (
-    <AppContext.Provider value={{ state, setState, sidebarVisible, setSidebarVisible, selectedLanguage, setSelectedLanguage, topics, setTopics, lessons, streakdays, setStreakDays }}>
+    <AppContext.Provider value={{ state, setState, sidebarVisible, setSidebarVisible, selectedLanguage, setSelectedLanguage, topics, setTopics, lessons, streakdays, setStreakDays, test, setTest }}>
       {children}
     </AppContext.Provider>
   );
