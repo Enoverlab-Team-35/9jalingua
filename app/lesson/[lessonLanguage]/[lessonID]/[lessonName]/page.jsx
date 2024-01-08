@@ -108,11 +108,7 @@ export default function Page() {
                         // disabled={topic?.progress >= lessons.length}
                         onClick={onNext}
                     >
-                        {topic?.progress >= lessons.length ? (
-                            <span>Goto Test</span>
-                        ) : (
                             <span>Next</span>
-                        )}
                         <Image
                             src={'/svgs/arrow-r.svg'}
                             width={24}
