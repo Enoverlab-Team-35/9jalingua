@@ -23,7 +23,7 @@ export function AppContextProvider({ children }) {
     {
       from: "e kaale",
       to: "Good night",
-      audio: null
+      audio: ""
     },
   ]
   const [topics, setTopics] = useState([
