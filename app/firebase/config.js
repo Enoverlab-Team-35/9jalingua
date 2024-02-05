@@ -10,12 +10,12 @@ import {
 } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB31cEV6oxe7p7FttAqatqXg8AjtUyE2Io",
-  authDomain: "jalingua-5801b.firebaseapp.com",
-  projectId: "jalingua-5801b",
-  storageBucket: "jalingua-5801b.appspot.com",
-  messagingSenderId: "299306863141",
-  appId: "1:299306863141:web:ccba27199300e6cf714dcc"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECTID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 };
 
 export const app = initializeApp(firebaseConfig);
