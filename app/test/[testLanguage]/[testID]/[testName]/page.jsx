@@ -75,11 +75,13 @@ export default function Page() {
             <div className='mt-8 container mx-auto px-5 sm:px-10 pb-28 flex flex-col md:flex-row gap-[75px] sm:gap-8 md:gap-12 md:items-center justify-between'>
                 <div className='flex-1'>
                     <p className='text-grays-800 text-[20px] sm:text-[32px]'>Choose the correct word</p>
+                    {/* The current question */}
                     <h1 className='mt-11 sm:mt-20 sm:text-center text-grays-1000 text-[32px] sm:text-[52px]'>{test[currentTest].question}</h1>
+                    {/* Input Tag */}
                     <input
                         type="text"
                         value={correctAnswer ? correctAnswer : ""}
-                        className={`mt-11 sm:mt-20 p-6 rounded-lg border-2 max-w-[824px] w-full text-xl sm:text-[32px] text-grays-1000 ${correctAnswer
+                        className={`mt-11 sm:mt-20 px-6 rounded-lg border-2 max-w-[824px] w-full text-xl sm:text-[32px] text-grays-1000 h-[56px] sm:h-[84px] flex items-center justify-center  ${correctAnswer
                             ? test[currentTest].answer === correctAnswer
                                 ? 'bg-greens-900 border-greens-200'
                                 : 'bg-[#FECDCA] border-[#912018]'
@@ -87,6 +89,7 @@ export default function Page() {
                             }`}
                         readOnly
                     />
+                    {/* Options */}
                     <div className='mt-8 sm:mt-[72px] grid sm:grid-cols-2 gap-5 sm:gap-10 max-w-[824px] w-full'>
                         {test[currentTest].options.map((option, index) => (
                             <button
@@ -94,14 +97,14 @@ export default function Page() {
                                 onClick={() => {
                                     setCorrectAnswer(option)
                                 }}
-                                className={`sm:max-w-[392px] w-full h-[84px] flex items-center justify-center gap-2 border text-[20px] sm:text-[32px] text-grays-1000 border-grays-600 rounded-lg hover:bg-grays-100}`}
+                                className={`sm:max-w-[392px] w-full h-[56px] sm:h-[84px] flex items-center justify-center border text-[20px] sm:text-[32px] text-grays-1000 border-grays-600 rounded-lg hover:bg-grays-100}`}
                             >
                                 {option}
                             </button>
                         ))}
                     </div>
                 </div>
-
+                {/* Next Button */}
                 <button
                     className='flex md:flex-col-reverse items-center justify-center gap-3 bg-blues-1000 text-white rounded-lg px-8 py-4 font-bold text-xl font-arimo disabled:opacity-75'
                     onClick={onNext}

@@ -2,7 +2,7 @@ import React from 'react'
 
 const text = [
     {
-        title: `Unlocking CUltural Insights`,
+        title: `Unlocking Cultural Insights`,
         description: `The journey of learning Nigerian languages goes far beyond mastering vocabulary and pronunciation. It becomes a portal to understanding the intricate tapestry of Nigerian culture. From traditional proverbs to colloquial expressions, language becomes the key to unraveling the values, beliefs, and customs that shape the Nigerian way of life.`
     },
     {
