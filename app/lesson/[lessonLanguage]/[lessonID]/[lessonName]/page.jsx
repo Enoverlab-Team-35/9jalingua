@@ -91,9 +91,15 @@ export default function Page() {
                         <h5 className='text-base sm:text-xl text-grays-800'>
                             YORUBA
                         </h5>
-                        <h1 className='mt-8 lg:mt-10 text-[44px] md:text-[52px] text-grays-1000'>
-                            {lessons[topic.progress]?.from}
-                        </h1>
+                        {/* Audio and Yoruba Lessom */}
+                        <div>
+                            <h1 className='mt-8 lg:mt-10 text-[44px] md:text-[52px] text-grays-1000'>
+                                {lessons[topic.progress]?.from}
+                            </h1>
+                            <div>
+                                <audio controls src={lessons[topic.progress]?.audio}></audio>
+                            </div>
+                        </div>
 
                         <h5 className='mt-10 sm:mt-12 text-base sm:text-xl text-grays-800'>
                             ENGLISH
@@ -108,7 +114,7 @@ export default function Page() {
                         // disabled={topic?.progress >= lessons.length}
                         onClick={onNext}
                     >
-                            <span>Next</span>
+                        <span>Next</span>
                         <Image
                             src={'/svgs/arrow-r.svg'}
                             width={24}

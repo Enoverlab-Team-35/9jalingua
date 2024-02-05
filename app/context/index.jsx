@@ -12,15 +12,18 @@ export function AppContextProvider({ children }) {
   const lessons = [
     {
       from: "e kaaro",
-      to: "Good morning"
+      to: "Good morning",
+      audio: "/audio/ekaaro.mp3"
     },
     {
       from: "e kaasan",
-      to: "Good afternoon"
+      to: "Good afternoon",
+      audio: "/audio/ekaasan.mp3"
     },
     {
       from: "e kaale",
-      to: "Good night"
+      to: "Good night",
+      audio: null
     },
   ]
   const [topics, setTopics] = useState([
