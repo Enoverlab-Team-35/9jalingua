@@ -6,6 +6,7 @@ import Languages from "./components/homepage/Languages";
 import AboutUs from "./components/homepage/AboutUs";
 import Testimonial from "./components/homepage/Testimonial";
 import Insights from "./components/homepage/Insights";
+import Testimonial1 from "./components/homepage/Testimonial1";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
       <Features />
       <Languages />
       <AboutUs />
-      <Testimonial />
+      <Testimonial1 />
       <Insights />
     </MainLayout>
   );

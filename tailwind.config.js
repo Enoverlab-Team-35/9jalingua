@@ -61,6 +61,15 @@ module.exports = {
         laptop: "1024px",
         // => @media (min-width: 1024px) { ... }
       },
+      keyframes: {
+        slidein: {
+          '0%, 100%': { marginLeft: '20%' },
+          '90%': { marginLeft: '-33%' },
+        }
+      },
+      animation: {
+        slidein: 'slidein 10s ease-in-out infinite',
+      }
     },
   },
   plugins: [],
