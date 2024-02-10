@@ -68,7 +68,7 @@ module.exports = {
         }
       },
       animation: {
-        slidein: 'slidein 10s ease-in-out infinite',
+        slidein: 'slidein 5s ease-in-out infinite',
       }
     },
   },

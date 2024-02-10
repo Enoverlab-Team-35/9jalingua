@@ -41,7 +41,7 @@ export default function Testimonial1() {
                 </h1>
 
                 <div className="overflow-auto snap-x snap-mandatory">
-                    <div className="mt-12 sm:mt-8 flex justify-between gap-x-8 ||  w-full pb-2 animate-slidein">
+                    <div className="mt-12 sm:mt-8 flex justify-between gap-x-8 ||  w-full pb-2 animate-slidein animate-pause-hover">
                         {testimonials?.map((item, index) => (
                             <div
                                 key={index}
