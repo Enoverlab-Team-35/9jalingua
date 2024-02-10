@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 export default function HomeHeader() {
@@ -6,19 +7,39 @@ export default function HomeHeader() {
         <header className="bg-blues-1000 px-5 py-10">
             <div className="mx-auto container flex flex-col lg:flex-row items-center justify-between gap-24">
                 {/* Text */}
-                <div className='lg:max-w-[615px] w-full text-center lg:text-left'>
-                    <h1 className='font-bold font-arimo text-white text-[56px]'>
+                <div
+                    className='lg:max-w-[615px] w-full'
+                >
+                    <h1 
+                        className='font-bold font-arimo text-white text-[44px] sm:text-[56px]'
+                        data-aos="fade-up"
+                        data-aos-delay='100'
+                    >
                         Embrace and Discover Your Language Roots
                     </h1>
-                    <p className="mt-5 text-[#ECECEC] text-xl">
+                    <p 
+                        className="mt-5 text-[#ECECEC] leading-relaxed font-normal text-xl"
+                        data-aos="fade-up"
+                        data-aos-delay='200'
+                    >
                         Celebrate the richness of culture and connect with people from diverse backgrounds through language learning
                     </p>
-                    <button className="mt-10 px-8 py-4 rounded-lg bg-greens-300 text-white text-xl font-bold">
-                        Get Started
-                    </button>
+                    <div className='mt-12'>
+                        <Link
+                            href={"/login"}
+                            className="px-8 py-4 rounded-lg bg-greens-300 text-white text-xl font-bold"
+                            data-aos="fade-up"
+                            data-aos-delay='300'
+                        >
+                            Get Started
+                        </Link>
+                    </div>
                 </div>
                 {/* Image */}
-                <div className='w-full lg:w-auto flex-auto'>
+                <div
+                    className='w-full lg:w-auto flex-auto'
+                    data-aos="fade-up"
+                >
                     <Image
                         src={'/william.png'}
                         width={1880}

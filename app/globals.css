@@ -1,5 +1,135 @@
-@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Scroll Bar */
+::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0;
+}
+
+::-webkit-scrollbar-track {
+  background: #0040804d;
+  border-radius: 100vw;
+  margin-block: 0.3em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #004080b2;
+  border-radius: 100vw;
+}
+
+/* Progressive Bar */
+.progressiveBarContainer,
+.progressiveBarContainer * {
+  height: 10px !important;
+}
+
+.lessonBarContainer {
+  height: 32px !important;
+}
+
+.progressiveBarContainer > div > div,
+.lessonBarContainer > div > div {
+  background: #004080cc !important;
+}
+
+.vertical-mode {
+  /* writing-mode: vertical-rl; */
+  width: min-content;
+  transform: rotate(270deg);
+}
+
+/* React Calender Custom Styling */
+.react-calendar {
+  width: 100% !important;
+  border: none !important;
+  font-family: "Arimo", sans-serif !important;
+}
+
+.react-calendar__navigation__label__labelText,
+.react-calendar__navigation__label__labelText--from {
+  color: #0d0d0dcc !important;
+  font-size: 1rem !important;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  padding: 10px 8px !important;
+  color: #0d0d0dcc !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+}
+
+abbr:where([title]) {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.react-calendar__tile {
+  padding: 10px 8px !important;
+  font-family: "Arimo", sans-serif !important;
+  font-size: 1rem !important;
+  color: #0d0d0dcc !important;
+  border-radius: 9999px;
+  aspect-ratio: 1 /1 !important;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #0d0d0d4d !important;
+}
+
+.react-calendar__tile--now {
+  background: #0080001a !important;
+}
+
+.react-calendar__tile--active {
+  background: #004080cc !important;
+  color: white !important;
+}
+
+/* Circular Bar */
+.CircularProgressbar.CircularProgressbar-inverted
+  .CircularProgressbar-background {
+  fill: #004080cc !important;
+}
+
+.CircularProgressbar .CircularProgressbar-path {
+  stroke: #004080cc !important;
+  stroke-linecap: square !important;
+}
+
+.CircularProgressbar .CircularProgressbar-text {
+  fill: #004080cc !important;
+}
+.swiper {
+  width: 40%;
+  height: 100%;
+
+  @media screen and (max-width: 768px) {
+    width: 50%;
+    height: 100%;
+  }
+  @media screen and (max-width: 428px) {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.swiper-slide {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  width: auto;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  align-items: center;
+}

@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -25,7 +25,7 @@ module.exports = {
           800: "#0080004D",
           900: "#00800033",
           1000: "#0080001A",
-          1100: "#0080001A"
+          1100: "#0080001A",
         },
         blues: {
           1100: "#004080",
@@ -38,7 +38,7 @@ module.exports = {
           400: "#0040804D",
           300: "#00408033",
           200: "#0040801A",
-          100: "#0040800D"
+          100: "#0040800D",
         },
         grays: {
           1100: "#0D0D0D",
@@ -51,9 +51,25 @@ module.exports = {
           400: "#0D0D0D4D",
           300: "#0D0D0D33",
           200: "#0D0D0D1A",
-          100: "#0D0D0D0D"
+          100: "#0D0D0D0D",
+        },
+      },
+      screens: {
+        tablet: "640px",
+        // => @media (min-width: 640px) { ... }
+
+        laptop: "1024px",
+        // => @media (min-width: 1024px) { ... }
+      },
+      keyframes: {
+        slidein: {
+          '0%, 100%': { marginLeft: '20%' },
+          '90%': { marginLeft: '-33%' },
         }
       },
+      animation: {
+        slidein: 'slidein 10s ease-in-out infinite',
+      }
     },
   },
   plugins: [],
