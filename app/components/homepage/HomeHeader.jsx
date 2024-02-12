@@ -50,7 +50,7 @@ export default function HomeHeader() {
                     <iframe
                         // width="560"
                         // height="315"
-                        className='w-full min-w-[500px] h-full rounded-lg object-center aspect-video lg:aspect-square'
+                        className='w-full lg:min-w-[500px] h-full rounded-lg object-center aspect-video lg:aspect-square'
                         src="https://www.youtube.com/embed/Talq85dqxcg?si=l3dM8xvhxkQcXtSe"
                         title="YouTube video player"
                         frameborder="0"
