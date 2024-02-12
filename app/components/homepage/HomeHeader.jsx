@@ -10,14 +10,14 @@ export default function HomeHeader() {
                 <div
                     className='lg:max-w-[615px] w-full'
                 >
-                    <h1 
+                    <h1
                         className='font-bold font-arimo text-white text-[44px] sm:text-[56px]'
                         data-aos="fade-up"
                         data-aos-delay='100'
                     >
                         Embrace and Discover Your Language Roots
                     </h1>
-                    <p 
+                    <p
                         className="mt-5 text-[#ECECEC] leading-relaxed font-normal text-xl"
                         data-aos="fade-up"
                         data-aos-delay='200'
@@ -40,13 +40,23 @@ export default function HomeHeader() {
                     className='w-full lg:w-auto flex-auto'
                     data-aos="fade-up"
                 >
-                    <Image
+                    {/* <Image
                         src={'/william.png'}
                         width={1880}
                         height={1253}
                         alt='William'
-                        className='w-full rounded-lg object-center'
-                    />
+                        className='w-full rounded-lg object-center aspect-video lg:aspect-auto'
+                    /> */}
+                    <iframe
+                        // width="560"
+                        // height="315"
+                        className='w-full min-w-[500px] h-full rounded-lg object-center aspect-video lg:aspect-square'
+                        src="https://www.youtube.com/embed/Talq85dqxcg?si=l3dM8xvhxkQcXtSe"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                    ></iframe>
                 </div>
             </div>
         </header>
