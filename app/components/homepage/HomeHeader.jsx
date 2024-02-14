@@ -48,10 +48,10 @@ export default function HomeHeader() {
                         className='w-full rounded-lg object-center aspect-video lg:aspect-auto'
                     /> */}
                     <iframe
-                        // width="560"
-                        // height="315"
+                        width="560"
+                        height="315"
                         className='w-full lg:min-w-[500px] h-full rounded-lg object-center aspect-video lg:aspect-square'
-                        src="https://www.youtube.com/embed/Talq85dqxcg?si=l3dM8xvhxkQcXtSe"
+                        src="https://www.youtube.com/embed/Talq85dqxcg?si=wWcRtvrIrzrS0Pnm&amp;clip=UgkxZf9oq-nCtnvtDE-upIsBrUBVRQlQdxqq&amp;clipt=EAAY6IEC"
                         title="YouTube video player"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

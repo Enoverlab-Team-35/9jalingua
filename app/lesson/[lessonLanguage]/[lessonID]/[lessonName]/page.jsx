@@ -92,14 +92,9 @@ export default function Page() {
                             YORUBA
                         </h5>
                         {/* Audio and Yoruba Lessom */}
-                        <div>
-                            <h1 className='mt-8 lg:mt-10 text-[44px] md:text-[52px] text-grays-1000'>
-                                {lessons[topic.progress]?.from}
-                            </h1>
-                            <div>
-                                <audio controls src={lessons[topic.progress]?.audio}></audio>
-                            </div>
-                        </div>
+                        <h1 className='mt-8 lg:mt-10 text-[44px] md:text-[52px] text-grays-1000'>
+                            {lessons[topic.progress]?.from}
+                        </h1>
 
                         <h5 className='mt-10 sm:mt-12 text-base sm:text-xl text-grays-800'>
                             ENGLISH
@@ -107,6 +102,9 @@ export default function Page() {
                         <h1 className='mt-6 text-[32px] text-grays-1000'>
                             {lessons[topic.progress]?.to}
                         </h1>
+                        <div className='mt-4'>
+                            <audio controls src={lessons[topic.progress]?.audio}></audio>
+                        </div>
                     </div>
 
                     <button
