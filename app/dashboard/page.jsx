@@ -19,7 +19,7 @@ export default function Page() {
 
   return (
     <DashboardLayout>
-      <div className="mt-14 bg-greens-200 text-white rounded-lg w-full px-8 md:ps-3 md:pe-9 pb-12 md:pb-8">
+      <div className={`mt-14 text-black rounded-lg w-full px-8 md:ps-3 md:pe-9 pb-12 md:pb-8 ${topics.reduce((total, obj) => total + obj.progress, 0) > 0 ? 'bg-blues-200' : 'bg-[#E7EDE8E5]'}`}>
 
         <div className="flex items-center gap-[10px] text-xl font-bold py-8 md:py-4">
           <BsFileEarmarkCheck size={24} />
@@ -29,7 +29,10 @@ export default function Page() {
         <div className="mt-14 flex flex-col md:flex-row md:items-center justify-between gap-10">
           <div>
             <h2 className=" font-bold mb-3 text-xl">
-              Achieve your language learning goals
+              {topics.reduce((total, obj) => total + obj.progress, 0) > 0 ?
+                `Increase your word count to reach your language mastery target`
+                : `Achieve your language learning goals`
+              }
             </h2>
             <p className="mt-4">
               {topics.reduce((total, obj) => total + obj.progress, 0) > 0 ?
