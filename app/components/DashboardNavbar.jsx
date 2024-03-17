@@ -45,6 +45,7 @@ export default function DashboardNavbar() {
                         {pathname.toLowerCase() === '/community-forum' ? (
                             <button
                                 className='flex items-center border gap-2 rounded-lg border-grays-500 py-3 px-6 font-bold'
+                                disabled
                             >
                                 Categories
                             </button>

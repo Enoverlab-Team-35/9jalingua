@@ -101,12 +101,18 @@ export default function Page() {
                                         )}
 
                                         <div className='mt-6 flex lg:justify-end'>
-                                            <button
-                                                className={`px-4 py-3 font-bold rounded-lg border border-blues-1000 text-blues-1000 ${data.progress > 0 && 'px-7 bg-blues-1000 text-white'}`}
-                                                onClick={() => router.push(`/lesson/${selectedLanguage}/${data.id}/${data.heading}`)}
-                                            >
-                                                {data.progress > 0 ? "Continue" : "Take Lesson"}
-                                            </button>
+                                            {data?.available ? (
+                                                <button
+                                                    className={`px-4 py-3 font-bold rounded-lg border border-blues-1000 text-blues-1000 ${data.progress > 0 && 'px-7 bg-blues-1000 text-white'}`}
+                                                    onClick={() => router.push(`/lesson/${selectedLanguage}/${data.id}/${data.heading}`)}
+                                                >
+                                                    {data.progress > 0 ? "Continue" : "Take Lesson"}
+                                                </button>
+                                            ) : (
+                                                <p className='cursor-default italic text-red-700'>
+                                                    Coming soon
+                                                </p>
+                                            )}
                                         </div>
                                     </div>
                                 </div>

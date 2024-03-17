@@ -16,6 +16,16 @@ export default function Page() {
 
     const router = useRouter()
 
+    // useEffect(() => {
+    //     if (lessonLanguage.toLocaleLowerCase() === 'yoruba') {
+    //         alert('Yoruba')
+    //     } else if (lessonLanguage.toLocaleLowerCase() === 'igbo') {
+    //         alert('Igbo')
+    //     } else if (lessonLanguage.toLocaleLowerCase() === 'hausa') {
+    //         alert('Hausa')
+    //     }
+    // }, [])
+
     const onNext = async () => {
         setLoad(true)
         setStreakDays(1)
@@ -25,7 +35,7 @@ export default function Page() {
             behavior: "smooth"
         })
         setTimeout(() => {
-            if (topic?.progress < lessons.length) {
+            if (topic?.progress < (lessons.length - 1)) {
                 setTopics((prev) => prev.map((item) => item.id === Number(lessonID) ?
                     { ...item, progress: item.progress + 1 } : item
                 ))
@@ -71,7 +81,7 @@ export default function Page() {
                 <ProgressBar
                     className="rounded-full lessonBarContainer"
                     customLabel={" "}
-                    completed={Math.floor((topic?.progress / lessons.length) * 100)}
+                    completed={Math.floor((topic?.progress / (lessons.length - 1)) * 100)}
                 />
             </div>
 
@@ -89,7 +99,7 @@ export default function Page() {
                 <div className='flex-1 flex lg:flex-row flex-col lg:items-center gap-24 lg:gap-5 justify-between'>
                     <div className='font-arimo'>
                         <h5 className='text-base sm:text-xl text-grays-800'>
-                            YORUBA
+                            {lessonLanguage}
                         </h5>
                         {/* Audio and Yoruba Lessom */}
                         <h1 className='mt-8 lg:mt-10 text-[44px] md:text-[52px] text-grays-1000'>
@@ -102,9 +112,11 @@ export default function Page() {
                         <h1 className='mt-6 text-[32px] text-grays-1000'>
                             {lessons[topic.progress]?.to}
                         </h1>
-                        <div className='mt-4'>
-                            <audio controls src={lessons[topic.progress]?.audio}></audio>
-                        </div>
+                        {lessons[topic.progress]?.audio && (
+                            <div className='mt-4'>
+                                <audio controls src={lessons[topic.progress]?.audio}></audio>
+                            </div>
+                        )}
                     </div>
 
                     <button
